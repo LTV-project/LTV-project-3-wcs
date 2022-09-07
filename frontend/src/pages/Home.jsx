@@ -7,7 +7,7 @@ export default function Home() {
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>Hello Vite + React !</p>
-      <Counter /> 
+      <Counter />
       <Header />
       <p>
         Edit <code>App.jsx</code> and save to test HMR updates.
@@ -32,5 +32,5 @@ export default function Home() {
         </a>
       </p>
     </header>
-   );
+  );
 }
