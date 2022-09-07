@@ -1,0 +1,7 @@
+.header-container {
+    background-color: rgb(21,25,101);
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    list-style-type: none;
+}

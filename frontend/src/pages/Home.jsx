@@ -1,14 +1,14 @@
 import Counter from "@components/Counter";
 import logo from "@assets/logo.svg";
+import Header from "@components/Header";
 
 export default function Home() {
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>Hello Vite + React !</p>
-
-      <Counter />
-
+      <Counter /> 
+      <Header />
       <p>
         Edit <code>App.jsx</code> and save to test HMR updates.
       </p>
@@ -32,5 +32,5 @@ export default function Home() {
         </a>
       </p>
     </header>
-  );
+   );
 }
