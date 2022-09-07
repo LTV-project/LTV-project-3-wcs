@@ -7,15 +7,15 @@ class GamesManager extends AbstractManager {
 
   insert(games) {
     return this.connection.query(
-      `insert into ${this.table} (title) values (?)`,
-      [games.title]
+      `insert into ${this.table} (name, category) values (?, ?)`,
+      [games.name, games.category]
     );
   }
 
   update(games) {
     return this.connection.query(
-      `update ${this.table} set title = ? where id = ?`,
-      [games.title, games.id]
+      `update ${this.table} set name = ?, category = ? where id = ?`,
+      [games.name, games.category]
     );
   }
 }
