@@ -7,15 +7,25 @@ class lobbieManager extends AbstractManager {
 
   insert(lobbie) {
     return this.connection.query(
-      `insert into ${this.table} (title) values (?)`,
-      [lobbie.title]
+      `insert into ${this.table} (number of gamers, theme, name of lobbie, commentary) values (?, ?, ?, ?)`,
+      [
+        lobbie.number_of_gamers,
+        lobbie.theme,
+        lobbie.name_of_lobbie,
+        lobbie.commentary,
+      ]
     );
   }
 
   update(lobbie) {
     return this.connection.query(
-      `update ${this.table} set title = ? where id = ?`,
-      [lobbie.title, lobbie.id]
+      `update ${this.table} set number of gamers = ?, theme = ?, name of lobbie = ?, commentary = ? where id = ?`,
+      [
+        lobbie.numberOfGamers,
+        lobbie.theme,
+        lobbie.nameOfLobbie,
+        lobbie.commentary,
+      ]
     );
   }
 }
