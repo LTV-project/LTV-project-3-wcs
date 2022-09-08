@@ -8,6 +8,7 @@ const gamesControllers = require("./controllers/gamesControllers");
 const usersControllers = require("./controllers/usersControllers");
 const lobbiesControllers = require("./controllers/lobbiesControllers");
 const travelInfosControllers = require("./controllers/travelInfosControllers");
+const imagesControllers = require("./controllers/imagesControllers");
 
 // GET
 router.get("/items", itemControllers.browse);
@@ -20,6 +21,8 @@ router.get("/lobbies", lobbiesControllers.browse);
 router.get("/lobbies/:id", lobbiesControllers.read);
 router.get("/travel_info", travelInfosControllers.browse);
 router.get("/travel_info/:id", travelInfosControllers.read);
+router.get("/images", imagesControllers.browse);
+router.get("/images/:id", imagesControllers.read);
 
 // UPDATE
 router.put("/items/:id", itemControllers.edit);
@@ -27,6 +30,7 @@ router.put("/games/:id", gamesControllers.edit);
 router.put("/users/:id", usersControllers.edit);
 router.put("/lobbies/:id", lobbiesControllers.edit);
 router.put("/travel_info/:id", travelInfosControllers.edit);
+router.put("/images/:id", imagesControllers.edit);
 
 // CREATE
 router.post("/items", itemControllers.add);
@@ -34,6 +38,7 @@ router.post("/games", gamesControllers.add);
 router.post("/users", usersControllers.add);
 router.post("/lobbies", lobbiesControllers.add);
 router.post("/travel_info", travelInfosControllers.add);
+router.post("/images", imagesControllers.add);
 
 // DELETE
 router.delete("/items/:id", itemControllers.destroy);
@@ -41,5 +46,6 @@ router.delete("/games/:id", gamesControllers.destroy);
 router.delete("/users/:id", usersControllers.destroy);
 router.delete("/lobbies/:id", lobbiesControllers.destroy);
 router.delete("/travel_info/:id", travelInfosControllers.destroy);
+router.delete("/images/:id", imagesControllers.destroy);
 
 module.exports = router;
