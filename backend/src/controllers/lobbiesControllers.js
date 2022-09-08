@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.lobbie
+  models.lobbies
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,7 +13,7 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.lobbie
+  models.lobbies
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -29,14 +29,14 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const lobbie = req.body;
+  const lobbies = req.body;
 
   // TODO validations (length, format...)
 
-  lobbie.id = parseInt(req.params.id, 10);
+  lobbies.id = parseInt(req.params.id, 10);
 
-  models.lobbie
-    .update(lobbie)
+  models.lobbies
+    .update(lobbies)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -51,12 +51,12 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const lobbie = req.body;
+  const lobbies = req.body;
 
   // TODO validations (length, format...)
 
-  models.lobbie
-    .insert(lobbie)
+  models.lobbies
+    .insert(lobbies)
     .then(([result]) => {
       res.location(`/lobbies/${result.insertId}`).sendStatus(201);
     })
@@ -67,7 +67,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.lobbie
+  models.lobbies
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {

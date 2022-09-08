@@ -1,33 +1,36 @@
 const AbstractManager = require("./AbstractManager");
 
-class lobbieManager extends AbstractManager {
+class lobbiesManager extends AbstractManager {
   constructor() {
-    super({ table: "lobbie" });
+    super({ table: "lobbies" });
   }
 
-  insert(lobbie) {
+  insert(lobbies) {
     return this.connection.query(
-      `insert into ${this.table} (number of gamers, theme, name of lobbie, commentary) values (?, ?, ?, ?)`,
+      `insert into ${this.table} (travel_infos_id, number_of_gamers, theme, name_of_lobbie, commentary, creator_id) values (?, ?, ?, ?, ?, ?)`,
       [
-        lobbie.number_of_gamers,
-        lobbie.theme,
-        lobbie.name_of_lobbie,
-        lobbie.commentary,
+        lobbies.travel_infos_id,
+        lobbies.number_of_gamers,
+        lobbies.theme,
+        lobbies.name_of_lobbie,
+        lobbies.commentary,
+        lobbies.creator_id,
       ]
     );
   }
 
-  update(lobbie) {
+  update(lobbies) {
     return this.connection.query(
-      `update ${this.table} set number of gamers = ?, theme = ?, name of lobbie = ?, commentary = ? where id = ?`,
+      `update ${this.table} set number_of_gamers = ?, theme = ?, name_of_lobbie = ?, commentary = ? where id = ?`,
       [
-        lobbie.numberOfGamers,
-        lobbie.theme,
-        lobbie.nameOfLobbie,
-        lobbie.commentary,
+        lobbies.number_of_gamers,
+        lobbies.theme,
+        lobbies.name_of_lobbie,
+        lobbies.commentary,
+        lobbies.id,
       ]
     );
   }
 }
 
-module.exports = lobbieManager;
+module.exports = lobbiesManager;
