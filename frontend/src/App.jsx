@@ -1,12 +1,15 @@
+import Footer from "@components/Footer";
 import Home from "@pages/Home";
 
 import "./App.css";
+import "./Style.css";
 
 function App() {
   return (
     <div className="App">
       <Home />
-      <p>coucou</p>
+      <p>MVP</p>
+      <Footer />
     </div>
   );
 }
