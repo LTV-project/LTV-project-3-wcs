@@ -15,7 +15,7 @@ class GamesManager extends AbstractManager {
   update(games) {
     return this.connection.query(
       `update ${this.table} set name = ?, category = ? where id = ?`,
-      [games.name, games.category]
+      [games.name, games.category, games.id]
     );
   }
 }
