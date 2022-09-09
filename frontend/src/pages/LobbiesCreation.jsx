@@ -1,7 +1,5 @@
-const LobbiesCreation = () => {
-  return (
-    <div>LobbiesCreation</div>
-  )
+function LobbiesCreation() {
+  return <div>LobbiesCreation</div>;
 }
 
-export default LobbiesCreation
+export default LobbiesCreation;

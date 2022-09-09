@@ -1,7 +1,5 @@
-const AccountCreation = () => {
-  return (
-    <div>AccountCreation</div>
-  )
+function AccountCreation() {
+  return <div>AccountCreation</div>;
 }
 
-export default AccountCreation
+export default AccountCreation;

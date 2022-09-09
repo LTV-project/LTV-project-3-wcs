@@ -1,7 +1,5 @@
-const UserHome = () => {
-  return (
-    <div>UserHome</div>
-  )
+function UserHome() {
+  return <div>UserHome</div>;
 }
 
-export default UserHome
+export default UserHome;

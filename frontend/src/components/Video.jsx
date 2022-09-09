@@ -1,7 +1,5 @@
-const Video = () => {
-  return (
-    <div>Video</div>
-  )
+function Video() {
+  return <div>Video</div>;
 }
 
-export default Video
+export default Video;

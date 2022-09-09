@@ -1,7 +1,5 @@
-const UserNavbar = () => {
-  return (
-    <div>UserNavbar</div>
-  )
+function UserNavbar() {
+  return <div>UserNavbar</div>;
 }
 
-export default UserNavbar
+export default UserNavbar;
