@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import GameEditTableAdmin from "./GameEditTableAdmin";
 
 export default function GamesAdminTable() {
   const [games, setGames] = useState("");
@@ -19,17 +20,7 @@ export default function GamesAdminTable() {
           <th>Catégorie</th>
         </tr>
       </thead>
-      {games &&
-        games.map((game) => (
-          <tbody>
-            <tr>
-              <td><input type="text" value={game.name} /></td>
-              <td><input type="text" value={game.category} /></td>
-              <td><button type="checkbox">Supprimer</button></td>
-              <td><button type="checkbox">Éditer</button></td>
-            </tr>
-          </tbody>
-        ))}
+      {games && games.map((game) => <GameEditTableAdmin game={game} />)}
     </table>
   );
 }
