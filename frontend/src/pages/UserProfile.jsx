@@ -1,5 +1,7 @@
+import EditAccount from "@components/EditAccount";
+
 function UserProfile() {
-  return <div>UserProfile</div>;
+  return <div><EditAccount /></div>;
 }
 
 export default UserProfile;
