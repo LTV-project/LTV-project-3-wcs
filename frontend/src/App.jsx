@@ -7,6 +7,7 @@ import UserHome from "@pages/UserHome";
 import UserProfile from "@pages/UserProfile";
 import VisitorHome from "@pages/VisitorHome";
 import JoinLobbies from "@pages/JoinLobbies";
+import AdminPage from "@pages/AdminPage";
 
 import "./App.css";
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/userProfile" element={<UserProfile />} />
           <Route path="/accountCreation" element={<AccountCreation />} />
           <Route path="/lobbiesCreation" element={<LobbiesCreation />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </div>
     </Router>
