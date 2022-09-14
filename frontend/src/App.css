@@ -1,24 +1,75 @@
-*{
+* {
   list-style-type: none;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.dashboard-wrapper{
+.dashboard-wrapper {
   margin-top: 5%;
   width: 20%;
   height: 80vh;
   background-color: #eef3f4;
-  border: solid 3px #47BED8;
+  border: solid 3px #47bed8;
   border-radius: 15px;
   display: flex;
 }
 
-.dashboard-items-container{
+.dashboard-items-container {
   margin: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.admin-workflow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-table {
+  border: 1px solid #1c6ea4;
+  background-color: #eeeeee;
+  width: 70%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.admin-table td,
+.admin-table th {
+  border: 1px solid #aaaaaa;
+  padding: 3px 2px;
+}
+.admin-table tbody td {
+  font-size: 13px;
+}
+.admin-table tr:nth-child(even) {
+  background: #eef3f4;
+}
+.admin-table thead {
+  background: #ffffff;
+  border-bottom: 2px solid #444444;
+}
+.admin-table thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000000;
+  border-left: 2px solid #eef3f4;
+}
+.admin-table thead th:first-child {
+  border-left: none;
+}
+
+.admin-table tfoot td {
+  font-size: 14px;
+}
+.admin-table tfoot .links {
+  text-align: right;
+}
+.admin-table tfoot .links a {
+  display: inline-block;
+  background: #1c6ea4;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 5px;
 }
