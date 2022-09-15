@@ -3,9 +3,12 @@ import React from "react";
 function VisitorNavbar() {
   return (
     <header>
-      <li>Lorem, ipsum.</li>
-      <li>Tempora, nemo?</li>
-      <li>Blanditiis, odit.</li>
+      <div className="header-container">
+      <li className="li-container">LTV</li>
+      <li className="li-container">Accueil</li>
+      <li className="li-container">Contact</li>
+      <li className="li-container">Je me connecte</li>
+      </div>
     </header>
   );
 }
