@@ -1,9 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function GameEditTableAdmin({ game }) {  
-  const [editGame, setEditGame] = useState(game);  
-  const id = game.id;
+export default function GameEditTableAdmin({ game }) {
+  const [editGame, setEditGame] = useState(game);
+  const { id } = game;
   const updateGame = () => {
     axios.put(`${import.meta.env.VITE_BACKEND_URL}/games/${id}`, {
       ...editGame,

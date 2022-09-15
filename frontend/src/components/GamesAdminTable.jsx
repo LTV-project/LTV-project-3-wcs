@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import GameEditTableAdmin from "./GameEditTableAdmin";
+import GameAddTableAdmin from "./GameAddTableAdmin";
 
 export default function GamesAdminTable() {
   const [games, setGames] = useState("");
@@ -13,15 +14,18 @@ export default function GamesAdminTable() {
   }, []);
 
   return (
-    <table className="admin-table">
-      <thead>
-        <tr>
-          <th>Nom du jeu</th>
-          <th>Catégorie</th>
-        </tr>
-      </thead>
-      {games &&
-        games.map((game) => <GameEditTableAdmin game={game} key={game.id} />)}
-    </table>
+    <div>
+      <GameAddTableAdmin />
+      <table className="admin-table">
+        <thead>
+          <tr>
+            <th>Nom du jeu</th>
+            <th>Catégorie</th>
+          </tr>
+        </thead>
+        {games &&
+          games.map((game) => <GameEditTableAdmin game={game} key={game.id} />)}
+      </table>
+    </div>
   );
 }
