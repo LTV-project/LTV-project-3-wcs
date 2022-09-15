@@ -58,7 +58,7 @@ const add = (req, res) => {
   models.contact
     .insert(contact)
     .then(([result]) => {
-      res.location(`/contact/${result.insertId}`).sendStatus(201);
+      res.location(`/contacts/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);

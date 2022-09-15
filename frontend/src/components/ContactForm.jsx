@@ -12,7 +12,7 @@ export default function ContactForm() {
 
   const postContact = () => {
     axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/contact`, { ...contact })
+      .post(`${import.meta.env.VITE_BACKEND_URL}/contacts`, { ...contact })
       .then((response) => {
         console.error(response);
         console.error(response.data);
@@ -30,7 +30,7 @@ export default function ContactForm() {
       >
         <input
           type="text"
-          value=""
+          value={contact.lastname}
           placeholder="Votre Nom"
           onChange={(e) =>
             setContact({
@@ -41,7 +41,7 @@ export default function ContactForm() {
         />
         <input
           type="text"
-          value=""
+          value={contact.firstname}
           placeholder="Prénom"
           onChange={(e) =>
             setContact({
@@ -52,7 +52,7 @@ export default function ContactForm() {
         />
         <input
           type="text"
-          value=""
+          value={contact.pseudo}
           placeholder="Pseudo"
           onChange={(e) =>
             setContact({
@@ -63,7 +63,7 @@ export default function ContactForm() {
         />
         <input
           type="text"
-          value=""
+          value={contact.email}
           placeholder="Votre adresse mail"
           onChange={(e) =>
             setContact({
@@ -74,7 +74,7 @@ export default function ContactForm() {
         />
         <input
           type="text"
-          value=""
+          value={contact.content}
           placeholder="Votre message"
           onChange={(e) =>
             setContact({
