@@ -30,7 +30,7 @@ export default function ContactForm() {
       >
         <input
           type="text"
-          value={contact.lastname}
+          value=""
           placeholder="Votre Nom"
           onChange={(e) =>
             setContact({
@@ -41,7 +41,7 @@ export default function ContactForm() {
         />
         <input
           type="text"
-          value={contact.firstname}
+          value=""
           placeholder="Prénom"
           onChange={(e) =>
             setContact({
@@ -52,18 +52,18 @@ export default function ContactForm() {
         />
         <input
           type="text"
-          value={contact.pseudo}
+          value=""
           placeholder="Pseudo"
           onChange={(e) =>
             setContact({
               ...contact,
-              lastname: e.target.value,
+              pseudo: e.target.value,
             })
           }
         />
         <input
           type="text"
-          value={contact.email}
+          value=""
           placeholder="Votre adresse mail"
           onChange={(e) =>
             setContact({
@@ -74,7 +74,7 @@ export default function ContactForm() {
         />
         <input
           type="text"
-          value={contact.content}
+          value=""
           placeholder="Votre message"
           onChange={(e) =>
             setContact({
