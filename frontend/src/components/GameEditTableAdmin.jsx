@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function GameEditTableAdmin({ game }) {
-  const params = useParams();
-  const [editGame, setEditGame] = useState(game);
+export default function GameEditTableAdmin({ game }) {  
+  const [editGame, setEditGame] = useState(game);  
+  const id = game.id;
   const updateGame = () => {
-    axios.put(`${import.meta.env.VITE_BACKEND_URL}/games/${params.id}`, {
+    axios.put(`${import.meta.env.VITE_BACKEND_URL}/games/${id}`, {
       ...editGame,
     });
   };
