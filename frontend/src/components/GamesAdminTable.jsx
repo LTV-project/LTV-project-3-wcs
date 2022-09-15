@@ -20,7 +20,8 @@ export default function GamesAdminTable() {
           <th>Catégorie</th>
         </tr>
       </thead>
-      {games && games.map((game) => <GameEditTableAdmin game={game} />)}
+      {games &&
+        games.map((game) => <GameEditTableAdmin game={game} key={game.id} />)}
     </table>
   );
 }
