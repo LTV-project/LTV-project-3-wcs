@@ -21,7 +21,7 @@ export default function ContactForm() {
 
   return (
     <div>
-      <h2>Nous contactez</h2>
+      <h2>Nous contacter</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
