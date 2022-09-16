@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import UserEditTableAdmin from "./UserEditTableAdmin";
+import UserAddTableAdmin from "./UserAddTableAdmin";
 
 export default function UsersAdminTable() {
   const [users, setUsers] = useState("");
@@ -12,28 +14,22 @@ export default function UsersAdminTable() {
   }, []);
 
   return (
-    <table className="admin-table">
-      <thead>
-        <tr>
-          <th>Pseudo</th>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Courriel</th>
-          <th>Âge</th>
-        </tr>
-      </thead>
-      {users &&
-        users.map((user) => (
-          <tbody>
-            <tr>
-              <td>{user.pseudo}</td>
-              <td>{user.lastname}</td>
-              <td>{user.firstname}</td>
-              <td>{user.email}</td>
-              <td>{user.age}</td>
-            </tr>
-          </tbody>
-        ))}
-    </table>
+    <div>
+      <UserAddTableAdmin />
+      <table className="admin-table">
+        <thead>
+          <tr>
+            <th>Pseudo</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Courriel</th>
+            <th>Password</th>
+            <th>Âge</th>
+          </tr>
+        </thead>
+        {users &&
+          users.map((user) => <UserEditTableAdmin user={user} key={user.ID} />)}
+      </table>
+    </div>
   );
 }
