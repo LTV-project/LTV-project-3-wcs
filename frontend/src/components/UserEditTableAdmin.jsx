@@ -56,6 +56,15 @@ export default function UserEditTableAdmin({ user }) {
         </td>
         <td>
           <input
+            type="password"
+            value={editUser.password}
+            onChange={(e) =>
+              setEditUser({ ...editUser, password: e.target.value })
+            }
+          />
+        </td>
+        <td>
+          <input
             type="number"
             value={editUser.age}
             onChange={(e) => setEditUser({ ...editUser, age: e.target.value })}
