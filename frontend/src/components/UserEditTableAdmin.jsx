@@ -1,12 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function GameEditTableAdmin({ game }) {
-  const [editGame, setEditGame] = useState(game);
-  const { id } = game;
-  const updateGame = () => {
-    axios.put(`${import.meta.env.VITE_BACKEND_URL}/games/${id}`, {
-      ...editGame,
+export default function UserEditTableAdmin({ user }) {
+  const [editUser, setEditUser] = useState(user);
+  const { id } = user;
+  const updateUser = () => {
+    axios.put(`${import.meta.env.VITE_BACKEND_URL}/users/${id}`, {
+      ...editUser,
+    });
+  };
+  const deleteUser = () => {
+    axios.put(`${import.meta.env.VITE_BACKEND_URL}/users/${id}`, {
+      ...editUser,
     });
   };
 
@@ -16,26 +21,55 @@ export default function GameEditTableAdmin({ game }) {
         <td>
           <input
             type="text"
-            value={editGame.name}
-            onChange={(e) => setEditGame({ ...editGame, name: e.target.value })}
+            value={editUser.pseudo}
+            onChange={(e) =>
+              setEditUser({ ...editUser, pseudo: e.target.value })
+            }
           />
         </td>
         <td>
           <input
             type="text"
-            value={editGame.category}
+            value={editUser.lastname}
             onChange={(e) =>
-              setEditGame({ ...editGame, category: e.target.value })
+              setEditUser({ ...editUser, lastname: e.target.value })
             }
           />
         </td>
         <td>
-          <button type="button" onClick={updateGame}>
+          <input
+            type="text"
+            value={editUser.firstname}
+            onChange={(e) =>
+              setEditUser({ ...editUser, firstname: e.target.value })
+            }
+          />
+        </td>
+        <td>
+          <input
+            type="email"
+            value={editUser.email}
+            onChange={(e) =>
+              setEditUser({ ...editUser, email: e.target.value })
+            }
+          />
+        </td>
+        <td>
+          <input
+            type="number"
+            value={editUser.age}
+            onChange={(e) => setEditUser({ ...editUser, age: e.target.value })}
+          />
+        </td>
+        <td>
+          <button type="button" onClick={updateUser}>
             Éditer
           </button>
         </td>
         <td>
-          <button type="button">Supprimer</button>
+          <button type="button" onClick={deleteUser}>
+            Supprimer
+          </button>
         </td>
       </tr>
     </tbody>
