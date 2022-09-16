@@ -39,7 +39,9 @@ export default function GameEditTableAdmin({ game }) {
           </button>
         </td>
         <td>
-          <button type="button" onClick={deleteGame}>Supprimer</button>
+          <button type="button" onClick={deleteGame}>
+            Supprimer
+          </button>
         </td>
       </tr>
     </tbody>
