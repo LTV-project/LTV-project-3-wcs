@@ -10,7 +10,7 @@ export default function LobbyEditTableAdmin({ lobby }) {
     });
   };
   const deleteLobby = () => {
-    axios.put(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${id}`, {
+    axios.delete(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${id}`, {
       ...editLobby,
     });
   };
@@ -43,7 +43,9 @@ export default function LobbyEditTableAdmin({ lobby }) {
           </button>
         </td>
         <td>
-          <button type="button" onClick={deleteLobby}>Supprimer</button>
+          <button type="button" onClick={deleteLobby}>
+            Supprimer
+          </button>
         </td>
       </tr>
     </tbody>
