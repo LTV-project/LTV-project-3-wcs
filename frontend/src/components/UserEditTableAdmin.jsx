@@ -30,7 +30,7 @@ export default function UserEditTableAdmin({ user }) {
         <td>
           <input
             type="text"
-            value={editUser.lastname}
+            value={editUser.lastname ? editUser.lastname : ""}
             onChange={(e) =>
               setEditUser({ ...editUser, lastname: e.target.value })
             }
@@ -39,7 +39,7 @@ export default function UserEditTableAdmin({ user }) {
         <td>
           <input
             type="text"
-            value={editUser.firstname}
+            value={editUser.firstname ? editUser.firstname : ""}
             onChange={(e) =>
               setEditUser({ ...editUser, firstname: e.target.value })
             }
@@ -66,7 +66,7 @@ export default function UserEditTableAdmin({ user }) {
         <td>
           <input
             type="number"
-            value={editUser.age}
+            value={editUser.age ? editUser.age : ""}
             onChange={(e) => setEditUser({ ...editUser, age: e.target.value })}
           />
         </td>
