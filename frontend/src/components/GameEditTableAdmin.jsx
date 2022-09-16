@@ -10,6 +10,10 @@ export default function GameEditTableAdmin({ game }) {
     });
   };
 
+  const deleteGame = () => {
+    axios.delete(`${import.meta.env.VITE_BACKEND_URL}/games/${id}`);
+  };
+
   return (
     <tbody>
       <tr>
@@ -35,7 +39,7 @@ export default function GameEditTableAdmin({ game }) {
           </button>
         </td>
         <td>
-          <button type="button">Supprimer</button>
+          <button type="button" onClick={deleteGame}>Supprimer</button>
         </td>
       </tr>
     </tbody>
