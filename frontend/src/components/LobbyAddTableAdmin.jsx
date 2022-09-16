@@ -3,11 +3,11 @@ import axios from "axios";
 
 export default function LobbyAddTableAdmin() {
   const [addLobby, setAddLobby] = useState({
-    name: "",
-    category: "",
+    name_of_lobbie: "",
+    commentary: "",
   });
   const postLobby = () => {
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/games/`, {
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/lobbies/`, {
       ...addLobby,
     });
   };
@@ -25,9 +25,9 @@ export default function LobbyAddTableAdmin() {
             <input
               type="text"
               value={addLobby.name}
-              placeholder="Nom du jeu"
+              placeholder="Nom de la salle"
               onChange={(e) =>
-                setAddLobby({ ...addLobby, name: e.target.value })
+                setAddLobby({ ...addLobby, name_of_lobbie: e.target.value })
               }
             />
           </td>
@@ -35,9 +35,9 @@ export default function LobbyAddTableAdmin() {
             <input
               type="text"
               value={addLobby.category}
-              placeholder="board_game ou card_game"
+              placeholder="Description"
               onChange={(e) =>
-                setAddLobby({ ...addLobby, category: e.target.value })
+                setAddLobby({ ...addLobby, commentary: e.target.value })
               }
             />
           </td>

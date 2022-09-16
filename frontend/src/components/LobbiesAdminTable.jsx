@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import LobbyEditTableAdmin from "./LobbyEdditTableAdmin";
+import LobbyAddTableAdmin from "./LobbyAddTableAdmin";
 
-export default function lobbiesAdminTable() {
+export default function lobbysAdminTable() {
   const [lobbies, setLobbies] = useState("");
 
   useEffect(() => {
@@ -12,24 +14,21 @@ export default function lobbiesAdminTable() {
   }, []);
 
   return (
-    <table className="admin-table">
-      <thead>
-        <tr>
-          <th>Nom de la salle</th>
-          <th>Catégorie</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      {lobbies &&
-        lobbies.map((lobbie) => (
-          <tbody>
-            <tr>
-              <td>{lobbie.name_of_lobbie}</td>
-              <td>{lobbie.commentary}</td>
-              <td>Catégorie</td>
-            </tr>
-          </tbody>
-        ))}
-    </table>
+    <div>
+      <LobbyAddTableAdmin />
+      <table className="admin-table">
+        <thead>
+          <tr>
+            <th>Nom de la salle</th>
+            <th>Catégorie</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        {lobbies &&
+          lobbies.map((lobby) => (
+            <LobbyEditTableAdmin lobby={lobby} key={lobby.id} />
+          ))}
+      </table>
+    </div>
   );
 }
