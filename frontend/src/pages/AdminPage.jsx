@@ -11,7 +11,7 @@ export default function Admin() {
       <div className="admin-workflow">
         <DashboardAdmin />
         <UsersAdminTable />
-        <LobbiesAdminTable />
+        {/* <LobbiesAdminTable /> */}
         <GamesAdminTable />
       </div>
     </div>

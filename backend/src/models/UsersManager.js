@@ -29,6 +29,7 @@ class UsersManager extends AbstractManager {
         users.age,
         users.email,
         users.password,
+        users.id,
       ]
     );
   }

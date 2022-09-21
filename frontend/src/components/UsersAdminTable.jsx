@@ -28,7 +28,7 @@ export default function UsersAdminTable() {
           </tr>
         </thead>
         {users &&
-          users.map((user) => <UserEditTableAdmin user={user} key={user.ID} />)}
+          users.map((user) => <UserEditTableAdmin user={user} key={user.id} />)}
       </table>
     </div>
   );

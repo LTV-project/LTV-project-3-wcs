@@ -10,7 +10,7 @@ export default function UserEditTableAdmin({ user }) {
     });
   };
   const deleteUser = () => {
-    axios.put(`${import.meta.env.VITE_BACKEND_URL}/users/${id}`, {
+    axios.delete(`${import.meta.env.VITE_BACKEND_URL}/users/${id}`, {
       ...editUser,
     });
   };
