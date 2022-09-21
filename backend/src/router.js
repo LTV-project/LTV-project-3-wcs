@@ -1,6 +1,12 @@
 const express = require("express");
 
+const app = express();
+
+app.use(express.json());
+
 const router = express.Router();
+
+const { hashedPassword, verifyPassword, verifyToken } = require("./auth");
 
 const itemControllers = require("./controllers/itemControllers");
 const gamesControllers = require("./controllers/gamesControllers");
@@ -25,6 +31,15 @@ router.get("/category", categoryControllers.browse);
 router.get("/category/:id", categoryControllers.read);
 router.get("/images", imagesControllers.browse);
 router.get("/images/:id", imagesControllers.read);
+router.post(
+  "/users",
+  hashedPassword,
+  verifyPassword,
+  verifyToken,
+  usersControllers.add
+);
+
+app.use(verifyToken);
 
 // UPDATE
 router.put("/items/:id", itemControllers.edit);
@@ -38,7 +53,6 @@ router.put("/images/:id", imagesControllers.edit);
 // CREATE
 router.post("/items", itemControllers.add);
 router.post("/games", gamesControllers.add);
-router.post("/users", usersControllers.add);
 router.post("/lobbies", lobbiesControllers.add);
 router.post("/travel_info", travelInfosControllers.add);
 router.post("/category", categoryControllers.add);

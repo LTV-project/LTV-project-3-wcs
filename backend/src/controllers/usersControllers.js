@@ -28,6 +28,24 @@ const read = (req, res) => {
     });
 };
 
+// const readUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
+//   models.users
+//   .find(req.body.email)
+//   .then(([rows]) => {
+//     if (rows[0] != null) {
+//       req.row = rows[0];
+
+//       next();
+//     } else {
+//       res.sendStatus(401);
+//     }
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     res.status(500).send("Error retrieving data from database");
+//   });
+// };
+
 const edit = (req, res) => {
   const users = req.body;
 
