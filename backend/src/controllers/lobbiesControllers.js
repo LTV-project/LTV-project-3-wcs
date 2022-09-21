@@ -12,6 +12,18 @@ const browse = (req, res) => {
     });
 };
 
+const browseLobbiesByCategoryWithTravelInfosAndParticipants = (req, res) => {
+  models.lobbies
+    .findLobbiesByCategoryWithTravelInfosAndParticipants()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const read = (req, res) => {
   models.lobbies
     .find(req.params.id)
@@ -84,6 +96,7 @@ const destroy = (req, res) => {
 
 module.exports = {
   browse,
+  browseLobbiesByCategoryWithTravelInfosAndParticipants,
   read,
   edit,
   add,
