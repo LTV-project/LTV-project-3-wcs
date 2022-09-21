@@ -18,7 +18,10 @@ router.get("/games", gamesControllers.browse);
 router.get("/games/:id", gamesControllers.read);
 router.get("/users", usersControllers.browse);
 router.get("/users/:id", usersControllers.read);
-router.get("/lobbies", lobbiesControllers.browse);
+router.get(
+  "/lobbies",
+  lobbiesControllers.browseLobbiesByCategoryWithTravelInfosAndParticipants
+);
 router.get("/lobbies/:id", lobbiesControllers.read);
 router.get("/travel_info", travelInfosControllers.browse);
 router.get("/travel_info/:id", travelInfosControllers.read);
