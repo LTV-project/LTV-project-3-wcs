@@ -94,13 +94,12 @@
 
 /* CSS page recherche de lobbies */
 
-.train-number-input{
+.train-number-input {
   margin: 5% 50% 0;
   width: 50px;
-
 }
 
-.train-number-input::placeholder{
+.train-number-input::placeholder {
   text-align: center;
 }
 
@@ -108,10 +107,10 @@
   margin-top: 5%;
   display: flex;
   justify-content: space-evenly;
-  height: 25vh;  
+  height: 25vh;
 }
 
-.lobby-choice{
+.lobby-choice {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,7 +119,7 @@
   background-color: #151965;
 }
 
-.choice-btn{
+.choice-btn {
   display: inline-block;
   width: 200px;
   height: 100px;
