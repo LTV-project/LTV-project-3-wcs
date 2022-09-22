@@ -32,9 +32,10 @@ const readUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
   const { email } = req.body;
   models.users
     .findUserByMail(email)
-    .then(([rows]) => {
-      if (rows[0] != null) {
-        req.user = rows[0];
+    .then(([users]) => {
+      if (users[0] != null) {
+        // eslint-disable-next-line prefer-destructuring
+        req.user = users[0];
 
         next();
       } else {
