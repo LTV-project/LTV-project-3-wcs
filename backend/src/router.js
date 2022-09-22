@@ -1,6 +1,11 @@
 const express = require("express");
 
+const app = express();
+app.use(express.json());
+
 const router = express.Router();
+
+const { hashPassword, verifyPassword, verifyToken } = require("./auth");
 
 const itemControllers = require("./controllers/itemControllers");
 const gamesControllers = require("./controllers/gamesControllers");
@@ -10,6 +15,15 @@ const travelInfosControllers = require("./controllers/travelInfosControllers");
 const categoryControllers = require("./controllers/categoryControllers");
 const imagesControllers = require("./controllers/imagesControllers");
 const contactControllers = require("./controllers/contactControllers");
+
+router.post("/users", hashPassword, usersControllers.add);
+router.post(
+  "/login",
+  usersControllers.readUserByEmailWithPasswordAndPassToNext,
+  verifyPassword
+);
+
+app.use(verifyToken); // authentication wall : verifyToken is activated for each route after this line
 
 // GET
 router.get("/items", itemControllers.browse);
@@ -42,7 +56,6 @@ router.put("/contacts/:id", contactControllers.edit);
 // CREATE
 router.post("/items", itemControllers.add);
 router.post("/games", gamesControllers.add);
-router.post("/users", usersControllers.add);
 router.post("/lobbies", lobbiesControllers.add);
 router.post("/travel_info", travelInfosControllers.add);
 router.post("/category", categoryControllers.add);
