@@ -7,16 +7,16 @@ class categoryManager extends AbstractManager {
 
   insert(category) {
     return this.connection.query(
-      `insert into ${this.table} (game, talk) values (?, ?)`,
-      [category.game, category.talk]
+      `insert into ${this.table} (name) values (?)`,
+      [category.name]
     );
   }
 
   update(category) {
-    return this.connection.query(
-      `update ${this.table} set game = ?, talk = ?`,
-      [category.game, category.talk, category.id]
-    );
+    return this.connection.query(`update ${this.table} set name = ?`, [
+      category.name,
+      category.id,
+    ]);
   }
 }
 
