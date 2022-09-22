@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const itemControllers = require("./controllers/itemControllers");
-const gamesControllers = require("./controllers/gamesControllers");
+const gamesControllers = require("./controllers/GamesControllers");
 const usersControllers = require("./controllers/usersControllers");
 const lobbiesControllers = require("./controllers/lobbiesControllers");
 const travelInfosControllers = require("./controllers/travelInfosControllers");

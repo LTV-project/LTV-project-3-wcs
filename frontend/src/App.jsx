@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contact from "@pages/Contact";
 import AccountCreation from "@pages/AccountCreation";
 import SignIn from "@pages/SignIn";
-import LobbiesCreation from "@pages/LobbiesCreation";
+import LobbiesGameCreation from "@pages/LobbiesGameCreation";
+import LobbiesTalkCreation from "@pages/LobbiesTalkCreation";
 import UserHome from "@pages/UserHome";
 import UserProfile from "@pages/UserProfile";
 import EditAccount from "@components/EditAccount";
@@ -24,7 +25,14 @@ function App() {
           <Route path="/userProfile" element={<UserProfile />} />
           <Route path="/userProfile/:id" element={<EditAccount />} />
           <Route path="/accountCreation" element={<AccountCreation />} />
-          <Route path="/lobbiesCreation" element={<LobbiesCreation />} />
+          <Route
+            path="/lobbiesGameCreation"
+            element={<LobbiesGameCreation />}
+          />
+          <Route
+            path="/lobbiesTalkCreation"
+            element={<LobbiesTalkCreation />}
+          />
         </Routes>
       </div>
     </Router>
