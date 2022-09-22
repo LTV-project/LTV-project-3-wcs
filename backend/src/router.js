@@ -1,12 +1,11 @@
 const express = require("express");
 
 const app = express();
-
 app.use(express.json());
 
 const router = express.Router();
 
-const { hashedPassword, verifyPassword, verifyToken } = require("./auth");
+const { hashPassword, verifyPassword, verifyToken } = require("./auth");
 
 const itemControllers = require("./controllers/itemControllers");
 const gamesControllers = require("./controllers/gamesControllers");
@@ -15,6 +14,15 @@ const lobbiesControllers = require("./controllers/lobbiesControllers");
 const travelInfosControllers = require("./controllers/travelInfosControllers");
 const categoryControllers = require("./controllers/categoryControllers");
 const imagesControllers = require("./controllers/imagesControllers");
+
+router.post("/users", hashPassword, usersControllers.add);
+router.post(
+  "/login",
+  usersControllers.readUserByEmailWithPasswordAndPassToNext,
+  verifyPassword
+);
+
+app.use(verifyToken); // authentication wall : verifyToken is activated for each route after this line
 
 // GET
 router.get("/items", itemControllers.browse);
@@ -31,15 +39,6 @@ router.get("/category", categoryControllers.browse);
 router.get("/category/:id", categoryControllers.read);
 router.get("/images", imagesControllers.browse);
 router.get("/images/:id", imagesControllers.read);
-router.post(
-  "/users",
-  hashedPassword,
-  verifyPassword,
-  verifyToken,
-  usersControllers.add
-);
-
-app.use(verifyToken);
 
 // UPDATE
 router.put("/items/:id", itemControllers.edit);

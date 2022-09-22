@@ -1,5 +1,4 @@
 const argon2 = require("argon2");
-
 const jwt = require("jsonwebtoken");
 
 const hashingOptions = {
@@ -9,11 +8,11 @@ const hashingOptions = {
   parallelism: 1,
 };
 
-const hashedPassword = (req, res, next) => {
+const hashPassword = (req, res, next) => {
   argon2
     .hash(req.body.password, hashingOptions)
     .then((hashedPassword) => {
-      req.body.password = hashedPassword;
+      req.body.hashedPassword = hashedPassword;
       delete req.body.password;
 
       next();
@@ -72,7 +71,7 @@ const verifyToken = (req, res, next) => {
 };
 
 module.exports = {
-  hashedPassword,
+  hashPassword,
   verifyPassword,
   verifyToken,
 };

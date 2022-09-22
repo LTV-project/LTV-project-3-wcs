@@ -28,23 +28,24 @@ const read = (req, res) => {
     });
 };
 
-// const readUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
-//   models.users
-//   .find(req.body.email)
-//   .then(([rows]) => {
-//     if (rows[0] != null) {
-//       req.row = rows[0];
+const readUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
+  const { email } = req.body;
+  models.users
+    .findUserByMail(email)
+    .then(([rows]) => {
+      if (rows[0] != null) {
+        req.user = rows[0];
 
-//       next();
-//     } else {
-//       res.sendStatus(401);
-//     }
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//     res.status(500).send("Error retrieving data from database");
-//   });
-// };
+        next();
+      } else {
+        res.sendStatus(401);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
 
 const edit = (req, res) => {
   const users = req.body;
@@ -69,14 +70,14 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const users = req.body;
+  const user = req.body;
 
   // TODO validations (length, format...)
 
   models.users
-    .insert(users)
+    .insert(user)
     .then(([result]) => {
-      res.location(`/userss/${result.insertId}`).sendStatus(201);
+      res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -106,4 +107,5 @@ module.exports = {
   edit,
   add,
   destroy,
+  readUserByEmailWithPasswordAndPassToNext,
 };
