@@ -1,8 +1,24 @@
+@font-face {
+  font-family: "AvenirBlack";
+  src: url("./fonts/Avenir-Black.ttf");
+}
+
+@font-face {
+  font-family: "AvenirBook";
+  src: url("./fonts/Avenir-Book.ttf");
+}
+
+@font-face {
+  font-family: "AvenirMedium";
+  src: url("./fonts/Avenir-Medium.ttf");
+}
+
 * {
   list-style-type: none;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Avenir-Medium";
 }
 
 .dashboard-wrapper {

@@ -13,7 +13,10 @@ function LobbyChoice() {
 
   return (
     <section>
-      <input type="text" placeholder="Numéro de train" />
+      <input
+        type="text"
+        placeholder={displayLobbies && displayLobbies[2].train_number}
+      />
       <div className="lobby-choice">
         <p>Jouer</p>
       </div>

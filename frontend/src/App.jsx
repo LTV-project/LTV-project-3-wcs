@@ -10,6 +10,9 @@ import VisitorHome from "@pages/VisitorHome";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
 
+import "./fonts/Avenir-Book.ttf";
+import "./fonts/Avenir-Medium.ttf";
+import "./fonts/Avenir-Black.ttf";
 import "./App.css";
 
 function App() {
