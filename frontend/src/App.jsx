@@ -5,6 +5,7 @@ import SignIn from "@pages/SignIn";
 import LobbiesCreation from "@pages/LobbiesCreation";
 import UserHome from "@pages/UserHome";
 import UserProfile from "@pages/UserProfile";
+import EditAccount from "@components/EditAccount";
 import VisitorHome from "@pages/VisitorHome";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
@@ -18,10 +19,11 @@ function App() {
         <Routes>
           <Route path="/" element={<VisitorHome />} />
           <Route path="/userHome" element={<UserHome />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contacts" element={<Contact />} />
           <Route path="/joinLobbies" element={<JoinLobbies />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/userProfile" element={<UserProfile />} />
+          <Route path="/userProfile/:id" element={<EditAccount />} />
           <Route path="/accountCreation" element={<AccountCreation />} />
           <Route path="/lobbiesCreation" element={<LobbiesCreation />} />
           <Route path="/admin" element={<AdminPage />} />

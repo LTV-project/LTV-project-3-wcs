@@ -5,31 +5,31 @@ class UsersManager extends AbstractManager {
     super({ table: "users" });
   }
 
-  insert(users) {
+  insert(user) {
     return this.connection.query(
       `insert into ${this.table} (pseudo, firstname, lastname, age, email, password) values (?, ?, ?, ?, ?, ?)`,
       [
-        users.pseudo,
-        users.firstname,
-        users.lastname,
-        users.age,
-        users.email,
-        users.password,
+        user.pseudo,
+        user.firstname,
+        user.lastname,
+        user.age,
+        user.email,
+        user.password,
       ]
     );
   }
 
-  update(users) {
+  update(user) {
     return this.connection.query(
       `update ${this.table} set pseudo = ?, firstname = ?, lastname = ?, age = ?, email = ?, password = ? where id = ?`,
       [
-        users.pseudo,
-        users.firstname,
-        users.lastname,
-        users.age,
-        users.email,
-        users.password,
-        users.id,
+        user.pseudo,
+        user.firstname,
+        user.lastname,
+        user.age,
+        user.email,
+        user.password,
+        user.id,
       ]
     );
   }
