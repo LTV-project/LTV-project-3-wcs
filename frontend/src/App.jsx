@@ -9,6 +9,7 @@ import UserProfile from "@pages/UserProfile";
 import EditAccount from "@components/EditAccount";
 import VisitorHome from "@pages/VisitorHome";
 import JoinLobbies from "@pages/JoinLobbies";
+import AdminPage from "@pages/AdminPage";
 
 import "./App.css";
 
@@ -33,6 +34,7 @@ function App() {
             path="/lobbiesTalkCreation"
             element={<LobbiesTalkCreation />}
           />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </div>
     </Router>
