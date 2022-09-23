@@ -21,6 +21,8 @@
     "nodemon": "^2.0.19"
   },
   "dependencies": {
-    "axios": "^0.27.2"
+    "argon2": "^0.29.1",
+    "axios": "^0.27.2",
+    "jsonwebtoken": "^8.5.1"
   }
 }

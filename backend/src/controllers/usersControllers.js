@@ -28,6 +28,26 @@ const read = (req, res) => {
     });
 };
 
+const readUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
+  const { email } = req.body;
+  models.users
+    .findUserByMail(email)
+    .then(([users]) => {
+      if (users[0] != null) {
+        // eslint-disable-next-line prefer-destructuring
+        req.user = users[0];
+
+        next();
+      } else {
+        res.sendStatus(401);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
+
 const edit = (req, res) => {
   const users = req.body;
 
@@ -51,14 +71,14 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const users = req.body;
+  const user = req.body;
 
   // TODO validations (length, format...)
 
   models.users
-    .insert(users)
+    .insert(user)
     .then(([result]) => {
-      res.location(`/userss/${result.insertId}`).sendStatus(201);
+      res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -88,4 +108,5 @@ module.exports = {
   edit,
   add,
   destroy,
+  readUserByEmailWithPasswordAndPassToNext,
 };
