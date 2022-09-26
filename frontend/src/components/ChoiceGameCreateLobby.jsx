@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import oldCartes from "template-fullstack/assets/images/oldCartes.jpg";
+/* import oldCartes from "template-fullstack/assets/images/oldCartes.jpg"; */
 import LobbyGame from "./LobbyGame";
 
 function ChoiceGameCreateLobby() {
@@ -26,30 +26,44 @@ function ChoiceGameCreateLobby() {
   const handleClickBoard = () => {
     setBoardIsClicked(!boardIsClicked);
   };
-
-  return (
-    <div>
-      <img
+  /*      <img
         src={oldCartes}
         className="old-cartes-img"
         alt="Jeu de 52 cartes tenu dans une main faces visibles"
       />
-      {!boardIsClicked ? (
-        <button type="button" onClick={handleClickCard}>
-          {!cardIsClicked ? "Jeu de cartes" : "Retour"}
-        </button>
-      ) : (
-        ""
-      )}
-      {!cardIsClicked ? (
-        <button type="button" onClick={handleClickBoard}>
-          {!boardIsClicked ? "Jeu de plateau" : "Retour"}
-        </button>
-      ) : (
-        ""
-      )}
+      */
+  return (
+    <div>
+      <div className="parent_btn_click_create_lobby">
+        {!boardIsClicked ? (
+          <button
+            className="btn_click_create_lobby"
+            type="button"
+            onClick={handleClickCard}
+          >
+            {!cardIsClicked ? "Jeu de cartes" : "Retour"}
+          </button>
+        ) : (
+          ""
+        )}
+        {!cardIsClicked ? (
+          <button
+            className="btn_click_create_lobby"
+            type="button"
+            onClick={handleClickBoard}
+          >
+            {!boardIsClicked ? "Jeu de plateau" : "Retour"}
+          </button>
+        ) : (
+          ""
+        )}
+      </div>
       {boardIsClicked ? (
-        <select value={selectedValue} onChange={handleChange}>
+        <select
+          className="btn_click_create_lobby_select"
+          value={selectedValue}
+          onChange={handleChange}
+        >
           <option value="Choisissez votre jeu">
             -- Choisissez votre jeu --
           </option>
@@ -68,7 +82,11 @@ function ChoiceGameCreateLobby() {
         ""
       )}
       {cardIsClicked ? (
-        <select value={selectedValue} onChange={handleChange}>
+        <select
+          className="btn_click_create_lobby_select"
+          value={selectedValue}
+          onChange={handleChange}
+        >
           <option value="Choisissez votre jeu">
             -- Choisissez votre jeu --
           </option>

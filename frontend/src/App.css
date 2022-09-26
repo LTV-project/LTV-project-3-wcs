@@ -81,11 +81,36 @@
   margin: 10px;
 }
 
+.btn_click_create_lobby {
+  background-color: #81e8fe;
+  justify-content: space-evenly;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 30%;
+  height: 30vh;
+}
+
+.parent_btn_click_create_lobby {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 25px;
+}
+
+.btn_click_create_lobby_select {
+  font-size: 20px;
+  width: 25%;
+  height: 10vh;
+  border-radius: 25px;
+}
+
 .createlobby {
   display: flex;
   flex-direction: column;
   margin: 10px;
 }
+
 .create-lobby-input {
   margin: 20px;
   text-align: left;
@@ -154,4 +179,6 @@
   padding: 20px;
   background-color: #81e8fe;
   border-radius: 25px;
+  /*justify-content: space-evenly;
+  align-items: center;*/
 }
