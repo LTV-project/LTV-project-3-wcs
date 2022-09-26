@@ -75,14 +75,32 @@
 }
 
 /*CSS creation salle de jeux*/
+.title-create-lobby {
+  font-size: 42px;
+  text-align: center;
+  margin: 10px;
+}
+
 .createlobby {
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 .create-lobby-input {
   margin: 20px;
   text-align: left;
   width: 80%;
+  height: 30px;
+  left: 56px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 25px;
+}
+
+.create-lobby-input-od {
+  margin: 20px;
+  text-align: left;
+  width: 50%;
   height: 30px;
   left: 56px;
   padding: 20px;
@@ -102,18 +120,21 @@
 }
 
 .info-create-lobby {
-  background-color: brown;
+  background-color: #151965;
   margin-bottom: 40px;
+  border-radius: 25px;
 }
 
 .infotravel-create-lobby {
-  background-color: #d9d9d9;
+  background-color: #151965;
+  border-radius: 25px;
 }
 
 .commentary-create-lobby {
   margin-top: 10%;
-  background-color: #d9d9d9;
+  background-color: #151965;
   height: 195px;
+  border-radius: 25px;
 }
 
 .commentary-create-lobby-input {

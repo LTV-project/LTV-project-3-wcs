@@ -1,11 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import oldCartes from "template-fullstack/assets/images/oldCartes.jpg";
+import LobbyGame from "./LobbyGame";
 
 function ChoiceGameCreateLobby() {
   const [games, setGames] = useState("");
   const [cardIsClicked, setCardIsClicked] = useState(false);
   const [boardIsClicked, setBoardIsClicked] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const handleChange = (e) => {
+    setSelectedValue(e.target.value);
+  };
 
   useEffect(() => {
     axios
@@ -35,14 +41,16 @@ function ChoiceGameCreateLobby() {
         Jeu de plateau
       </button>
       {boardIsClicked ? (
-        <select name="" id="">
+        <select value={selectedValue} onChange={handleChange}>
           <option value="Choisissez votre jeu">
             -- Choisissez votre jeu --
           </option>
           {games &&
             games.map((game) =>
               game.category === "board_game" ? (
-                <option value={game.name}>{game.name}</option>
+                <option key={game.id} value={game.id}>
+                  {game.name}
+                </option>
               ) : (
                 ""
               )
@@ -52,14 +60,16 @@ function ChoiceGameCreateLobby() {
         ""
       )}
       {cardIsClicked ? (
-        <select name="" id="">
+        <select value={selectedValue} onChange={handleChange}>
           <option value="Choisissez votre jeu">
             -- Choisissez votre jeu --
           </option>
           {games &&
             games.map((game) =>
               game.category === "card_game" ? (
-                <option value={game.name}>{game.name}</option>
+                <option key={game.id} value={game.id}>
+                  {game.name}
+                </option>
               ) : (
                 ""
               )
@@ -68,6 +78,7 @@ function ChoiceGameCreateLobby() {
       ) : (
         ""
       )}
+      <LobbyGame selectedValue={selectedValue} />
     </div>
   );
 }

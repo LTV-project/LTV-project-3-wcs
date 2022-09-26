@@ -1,11 +1,11 @@
 import ChoiceGameCreateLobby from "@components/ChoiceGameCreateLobby";
-import LobbyGame from "@components/LobbyGame";
+// import LobbyGame from "@components/LobbyGame";
 
 function LobbiesGameCreation() {
   return (
     <div>
       <ChoiceGameCreateLobby />
-      <LobbyGame />
+      {/* <LobbyGame /> */}
     </div>
   );
 }

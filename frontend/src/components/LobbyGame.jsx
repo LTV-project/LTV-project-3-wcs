@@ -1,18 +1,22 @@
 import axios from "axios";
 import { useState } from "react";
 
-export default function LobbyGame() {
+export default function LobbyGame({ selectedValue }) {
+  const id = parseInt(selectedValue, 10);
   const [lobby, setLobby] = useState({
-    travel_infos: "",
+    game_id: id,
     number_of_gamers: "",
-    theme: "",
-    name_of_lobby: "",
+    name: "",
     commentary: "",
-    date: "",
+    category_id: 2,
+  });
+  const [travelInfo, setTravelInfo] = useState({
     train_number: "",
+    date: "",
+    departure: "",
+    arrival: "",
     coach_number: "",
     seat_number: "",
-    od: "",
   });
 
   const postLobby = () => {
@@ -24,10 +28,20 @@ export default function LobbyGame() {
       });
   };
 
+  const postTravelInfo = () => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/travel_info`, {
+        ...travelInfo,
+      })
+      .then((response) => {
+        console.error(response);
+        console.error(response.data);
+      });
+  };
   return (
     <div className="createlobby">
       <div>
-        <h2>Je crée ma salle de jeu</h2>
+        <h2 className="title-create-lobby">Je crée ma salle de jeu</h2>
       </div>
 
       <div>
@@ -35,13 +49,14 @@ export default function LobbyGame() {
           onSubmit={(e) => {
             e.preventDefault();
             postLobby();
+            postTravelInfo();
           }}
         >
           <div className="info-create-lobby">
             <input
               className="create-lobby-input-game"
-              type=""
-              value=""
+              type="text"
+              value={lobby.number_of_gamers}
               placeholder="Nombre de joueur souhaité"
               onChange={(e) =>
                 setLobby({
@@ -52,13 +67,13 @@ export default function LobbyGame() {
             />
             <input
               className="create-lobby-input-game"
-              type=""
-              value=""
+              type="text"
+              value={lobby.name}
               placeholder="Nom de la salle"
               onChange={(e) =>
                 setLobby({
                   ...lobby,
-                  number_of_gamers: e.target.value,
+                  name: e.target.value,
                 })
               }
             />
@@ -67,48 +82,60 @@ export default function LobbyGame() {
             <input
               className="create-lobby-input"
               type="text"
-              value=""
+              value={travelInfo.date}
               placeholder="Date de mon voyage"
               onChange={(e) =>
-                setLobby({
-                  ...lobby,
+                setTravelInfo({
+                  ...travelInfo,
                   date: e.target.value,
                 })
               }
             />
             <input
               className="create-lobby-input"
-              type=""
-              value=""
+              type="text"
+              value={travelInfo.train_number}
               placeholder="Mon numéro de train"
               onChange={(e) =>
-                setLobby({
-                  ...lobby,
+                setTravelInfo({
+                  ...travelInfo,
                   train_number: e.target.value,
                 })
               }
             />
             <input
               className="create-lobby-input"
-              type=""
-              value=""
+              type="text"
+              value={travelInfo.coach_number}
               placeholder="Mon numéro de voiture"
               onChange={(e) =>
-                setLobby({
-                  ...lobby,
+                setTravelInfo({
+                  ...travelInfo,
                   coach_number: e.target.value,
                 })
               }
             />
             <input
-              className="create-lobby-input"
+              className="create-lobby-input-od"
               type="text"
-              value=""
-              placeholder="Ma destination"
+              value={travelInfo.departure}
+              placeholder="Gare de départ de mon voyage"
               onChange={(e) =>
-                setLobby({
-                  ...lobby,
-                  od: e.target.value,
+                setTravelInfo({
+                  ...travelInfo,
+                  departure: e.target.value,
+                })
+              }
+            />
+            <input
+              className="create-lobby-input-od"
+              type="text"
+              value={travelInfo.arrival}
+              placeholder="Gare d'arrivée de mon voyage"
+              onChange={(e) =>
+                setTravelInfo({
+                  ...travelInfo.arrival,
+                  arrival: e.target.value,
                 })
               }
             />
@@ -117,7 +144,7 @@ export default function LobbyGame() {
             <input
               className="commentary-create-lobby-input"
               type="text"
-              value=""
+              value={lobby.commentary}
               placeholder="Je laisse un commentaire"
               onChange={(e) =>
                 setLobby({

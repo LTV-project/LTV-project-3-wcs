@@ -6,7 +6,7 @@ export default function LobbyTalk() {
     travel_infos: "",
     number_of_gamers: "",
     theme: "",
-    name_of_lobby: "",
+    name: "",
     commentary: "",
     date: "",
     train_number: "",
@@ -35,12 +35,12 @@ export default function LobbyTalk() {
       >
         <input
           type="text"
-          value={talk.name_of_lobby}
+          value={talk.name}
           placeholder="Sujet d'échange souhaité"
           onChange={(e) =>
             setTalk({
               ...talk,
-              name_of_lobby: e.target.value,
+              name: e.target.value,
             })
           }
         />
