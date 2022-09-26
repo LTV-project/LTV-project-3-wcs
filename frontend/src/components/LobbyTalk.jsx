@@ -3,16 +3,18 @@ import { useState } from "react";
 
 export default function LobbyTalk() {
   const [talk, setTalk] = useState({
-    travel_infos: "",
     number_of_gamers: "",
     theme: "",
     name: "",
     commentary: "",
-    date: "",
+  });
+  const [travelInfo, setTravelInfo] = useState({
     train_number: "",
+    date: "",
+    departure: "",
+    arrival: "",
     coach_number: "",
     seat_number: "",
-    od: "",
   });
 
   const postLobby = () => {
@@ -45,17 +47,6 @@ export default function LobbyTalk() {
           }
         />
         <input
-          type="text"
-          value=""
-          placeholder="Je renseigne mon numéro de train"
-          onChange={(e) =>
-            setTalk({
-              ...talk,
-              travel_info: e.target.value,
-            })
-          }
-        />
-        <input
           type=""
           value=""
           placeholder="Nombre d'invités"
@@ -68,45 +59,56 @@ export default function LobbyTalk() {
         />
         <input
           type="text"
-          value=""
+          value={travelInfo.date}
           placeholder="Date de mon voyage"
           onChange={(e) =>
-            setTalk({
-              ...talk,
+            setTravelInfo({
+              ...travelInfo,
               date: e.target.value,
             })
           }
         />
         <input
-          type=""
-          value=""
-          placeholder="Mon numéro de train"
+          type="text"
+          value={travelInfo.train_number}
+          placeholder="Je renseigne mon numéro de train"
           onChange={(e) =>
-            setTalk({
-              ...talk,
-              train_number: e.target.value,
+            setTravelInfo({
+              ...travelInfo,
+              travel_number: e.target.value,
             })
           }
         />
         <input
           type=""
-          value=""
+          value={travelInfo.coach_number}
           placeholder="Mon numéro de voiture"
           onChange={(e) =>
-            setTalk({
-              ...talk,
+            setTravelInfo({
+              ...travelInfo,
               coach_number: e.target.value,
             })
           }
         />
         <input
           type="text"
-          value="text"
-          placeholder="Ma destination"
+          value={travelInfo.departure}
+          placeholder="Gare de départ de mon voyage"
           onChange={(e) =>
-            setTalk({
-              ...talk,
-              od: e.target.value,
+            setTravelInfo({
+              ...travelInfo.departure,
+              departure: e.target.value,
+            })
+          }
+        />
+        <input
+          type="text"
+          value={travelInfo.arrival}
+          placeholder="Gare d'arrivée de mon voyage"
+          onChange={(e) =>
+            setTravelInfo({
+              ...travelInfo.arrival,
+              arrival: e.target.value,
             })
           }
         />

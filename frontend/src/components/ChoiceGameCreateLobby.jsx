@@ -34,12 +34,20 @@ function ChoiceGameCreateLobby() {
         className="old-cartes-img"
         alt="Jeu de 52 cartes tenu dans une main faces visibles"
       />
-      <button type="button" onClick={handleClickCard}>
-        Jeu de cartes
-      </button>
-      <button type="button" onClick={handleClickBoard}>
-        Jeu de plateau
-      </button>
+      {!boardIsClicked ? (
+        <button type="button" onClick={handleClickCard}>
+          {!cardIsClicked ? "Jeu de cartes" : "Retour"}
+        </button>
+      ) : (
+        ""
+      )}
+      {!cardIsClicked ? (
+        <button type="button" onClick={handleClickBoard}>
+          {!boardIsClicked ? "Jeu de plateau" : "Retour"}
+        </button>
+      ) : (
+        ""
+      )}
       {boardIsClicked ? (
         <select value={selectedValue} onChange={handleChange}>
           <option value="Choisissez votre jeu">
