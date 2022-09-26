@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function LobbiesGameList() {
+  const navigate = useNavigate();
+
   return (
     <div className="dark-body">
       <div className="mini-card">
@@ -9,6 +13,13 @@ export default function LobbiesGameList() {
         <button type="button">détails</button>
         <button type="button">rejoindre</button>
       </div>
+      <button
+        type="button"
+        className="generic-btn return-btn-lobbyChoice"
+        onClick={() => navigate(0)}
+      >
+        Retour
+      </button>
     </div>
   );
 }
