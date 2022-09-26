@@ -21,9 +21,9 @@ export default function LobbyEditTableAdmin({ lobby }) {
         <td>
           <input
             type="text"
-            value={editLobby.name_of_lobbie}
+            value={editLobby.name}
             onChange={(e) =>
-              setEditLobby({ ...editLobby, name_of_lobbie: e.target.value })
+              setEditLobby({ ...editLobby, name: e.target.value })
             }
           />
         </td>
