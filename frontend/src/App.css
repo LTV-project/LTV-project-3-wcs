@@ -126,8 +126,22 @@
   border: none;
   background-color: transparent;
   text-transform: uppercase;
-  color: #47bed8;
+  color: #81E8FE;
   font-weight: 700;
   font-size: 2rem;
   text-align: center;
+}
+
+.generic-btn{
+  background-color: #81E8FE;
+  color: #151965;
+  border: none;
+  border-radius: 20px;
+  width: auto;
+}
+
+.return-btn-lobbyChoice{
+   display: block;
+   margin-left: 80%;
+   width: 60px;
 }
