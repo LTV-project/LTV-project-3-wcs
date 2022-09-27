@@ -204,6 +204,11 @@
   grid-area: creator-pseudo;
 }
 
+.game-infos{
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn-container {
   display: grid; 
   padding: 5px;
