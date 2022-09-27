@@ -4,18 +4,36 @@ export default function LobbiesTalkList({ displayLobbies }) {
   const navigate = useNavigate();
   return (
     <div className="dark-body">
-      {displayLobbies &&
-        displayLobbies.map((lobby) => (
-          <div className="mini-card" key={lobby.id}>
-            {/* <img src="" alt="user-avatar" /> */}
-            <p>Hôte : {lobby.pseudo}</p>
-            <p>Thème : {lobby.theme}</p>
-            <p>Participants : {lobby.participants}</p>
-            <p>Description : {lobby.description}</p>
-            <button type="button">détails</button>
-            <button type="button">rejoindre</button>
-          </div>
-        ))}
+      <div className="lobbies-list-container">
+        {displayLobbies &&
+          displayLobbies.map((lobby) => (
+            <div className="mini-card" key={lobby.id}>
+              <div className="creator-infos">
+                <img
+                  src="https://placekitten.com/g/50/50"
+                  alt="creator-avatar"
+                  className="creator-avatar"
+                />
+                <p className="creator-pseudo">Hôte : {lobby.pseudo}</p>
+              </div>
+              <p className="mini-card-body">Thème : {lobby.theme}</p>
+              <p className="mini-card-body">
+                Participants : {lobby.participants}
+              </p>
+              <p className="mini-card-body">
+                Description : {lobby.description}
+              </p>
+              <div className="btn-container">
+                <button type="button" className="details-btn">
+                  détails
+                </button>
+                <button type="button" className="join-btn">
+                  rejoindre
+                </button>
+              </div>
+            </div>
+          ))}
+      </div>
       <button
         type="button"
         className="generic-btn return-btn-lobbyChoice"
