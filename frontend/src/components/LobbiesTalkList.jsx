@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-export default function LobbiesTalkList() {
+export default function LobbiesTalkList({ displayLobbies }) {
   const navigate = useNavigate();
 
   return (
     <div className="dark-body">
       <div className="mini-card">
-        <p>Pseudo</p>
+        <p>{displayLobbies.pseudo}</p>
         <p>Thème</p>
         <p>Participants</p>
         <p>Places</p>

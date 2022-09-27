@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-export default function LobbiesGameList() {
+export default function LobbiesGameList({ displayLobbies }) {
   const navigate = useNavigate();
 
   return (
     <div className="dark-body">
       <div className="mini-card">
-        <p>Pseudo</p>
+        <p>{displayLobbies.pseudo}</p>
         <p>Jeu</p>
         <p>Nb joueurs</p>
         <p>Places</p>
