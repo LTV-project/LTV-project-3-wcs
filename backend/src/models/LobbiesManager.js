@@ -7,7 +7,7 @@ class lobbiesManager extends AbstractManager {
 
   findLobbiesByCategoryWithTravelInfosAndParticipants() {
     return this.connection.query(
-      `select l.name, l.number_of_gamers, l.commentary as description, l.user_id as participants, u.pseudo, t.train_number, t.coach_number, t.seat_number, t.departure, t.arrival, t.date, c.name as category from ${this.table} as l left join travel_info as t on t.id=l.travel_infos_id left join users as u on u.id=l.user_id left join category as c on c.id=l.category_id left join participants ON l.user_id=participants.user_id;`
+      `select l.id, l.name, l.number_of_gamers, l.commentary as description, l.user_id as participants, u.pseudo, t.train_number, t.coach_number, t.seat_number, t.departure, t.arrival, t.date, c.name as category from ${this.table} as l left join travel_info as t on t.id=l.travel_infos_id left join users as u on u.id=l.user_id left join category as c on c.id=l.category_id left join participants ON l.user_id=participants.user_id;`
     );
   }
 
