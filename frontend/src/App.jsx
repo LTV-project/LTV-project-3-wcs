@@ -12,6 +12,10 @@ import AdminPage from "@pages/AdminPage";
 import AuthApi from "@services/AuthApi";
 import { useState } from "react";
 import AuthContext from "./contexts/AuthContext";
+
+import "./fonts/Avenir-Book.ttf";
+import "./fonts/Avenir-Medium.ttf";
+import "./fonts/Avenir-Black.ttf";
 import "./App.css";
 
 AuthApi.setup();
