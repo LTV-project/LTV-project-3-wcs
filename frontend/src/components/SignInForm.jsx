@@ -1,67 +1,59 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../contexts/AuthContext";
 
-function SignInForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function SignInForm() {
+  const [formState, setFormState] = useState({
+    email: "test@test.com",
+    password: "test",
+  });
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const emailError = document.querySelector(".email.error");
-    const passwordError = document.querySelector(".password.error");
-
-    axios({
-      method: "post",
-      url: `${import.meta.env.VITE_BACKEND_URL}/login`,
-      data: {
-        email,
-        password,
-      },
-    })
-      .then((res) => {
-        if (res.data.error) {
-          emailError.innerHtml = res.data.errors.email;
-          passwordError.innerHtml = res.data.errors.password;
-        } else {
-          // eslint-disable-next-line no-restricted-syntax
-          console.log(res.data.token);
-          // window.location = "/";
-        }
+  const { setIsAuthenticated } = useContext(AuthContext);
+  // Requete de connexion -> stocker le token dans le local storage -> ajouter le token dans les autorisations
+  const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/login/`, { ...formState })
+      .then((response) => response.data)
+      .then((data) => {
+        window.localStorage.setItem("authToken", data.token);
+        axios.defaults.headers.Authorization = `Bearer $(data.token)`;
+        setIsAuthenticated(true);
+      })
+      // -> rediriger l'utilisateur vers la page d'accueil
+      .then(() => {
+        navigate("/");
       })
       .catch((err) => {
-        // eslint-disable-next-line no-restricted-syntax
-        console.log(err);
+        console.error(err);
       });
   };
+
   return (
-    <div>
-      <form action="" onSubmit={handleLogin} id="sign-up-form">
-        <label htmlFor="email">Courriel</label>
-        <br />
+    <div className="connexion">
+      <form onSubmit={(event) => handleSubmit(event)}>
         <input
-          type="text"
           name="email"
-          id="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
+          Value={formState.email}
+          onChange={(e) =>
+            setFormState({ ...formState, email: e.target.value })
+          }
+          placeholder="Courriel"
         />
-        <div className="email error" />
-        <br />
-        <label htmlFor="password">Mot de passe</label>
         <br />
         <input
           type="password"
-          name="password"
-          id="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
+          placeholder="Mot de passe"
+          value={formState.password}
+          onChange={(e) =>
+            setFormState({ ...formState, password: e.target.value })
+          }
         />
-        <div className="password error" />
         <br />
         <input type="submit" value="Je me connecte" />
       </form>
     </div>
   );
 }
-
-export default SignInForm;
