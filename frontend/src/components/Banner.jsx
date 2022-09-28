@@ -1,4 +1,4 @@
-import trainBanner from "template-fullstack/assets/images/train_banner.jpg";
+import trainBanner from "@assets/images/train_banner.jpg";
 
 function Banner() {
   return (
