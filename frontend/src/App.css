@@ -19,6 +19,44 @@
   margin: 0;
   padding: 0;
   font-family: "Avenir-Medium";
+  text-decoration: none;
+}
+
+/* CSS Navbar */
+
+.navbar{
+  display: flex;
+  background-color: #151965;
+  justify-content: space-around;   
+  align-items: center;
+  height: 50px;
+}
+
+.navbar li{
+  background-color: #515585;
+  border-radius: 20px;
+  width: 100px;
+  text-align: center;
+  color: #81E8FE;
+}
+
+
+/* CSS Bannière */
+
+.banner{
+  height: 380px;
+}
+
+.banner img{
+  width: 100%;
+  opacity: 0.6;
+  height: 380px;
+}
+
+.banner h1{
+  position: relative;
+  top: -150px;
+  left: 45%;
 }
 
 /* CSS de la page admin */
