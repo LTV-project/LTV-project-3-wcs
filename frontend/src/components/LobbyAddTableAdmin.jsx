@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function LobbyAddTableAdmin() {
   const [addLobby, setAddLobby] = useState({
-    name_of_lobbie: "",
+    name: "",
     commentary: "",
   });
   const postLobby = () => {
@@ -27,7 +27,7 @@ export default function LobbyAddTableAdmin() {
               value={addLobby.name}
               placeholder="Nom de la salle"
               onChange={(e) =>
-                setAddLobby({ ...addLobby, name_of_lobbie: e.target.value })
+                setAddLobby({ ...addLobby, name: e.target.value })
               }
             />
           </td>
