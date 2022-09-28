@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contact from "@pages/Contact";
-import AccountCreation from "@pages/AccountCreation";
+import AccountCreation from "@pages/UserAccountCreation";
 import SignIn from "@pages/SignIn";
 import LobbiesCreation from "@pages/LobbiesCreation";
 import UserHome from "@pages/UserHome";
