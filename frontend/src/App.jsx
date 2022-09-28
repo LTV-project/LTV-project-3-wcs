@@ -3,7 +3,7 @@ import Contact from "@pages/Contact";
 import AccountCreation from "@pages/AccountCreation";
 import SignIn from "@pages/SignIn";
 import LobbiesCreation from "@pages/LobbiesCreation";
-import UserHome from "@pages/UserHome";
+import HomePage from "@pages/HomePage";
 import UserProfile from "@pages/UserProfile";
 import EditAccount from "@components/EditAccount";
 import JoinLobbies from "@pages/JoinLobbies";
@@ -19,7 +19,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/userHome" element={<UserHome />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/contacts" element={<Contact />} />
           <Route path="/joinLobbies" element={<JoinLobbies />} />
           <Route path="/signIn" element={<SignIn />} />
