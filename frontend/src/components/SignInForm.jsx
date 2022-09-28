@@ -5,8 +5,8 @@ import AuthContext from "../contexts/AuthContext";
 
 export default function SignInForm() {
   const [formState, setFormState] = useState({
-    email: "test@test.com",
-    password: "test",
+    email: "",
+    password: "",
   });
 
   const { setIsAuthenticated } = useContext(AuthContext);
