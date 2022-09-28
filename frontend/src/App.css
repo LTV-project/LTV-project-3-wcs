@@ -1,9 +1,27 @@
+@font-face {
+  font-family: "AvenirBlack";
+  src: url("./fonts/Avenir-Black.ttf");
+}
+
+@font-face {
+  font-family: "AvenirBook";
+  src: url("./fonts/Avenir-Book.ttf");
+}
+
+@font-face {
+  font-family: "AvenirMedium";
+  src: url("./fonts/Avenir-Medium.ttf");
+}
+
 * {
   list-style-type: none;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Avenir-Medium";
 }
+
+/* CSS de la page admin */
 
 .dashboard-wrapper {
   margin-top: 5%;
@@ -181,4 +199,151 @@
   border-radius: 25px;
   /*justify-content: space-evenly;
   align-items: center;*/
+}
+/* CSS page recherche de lobbies */
+
+.train-number-input {
+  margin: 5% 50% 0;
+  width: 50px;
+}
+
+.train-number-input::placeholder {
+  text-align: center;
+}
+
+.lobby-choice-wrapper {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  height: 25vh;
+}
+
+.lobby-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  background-color: #151965;
+}
+
+.choice-btn {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #81E8FE;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Composants LobbiesTalkList & LobbiesGameList */
+
+.generic-btn{
+  background-color: #81E8FE;
+  color: #151965;
+  border: none;
+  border-radius: 20px;
+  width: auto;
+}
+
+.return-btn-lobbyChoice{
+   display: block;
+   margin-left: 80%;
+   width: 60px;
+}
+
+.dark-body{
+  background-color: #151965;
+}
+
+.lobbies-list-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 50px;
+  width: 90%;
+  margin: auto ;
+}
+
+.mini-card {  
+  border-radius: 20px;
+  background-color: #E8E9F2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.6fr 0.5fr 1fr 1fr;
+  gap: 10px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "creator-infos"
+    "."
+    "."
+    "."
+    "btn-container";
+}
+
+.mini-card-body{
+  padding: 10px;
+}
+
+.creator-infos {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.3fr;
+  gap: 10px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". creator-avatar ."
+    ". creator-pseudo .";
+  grid-area: creator-infos;
+}
+
+.creator-avatar {
+  border-radius: 80%;
+  justify-self: center;
+  align-self: start;
+  grid-area: creator-avatar;
+}
+
+.creator-pseudo {
+  justify-self: center;
+  grid-area: creator-pseudo;
+}
+
+.game-infos{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container {
+  display: grid; 
+  padding: 5px;
+  grid-template-columns: 1.2fr 1.2fr; 
+  grid-template-rows: 0.5fr; 
+  gap: 0px 0px; 
+  grid-template-areas:  
+    "details-btn join-btn"; 
+  grid-area: btn-container; 
+}
+.details-btn {
+  text-transform: uppercase;
+  color: #81E8FE;
+  background-color: #515585;
+  border-radius: 20px;
+  justify-self: center; 
+  align-self: center; 
+  grid-area: details-btn;
+  width: 100px; 
+}
+.join-btn {
+  text-transform: uppercase;
+  color: #151965;
+  background-color: #81E8FE;
+  border-radius: 20px;
+  width: 100px; 
+  justify-self: center; 
+  align-self: center; 
+  grid-area: join-btn; 
 }
