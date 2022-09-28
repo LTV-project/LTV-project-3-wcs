@@ -36,7 +36,7 @@ export default function SignInForm() {
       <form onSubmit={(event) => handleSubmit(event)}>
         <input
           name="email"
-          Value={formState.email}
+          value={formState.email}
           onChange={(e) =>
             setFormState({ ...formState, email: e.target.value })
           }
