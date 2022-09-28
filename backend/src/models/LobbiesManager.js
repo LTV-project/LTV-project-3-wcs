@@ -13,14 +13,15 @@ class lobbiesManager extends AbstractManager {
 
   insert(lobbies) {
     return this.connection.query(
-      `insert into ${this.table} (travel_infos_id, number_of_gamers, theme, name, commentary, creator_id, category_id) values (?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (travel_infos_id, number_of_gamers, theme, name, commentary, game_id, user_id, category_id) values (?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         lobbies.travel_infos_id,
         lobbies.number_of_gamers,
         lobbies.theme,
         lobbies.name,
         lobbies.commentary,
-        lobbies.creator_id,
+        lobbies.game_id,
+        lobbies.user_id,
         lobbies.category_id,
       ]
     );

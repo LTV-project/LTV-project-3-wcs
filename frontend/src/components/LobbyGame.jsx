@@ -10,6 +10,7 @@ export default function LobbyGame({ selectedValue }) {
     commentary: "",
     category_id: 2,
   });
+
   const [travelInfo, setTravelInfo] = useState({
     train_number: "",
     date: "",
@@ -116,13 +117,25 @@ export default function LobbyGame({ selectedValue }) {
               }
             />
             <input
+              className="create-lobby-input"
+              type="text"
+              value={travelInfo.seat_number}
+              placeholder="Mon numéro de place"
+              onChange={(e) =>
+                setTravelInfo({
+                  ...travelInfo,
+                  seat_number: e.target.value,
+                })
+              }
+            />
+            <input
               className="create-lobby-input-od"
               type="text"
               value={travelInfo.departure}
               placeholder="Gare de départ de mon voyage"
               onChange={(e) =>
                 setTravelInfo({
-                  ...travelInfo.departure,
+                  ...travelInfo,
                   departure: e.target.value,
                 })
               }
@@ -134,7 +147,7 @@ export default function LobbyGame({ selectedValue }) {
               placeholder="Gare d'arrivée de mon voyage"
               onChange={(e) =>
                 setTravelInfo({
-                  ...travelInfo.arrival,
+                  ...travelInfo,
                   arrival: e.target.value,
                 })
               }

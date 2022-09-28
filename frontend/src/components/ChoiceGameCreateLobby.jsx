@@ -7,23 +7,10 @@ function ChoiceGameCreateLobby() {
   const [games, setGames] = useState("");
   const [cardIsClicked, setCardIsClicked] = useState(false);
   const [boardIsClicked, setBoardIsClicked] = useState(false);
-  const [selectedValueLobby, setselectedValueLobby] = useState({
-    name: "",
-    number_of_gamers: "",
-    Commentary: "",
-  });
+  const [selectedValue, setselectedValue] = useState("");
 
-  /* const [selectedValueTravel, setselectedValueTravel] = useState({
-    train_number: "",
-    coach_number: "",
-    seat_number: "",
-    departure: "",
-    date: "",
-    arrival: "",
-  });
-*/
   const handleChange = (e) => {
-    setselectedValueLobby(e.target.value);
+    setselectedValue(e.target.value);
   };
 
   useEffect(() => {
@@ -74,7 +61,7 @@ function ChoiceGameCreateLobby() {
       {boardIsClicked ? (
         <select
           className="btn_click_create_lobby_select"
-          value={selectedValueLobby}
+          value={selectedValue}
           onChange={handleChange}
         >
           <option value="Choisissez votre jeu">
@@ -97,7 +84,7 @@ function ChoiceGameCreateLobby() {
       {cardIsClicked ? (
         <select
           className="btn_click_create_lobby_select"
-          value={selectedValueLobby}
+          value={selectedValue}
           onChange={handleChange}
         >
           <option value="Choisissez votre jeu">
@@ -117,7 +104,7 @@ function ChoiceGameCreateLobby() {
       ) : (
         ""
       )}
-      <LobbyGame selectedValueLobby={selectedValueLobby} />
+      <LobbyGame selectedValue={selectedValue} />
     </div>
   );
 }

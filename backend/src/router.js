@@ -65,7 +65,6 @@ router.post("/travel_info", travelInfosControllers.add);
 router.post("/category", categoryControllers.add);
 router.post("/images", imagesControllers.add);
 router.post("/contacts", contactControllers.add);
-// router.post("/lobbiesGameCreation", lobbiesGamesCreationControllers.add);
 
 // DELETE
 router.delete("/items/:id", itemControllers.destroy);
