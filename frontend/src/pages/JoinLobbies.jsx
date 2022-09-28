@@ -1,10 +1,10 @@
 import LobbyChoice from "@components/LobbyChoice";
-import UserNavbar from "@components/UserNavbar";
+import Navbar from "@components/Navbar";
 
 function JoinLobbies() {
   return (
     <div>
-      <UserNavbar />
+      <Navbar />
       <LobbyChoice />
     </div>
   );
