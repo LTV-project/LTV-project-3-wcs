@@ -1,5 +1,11 @@
+import SignInForm from "@components/SignInForm";
+
 function SignIn() {
-  return <div>SignIn</div>;
+  return (
+    <div>
+      <SignInForm />
+    </div>
+  );
 }
 
 export default SignIn;
