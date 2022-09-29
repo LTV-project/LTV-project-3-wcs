@@ -11,14 +11,6 @@ export default function AccountCreation() {
     password: "",
   });
 
-  // const postAccountCreation = () => {
-  //   axios
-  //     .post(`${import.meta.env.VITE_BACKEND_URL}/users`, { ...accountCreation })
-  //     .then((response) => {
-  //       console.error(response);
-  //       console.error(response.data);
-  //     });
-  // };
   return (
     <div>
       <form>
