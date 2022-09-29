@@ -30,13 +30,14 @@
   background-color: #151965;
   justify-content: space-around;
   align-items: center;
-  height: 50px;
+  height: 100px;
 }
 
 .navbar li {
   background-color: #515585;
   border-radius: 20px;
-  width: 100px;
+  font-size: 1.7rem;
+  width: 200px;
   text-align: center;
   color: #81e8fe;
 }
