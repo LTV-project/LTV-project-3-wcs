@@ -9,6 +9,7 @@ import UserProfile from "@pages/UserProfile";
 import EditAccount from "@components/EditAccount";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
+import ValidatedMessage from "@components/ValidatedMessage";
 
 import "./fonts/Avenir-Book.ttf";
 import "./fonts/Avenir-Medium.ttf";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/userProfile" element={<UserProfile />} />
           <Route path="/userProfile/:id" element={<EditAccount />} />
           <Route path="/accountCreation" element={<AccountCreation />} />
+          <Route path="/validatedMessage" element={<ValidatedMessage />} />
           <Route
             path="/lobbiesGameCreation"
             element={<LobbiesGameCreation />}

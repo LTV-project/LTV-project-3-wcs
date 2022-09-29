@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LobbyGame({ selectedValue }) {
   const id = parseInt(selectedValue, 10);
+  const navigate = useNavigate();
+
   const [lobby, setLobby] = useState({
     game_id: id,
     number_of_gamers: "",
@@ -26,7 +29,8 @@ export default function LobbyGame({ selectedValue }) {
       .then((response) => {
         console.error(response);
         console.error(response.data);
-      });
+      })
+      .catch((error) => console.error(error));
   };
 
   const postTravelInfo = () => {
@@ -35,10 +39,17 @@ export default function LobbyGame({ selectedValue }) {
         ...travelInfo,
       })
       .then((response) => {
-        console.error(response);
         console.error(response.data);
-      });
+      })
+      .catch((error) => console.error(error));
   };
+
+  function handleSubmitButton() {
+    postLobby();
+    postTravelInfo();
+    navigate("/validatedMessage");
+  }
+
   return (
     <div className="createlobby">
       <div>
@@ -47,16 +58,15 @@ export default function LobbyGame({ selectedValue }) {
 
       <div>
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            postLobby();
-            postTravelInfo();
+          onSubmit={() => {
+            handleSubmitButton();
           }}
         >
           <div className="info-create-lobby">
             <input
               className="create-lobby-input-game"
               type="text"
+              pattern="[0-9]"
               value={lobby.number_of_gamers}
               placeholder="Nombre de joueur souhaité"
               onChange={(e) =>
@@ -65,10 +75,12 @@ export default function LobbyGame({ selectedValue }) {
                   number_of_gamers: e.target.value,
                 })
               }
+              required
             />
             <input
               className="create-lobby-input-game"
               type="text"
+              pattern="[0-9]"
               value={lobby.name}
               placeholder="Nom de la salle"
               onChange={(e) =>
@@ -77,12 +89,13 @@ export default function LobbyGame({ selectedValue }) {
                   name: e.target.value,
                 })
               }
+              required
             />
           </div>
           <div className="infotravel-create-lobby">
             <input
               className="create-lobby-input"
-              type="text"
+              type="date"
               value={travelInfo.date}
               placeholder="Date de mon voyage"
               onChange={(e) =>
@@ -91,6 +104,7 @@ export default function LobbyGame({ selectedValue }) {
                   date: e.target.value,
                 })
               }
+              required
             />
             <input
               className="create-lobby-input"
@@ -103,6 +117,7 @@ export default function LobbyGame({ selectedValue }) {
                   train_number: e.target.value,
                 })
               }
+              required
             />
             <input
               className="create-lobby-input"
@@ -115,6 +130,7 @@ export default function LobbyGame({ selectedValue }) {
                   coach_number: e.target.value,
                 })
               }
+              required
             />
             <input
               className="create-lobby-input"
@@ -127,6 +143,7 @@ export default function LobbyGame({ selectedValue }) {
                   seat_number: e.target.value,
                 })
               }
+              required
             />
             <input
               className="create-lobby-input-od"
@@ -139,6 +156,7 @@ export default function LobbyGame({ selectedValue }) {
                   departure: e.target.value,
                 })
               }
+              required
             />
             <input
               className="create-lobby-input-od"
@@ -151,6 +169,7 @@ export default function LobbyGame({ selectedValue }) {
                   arrival: e.target.value,
                 })
               }
+              required
             />
           </div>
           <div className="commentary-create-lobby">
@@ -165,6 +184,7 @@ export default function LobbyGame({ selectedValue }) {
                   commentary: e.target.value,
                 })
               }
+              required
             />
           </div>
           <input
