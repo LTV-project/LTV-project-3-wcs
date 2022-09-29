@@ -19,7 +19,6 @@ import "./fonts/Avenir-Book.ttf";
 import "./fonts/Avenir-Medium.ttf";
 import "./fonts/Avenir-Black.ttf";
 import "./App.css";
-import "./Style.css";
 
 AuthApi.setup();
 
@@ -32,19 +31,21 @@ function App() {
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/join-lobbies" element={<JoinLobbies />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/user-profile/:id" element={<UserProfile />} />
-          <Route path="/user-profile/:id/edit" element={<EditAccount />} />
-          <Route path="/account-creation" element={<AccountCreation />} />
-          <Route path="/create-lobby-game" element={<LobbyGameCreation />} />
-          <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
-          <Route path="/admin" element={<AdminPage />} />
+        <div>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/join-lobbies" element={<JoinLobbies />} />
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/user-profile/:id" element={<UserProfile />} />
+            <Route path="/user-profile/:id/edit" element={<EditAccount />} />
+            <Route path="/account-creation" element={<AccountCreation />} />
+            <Route path="/create-lobby-game" element={<LobbyGameCreation />} />
+            <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
+            <Route path="/admin" element={<AdminPage />} />
+          </Routes>
           <Footer />
-        </Routes>
+        </div>
       </Router>
     </AuthContext.Provider>
   );
