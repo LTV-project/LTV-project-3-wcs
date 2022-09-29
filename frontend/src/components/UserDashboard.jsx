@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-relative-packages
 import { Link } from "react-router-dom";
-import backgroundDash from "@assets/images/old_cartes.jpg";
+import backgroundDashGame from "@assets/images/game_illu.jpg";
+import backgroundDashJoin from "@assets/images/join_illu.jpg";
+import backgroundDashTalk from "@assets/images/talk_illu.jpg";
 
 function UserDashboard() {
   return (
@@ -9,7 +11,10 @@ function UserDashboard() {
         <Link to="/create-lobby-game">
           <div
             className="dash dash1"
-            style={{ backgroundImage: `url(${backgroundDash})` }}
+            style={{
+              backgroundImage: `url(${backgroundDashGame})`,
+              backgroundSize: "cover",
+            }}
           >
             <h2>Lorem.</h2>
           </div>
@@ -17,7 +22,10 @@ function UserDashboard() {
         <Link to="/create-lobby-talk">
           <div
             className="dash dash2"
-            style={{ backgroundImage: `url(${backgroundDash})` }}
+            style={{
+              backgroundImage: `url(${backgroundDashTalk})`,
+              backgroundSize: "cover",
+            }}
           >
             <h2>Non?</h2>
           </div>
@@ -25,7 +33,10 @@ function UserDashboard() {
         <Link to="/join-lobbies">
           <div
             className="dash dash3"
-            style={{ backgroundImage: `url(${backgroundDash})` }}
+            style={{
+              backgroundImage: `url(${backgroundDashJoin})`,
+              backgroundSize: "cover",
+            }}
           >
             <h2>Omnis.</h2>
           </div>
