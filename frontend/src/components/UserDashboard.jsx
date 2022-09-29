@@ -27,7 +27,7 @@ function UserDashboard() {
             style={{
               backgroundImage: `url(${backgroundDashTalk})`,
               backgroundSize: "cover",
-              opacity: "0.8",
+              backgroundColor: "rgba(0, 0, 0, 1)",
             }}
           >
             <h2>Échanger</h2>
