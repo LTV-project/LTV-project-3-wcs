@@ -12,9 +12,7 @@ export default function Footer() {
         {/* </Link> */}
       </div>
       <div className="footer3">
-        <li className="img">
-          <img src={logoSNCF} alt="logo" />
-        </li>
+        <img src={logoSNCF} alt="logo" className="img" />
       </div>
       <div className="footer2">
         <li>Liens Utiles</li>

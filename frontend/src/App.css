@@ -341,4 +341,10 @@
 
 .footer1, .footer2, .footer3{
   width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer2{
+  align-items: flex-end;
 }
