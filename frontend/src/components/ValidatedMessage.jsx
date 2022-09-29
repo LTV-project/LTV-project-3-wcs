@@ -21,14 +21,25 @@ function ValidatedMessage() {
           : "place du pseudo"}{" "}
         !!!
       </h2>
-      <p>
-        Vous venez de créer la salle de jeu :{" "}
-        {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}
-        N'oubliez pas d'apporter votre jeu !!! Rappels concernant votre voyage :
-        Date du voyage : {lobbyCreateByUser.date}
-        Numéro de train : {lobbyCreateByUser.train_number}
-        Numéro de voiture : {lobbyCreateByUser.coach_number}
-      </p>
+      {lobbyCreateByUser.category_id === 2 ? (
+        <p>
+          Vous venez de créer la salle de jeu :{" "}
+          {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}
+          N'oubliez pas d'apporter votre jeu !!! Rappels concernant votre voyage
+          : Date du voyage : {lobbyCreateByUser.date}
+          Numéro de train : {lobbyCreateByUser.train_number}
+          Numéro de voiture : {lobbyCreateByUser.coach_number}
+        </p>
+      ) : (
+        <p>
+          Vous venez de créer la salle de discussion :{" "}
+          {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}
+          Rappels concernant votre voyage : Date du voyage :{" "}
+          {lobbyCreateByUser.date}
+          Numéro de train : {lobbyCreateByUser.train_number}
+          Numéro de voiture : {lobbyCreateByUser.coach_number}
+        </p>
+      )}
       <button type="button" className="generic-btn return-btn-lobbyChoice">
         Retour
       </button>
