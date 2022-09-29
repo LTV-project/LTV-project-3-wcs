@@ -60,7 +60,7 @@
 
 /* CSS UserDashboard */
 
-.user-dashboard-container{
+.user-dashboard-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -68,19 +68,25 @@
   background-color: #151965;
 }
 
-.user-dashboard-container div{
+.user-dashboard-container div {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  margin: auto;
-  width: 40%;
+  width: 60%;
   height: 250px;
+  margin: 20px auto 20px auto;
 }
 
-.dash > h2{
+.dash > h2 {
+  font-size: 2.5rem;
+  color: #151965;
   grid-column: 1/4;
   grid-row: 1/3;
   align-self: center;
+}
+
+.dash {
+  padding: 20px;
 }
 
 /* CSS de la page admin */
