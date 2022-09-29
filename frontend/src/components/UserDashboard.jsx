@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import backgroundDashGame from "@assets/images/game_illu.jpg";
 import backgroundDashJoin from "@assets/images/join_illu.jpg";
 import backgroundDashTalk from "@assets/images/talk_illu.jpg";
+import backgroundDashProfile from "@assets/images/logo-profile.png";
 
 function UserDashboard() {
   return (
@@ -41,7 +42,13 @@ function UserDashboard() {
             <h2>Omnis.</h2>
           </div>
         </Link>
-        <div className="dash dash4">
+        <div
+          className="dash dash4"
+          style={{
+            backgroundImage: `url(${backgroundDashProfile})`,
+            backgroundSize: "cover",
+          }}
+        >
           <h2>Maiores?</h2>
         </div>
       </div>
