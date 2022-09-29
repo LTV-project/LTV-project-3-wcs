@@ -221,7 +221,7 @@
 .details-btn {
   text-transform: uppercase;
   color: #81e8fe;
-  background-color: #515585;
+  background-color: rgb (81, 85, 133, 0.2);
   border-radius: 20px;
   justify-self: center;
   align-self: center;
@@ -243,6 +243,7 @@
 .contain-account {
   display: flex;
   justify-content: space-evenly;
+  margin-right: 10%;
 }
 
 .input-contain1 {
@@ -250,7 +251,7 @@
   font-family: "Avenir";
   font-style: normal;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 30px;
   text-align: left;
   color: #151965;
@@ -260,36 +261,46 @@
   font-family: "Avenir";
   font-style: normal;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 30px;
   color: #151965;
 }
 .empty-space {
-  width: 40%;
+  width: 10%;
 }
 
 .input-containerA,
 .input-containerB,
 .input-containerC,
 .input-containerD {
-  width: 200px;
-  height: 32px;
-  left: 100px;
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
   top: 728px;
-  background: #515585;
-  opacity: 0.8;
+  background-color: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
 }
 
-.input-containerE,
 .input-containerF,
 .input-containerG {
-  width: 200px;
-  height: 32px;
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
   right: 100px;
   top: 1029px;
-  background: #515585;
-  opacity: 0.8;
+  background: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+.input-containerE {
+  width: 100px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  right: 100px;
+  top: 1029px;
+  background: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
 }
 .img-kitten {
@@ -298,5 +309,28 @@
 
 /*DescribeMe*/
 .buttonSub {
-  display: block;
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+  margin-top: 2%;
+  margin-left: 84%;
+}
+.message-describe {
+  display: inline-block;
+  color: #151965;
+  font-size: 1.4rem;
+  padding: 10px;
+  width: 1000px;
+  height: 200px;
+  margin-left: 10%;
+  box-sizing: border-box;
+  box-shadow: inset 3px 3px 5px;
+  border-radius: 10px;
+}
+
+.p-describe {
+  display: inline-block;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  margin-left: 10%;
 }

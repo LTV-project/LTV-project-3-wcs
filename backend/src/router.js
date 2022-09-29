@@ -15,6 +15,7 @@ const travelInfosControllers = require("./controllers/travelInfosControllers");
 const categoryControllers = require("./controllers/categoryControllers");
 const imagesControllers = require("./controllers/imagesControllers");
 const contactControllers = require("./controllers/contactControllers");
+const commentsControllers = require("./controllers/commentsControllers");
 
 router.post("/users", hashPassword, usersControllers.add);
 router.post(
@@ -46,6 +47,8 @@ router.get("/images", imagesControllers.browse);
 router.get("/images/:id", imagesControllers.read);
 router.get("/contacts", contactControllers.browse);
 router.get("/contacts/:id", contactControllers.read);
+router.get("/comments", commentsControllers.browse);
+router.get("/comments/:id", commentsControllers.read);
 
 // UPDATE
 router.put("/items/:id", itemControllers.edit);
@@ -56,6 +59,7 @@ router.put("/travel_info/:id", travelInfosControllers.edit);
 router.put("/category/:id", categoryControllers.edit);
 router.put("/images/:id", imagesControllers.edit);
 router.put("/contacts/:id", contactControllers.edit);
+router.put("/comments/:id", commentsControllers.edit);
 
 // CREATE
 router.post("/items", itemControllers.add);
@@ -65,6 +69,7 @@ router.post("/travel_info", travelInfosControllers.add);
 router.post("/category", categoryControllers.add);
 router.post("/images", imagesControllers.add);
 router.post("/contacts", contactControllers.add);
+router.post("/comments", commentsControllers.add);
 
 // DELETE
 router.delete("/items/:id", itemControllers.destroy);
@@ -75,5 +80,7 @@ router.delete("/travel_info/:id", travelInfosControllers.destroy);
 router.delete("/category/:id", categoryControllers.destroy);
 router.delete("/images/:id", imagesControllers.destroy);
 router.delete("/contacts/:id", contactControllers.destroy);
+router.delete("/comments/:id", commentsControllers.destroy);
+router.delete("/comments/:id", commentsControllers.destroy);
 
 module.exports = router;
