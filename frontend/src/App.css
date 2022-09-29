@@ -20,3 +20,244 @@
 .footer3 img {
   width: 40%;
 }
+
+@font-face {
+  font-family: "AvenirBlack";
+  src: url("./fonts/Avenir-Black.ttf");
+}
+
+@font-face {
+  font-family: "AvenirBook";
+  src: url("./fonts/Avenir-Book.ttf");
+}
+
+@font-face {
+  font-family: "AvenirMedium";
+  src: url("./fonts/Avenir-Medium.ttf");
+}
+
+* {
+  list-style-type: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir-Medium";
+}
+
+/* CSS de la page admin */
+
+.dashboard-wrapper {
+  margin-top: 5%;
+  width: 20%;
+  height: 80vh;
+  background-color: #eef3f4;
+  border: solid 3px #47bed8;
+  border-radius: 15px;
+  display: flex;
+}
+
+.dashboard-items-container {
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.admin-workflow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-table {
+  border: 1px solid #1c6ea4;
+  background-color: #eeeeee;
+  width: 70%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.admin-table td,
+.admin-table th {
+  border: 1px solid #aaaaaa;
+  padding: 3px 2px;
+}
+.admin-table tbody td {
+  font-size: 13px;
+}
+.admin-table tr:nth-child(even) {
+  background: #eef3f4;
+}
+.admin-table thead {
+  background: #ffffff;
+  border-bottom: 2px solid #444444;
+}
+.admin-table thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000000;
+  border-left: 2px solid #eef3f4;
+}
+.admin-table thead th:first-child {
+  border-left: none;
+}
+
+.admin-table tfoot td {
+  font-size: 14px;
+}
+.admin-table tfoot .links {
+  text-align: right;
+}
+.admin-table tfoot .links a {
+  display: inline-block;
+  background: #1c6ea4;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+/* CSS page recherche de lobbies */
+
+.train-number-input {
+  margin: 5% 50% 0;
+  width: 50px;
+}
+
+.train-number-input::placeholder {
+  text-align: center;
+}
+
+.lobby-choice-wrapper {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  height: 25vh;
+}
+
+.lobby-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  background-color: #151965;
+}
+
+.choice-btn {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #81e8fe;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Composants LobbiesTalkList & LobbiesGameList */
+
+.generic-btn {
+  background-color: #81e8fe;
+  color: #151965;
+  border: none;
+  border-radius: 20px;
+  width: auto;
+}
+
+.return-btn-lobbyChoice {
+  display: block;
+  margin-left: 80%;
+  width: 60px;
+}
+
+.dark-body {
+  background-color: #151965;
+}
+
+.lobbies-list-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 50px;
+  width: 90%;
+  margin: auto;
+}
+
+.mini-card {
+  border-radius: 20px;
+  background-color: #e8e9f2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.6fr 0.5fr 1fr 1fr;
+  gap: 10px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "creator-infos"
+    "."
+    "."
+    "."
+    "btn-container";
+}
+
+.mini-card-body {
+  padding: 10px;
+}
+
+.creator-infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.3fr;
+  gap: 10px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". creator-avatar ."
+    ". creator-pseudo .";
+  grid-area: creator-infos;
+}
+
+.creator-avatar {
+  border-radius: 80%;
+  justify-self: center;
+  align-self: start;
+  grid-area: creator-avatar;
+}
+
+.creator-pseudo {
+  justify-self: center;
+  grid-area: creator-pseudo;
+}
+
+.game-infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container {
+  display: grid;
+  padding: 5px;
+  grid-template-columns: 1.2fr 1.2fr;
+  grid-template-rows: 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas: "details-btn join-btn";
+  grid-area: btn-container;
+}
+.details-btn {
+  text-transform: uppercase;
+  color: #81e8fe;
+  background-color: #515585;
+  border-radius: 20px;
+  justify-self: center;
+  align-self: center;
+  grid-area: details-btn;
+  width: 100px;
+}
+.join-btn {
+  text-transform: uppercase;
+  color: #151965;
+  background-color: #81e8fe;
+  border-radius: 20px;
+  width: 100px;
+  justify-self: center;
+  align-self: center;
+  grid-area: join-btn;
+}

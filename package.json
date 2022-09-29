@@ -20,6 +20,11 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
-    "react-router-dom": "^6.4.1"
+    "react-router-dom": "^6.4.1",
+    "husky": "^7.0.0",
+    "nodemon": "^2.0.19",
+    "argon2": "^0.29.1",
+    "axios": "^0.27.2",
+    "jsonwebtoken": "^8.5.1"
   }
 }
