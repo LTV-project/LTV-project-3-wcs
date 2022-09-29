@@ -1,3 +1,4 @@
+import Footer from "@components/Footer";
 /* eslint-disable import/no-unresolved */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contact from "@pages/Contact";
@@ -18,6 +19,7 @@ import "./fonts/Avenir-Book.ttf";
 import "./fonts/Avenir-Medium.ttf";
 import "./fonts/Avenir-Black.ttf";
 import "./App.css";
+import "./Style.css";
 
 AuthApi.setup();
 
@@ -41,6 +43,7 @@ function App() {
           <Route path="/create-lobby-game" element={<LobbyGameCreation />} />
           <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Footer />
         </Routes>
       </Router>
     </AuthContext.Provider>

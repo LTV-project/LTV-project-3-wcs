@@ -1,3 +1,26 @@
+/* Css footer */
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(21, 25, 101);
+  color: rgb(129, 232, 254);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100px;
+}
+
+.footer2 li a {
+  color: rgb(129, 232, 254);
+}
+
+.footer3 img {
+  width: 40%;
+}
+
 @font-face {
   font-family: "AvenirBlack";
   src: url("./fonts/Avenir-Black.ttf");
