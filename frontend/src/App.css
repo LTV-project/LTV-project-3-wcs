@@ -112,13 +112,13 @@
 
 /* CSS composant UsersComments */
 
-.users-comments-flex-container{
+.users-comments-flex-container {
   display: flex;
   margin-bottom: 180px;
   margin-top: 100px;
 }
 
-.user-comment{
+.user-comment {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
