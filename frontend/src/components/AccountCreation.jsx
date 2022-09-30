@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DescribeMe from "@components/DescribeMe";
+import eye from "@assets/images/eye.png";
 
 export default function AccountCreation() {
   const [accountCreation, setAccountCreation] = useState({
@@ -10,6 +11,16 @@ export default function AccountCreation() {
     email: "",
     password: "",
   });
+
+  const [typeInputPassword, setTypeInputPassword] = useState("password");
+
+  function showHide() {
+    if (typeInputPassword === "password") {
+      setTypeInputPassword("text");
+    } else {
+      setTypeInputPassword("password");
+    }
+  }
 
   return (
     <div>
@@ -48,7 +59,7 @@ export default function AccountCreation() {
 
             <input
               className="input-containerC"
-              type="text"
+              type={typeInputPassword}
               value={accountCreation.password}
               onChange={(e) => {
                 e.preventDefault();
@@ -63,7 +74,7 @@ export default function AccountCreation() {
 
             <input
               className="input-containerD"
-              type="text"
+              type={typeInputPassword}
               value={accountCreation.confirmPassword}
               onChange={(e) => {
                 e.preventDefault();
@@ -73,6 +84,14 @@ export default function AccountCreation() {
                 });
               }}
             />
+            <button
+              className="btn-eye"
+              type="button"
+              onClick={() => showHide()}
+              id="eye"
+            >
+              <img className="eye" src={eye} alt="eye" />
+            </button>
           </div>
           <span className="empty-space" />
 

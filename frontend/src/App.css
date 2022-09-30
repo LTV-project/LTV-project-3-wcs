@@ -425,3 +425,12 @@
   margin-bottom: 2%;
   margin-left: 10%;
 }
+
+.eye {
+  width: 50%;
+}
+.btn-eye {
+  width: 10%;
+  border-radius: 30%;
+  margin-left: 2%;
+}
