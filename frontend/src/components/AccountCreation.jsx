@@ -39,6 +39,7 @@ export default function AccountCreation() {
                   pseudo: e.target.value,
                 });
               }}
+              required
             />
 
             <p>Courriel*</p>
@@ -53,6 +54,7 @@ export default function AccountCreation() {
                   email: e.target.value,
                 });
               }}
+              required
             />
 
             <p>Mot de passe*</p>
@@ -68,6 +70,7 @@ export default function AccountCreation() {
                   password: e.target.value,
                 });
               }}
+              required
             />
 
             <p>Confirmation du mot de passe*</p>
@@ -83,6 +86,7 @@ export default function AccountCreation() {
                   confirmPassword: e.target.value,
                 });
               }}
+              required
             />
             <button
               className="btn-eye"
