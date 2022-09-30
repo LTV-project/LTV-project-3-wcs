@@ -68,12 +68,13 @@ export default function LobbyGame({ selectedValue }) {
               className="create-lobby-input-game"
               type="text"
               // pattern="[0-9]"
+
               value={lobby.number_of_gamers}
               placeholder="Nombre de joueur souhaité"
               onChange={(e) =>
                 setLobby({
                   ...lobby,
-                  number_of_gamers: e.target.value,
+                  number_of_gamers: e.target.value.replace(/\D/g, ""),
                 })
               }
               required
@@ -117,7 +118,7 @@ export default function LobbyGame({ selectedValue }) {
               onChange={(e) =>
                 setTravelInfo({
                   ...travelInfo,
-                  train_number: e.target.value,
+                  train_number: e.target.value.replace(/\D/g, ""),
                 })
               }
               required
@@ -130,7 +131,7 @@ export default function LobbyGame({ selectedValue }) {
               onChange={(e) =>
                 setTravelInfo({
                   ...travelInfo,
-                  coach_number: e.target.value,
+                  coach_number: e.target.value.replace(/\D/g, ""),
                 })
               }
               required
@@ -143,7 +144,7 @@ export default function LobbyGame({ selectedValue }) {
               onChange={(e) =>
                 setTravelInfo({
                   ...travelInfo,
-                  seat_number: e.target.value,
+                  seat_number: e.target.value.replace(/\D/g, ""),
                 })
               }
               required
