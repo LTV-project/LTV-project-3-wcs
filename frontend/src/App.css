@@ -110,6 +110,28 @@
   color: #81e8fe;
 }
 
+/* CSS composant UsersComments */
+
+.users-comments-flex-container{
+  display: flex;
+  margin-bottom: 180px;
+  margin-top: 100px;
+}
+
+.user-comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+}
+
+.user-comment img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+}
+
 /* CSS de la page admin */
 
 .dashboard-wrapper {
