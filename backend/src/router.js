@@ -14,7 +14,6 @@ const usersControllers = require("./controllers/usersControllers");
 const lobbiesControllers = require("./controllers/lobbiesControllers");
 const travelInfosControllers = require("./controllers/travelInfosControllers");
 const categoryControllers = require("./controllers/categoryControllers");
-const imagesControllers = require("./controllers/imagesControllers");
 const contactControllers = require("./controllers/contactControllers");
 
 router.post("/users", hashPassword, usersControllers.add);

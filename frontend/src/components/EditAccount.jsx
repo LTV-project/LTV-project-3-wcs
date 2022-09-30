@@ -16,7 +16,6 @@ export default function EditAccount() {
     image: "",
   });
 
-  
   function updateAccount() {
     axios.put(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`, {
       ...editUser,
