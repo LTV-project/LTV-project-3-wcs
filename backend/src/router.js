@@ -42,7 +42,7 @@ router.get("/travel_info", travelInfosControllers.browse);
 router.get("/travel_info/:id", travelInfosControllers.read);
 router.get("/category", categoryControllers.browse);
 router.get("/category/:id", categoryControllers.read);
-router.get("/images", imagesControllers.browse);
+router.get("/images", usersControllers.browseUserWithDescriptionAndAvatar);
 router.get("/images/:id", imagesControllers.read);
 router.get("/contacts", contactControllers.browse);
 router.get("/contacts/:id", contactControllers.read);

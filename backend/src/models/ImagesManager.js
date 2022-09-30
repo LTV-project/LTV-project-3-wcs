@@ -7,8 +7,8 @@ class ImagesManager extends AbstractManager {
 
   insert(images) {
     return this.connection.query(
-      `insert into ${this.table} (image, title) values (?, ?)`,
-      [images.image, images.title]
+      `insert into ${this.table} (user_id, image, title) values (?, ?, ?)`,
+      [images.user_id, images.image, images.title]
     );
   }
 
