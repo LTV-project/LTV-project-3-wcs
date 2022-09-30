@@ -21,7 +21,7 @@ function ValidatedMessage() {
           : "place du pseudo"}{" "}
         !!!
       </h2>
-      {lobbyCreateByUser.category_id === 2 ? (
+      {lobbyCreateByUser.category_id === "game" ? (
         <p>
           Vous venez de créer la salle de jeu :{" "}
           {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}

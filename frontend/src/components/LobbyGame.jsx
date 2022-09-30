@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getDate } from "../services/DateManager";
 
 export default function LobbyGame({ selectedValue }) {
   const id = parseInt(selectedValue, 10);
@@ -66,7 +67,7 @@ export default function LobbyGame({ selectedValue }) {
             <input
               className="create-lobby-input-game"
               type="text"
-              pattern="[0-9]"
+              // pattern="[0-9]"
               value={lobby.number_of_gamers}
               placeholder="Nombre de joueur souhaité"
               onChange={(e) =>
@@ -80,7 +81,7 @@ export default function LobbyGame({ selectedValue }) {
             <input
               className="create-lobby-input-game"
               type="text"
-              pattern="[0-9]"
+              pattern="[0-9]+"
               value={lobby.name}
               placeholder="Nom de la salle"
               onChange={(e) =>
@@ -96,6 +97,7 @@ export default function LobbyGame({ selectedValue }) {
             <input
               className="create-lobby-input"
               type="date"
+              min={getDate()}
               value={travelInfo.date}
               placeholder="Date de mon voyage"
               onChange={(e) =>
@@ -110,6 +112,7 @@ export default function LobbyGame({ selectedValue }) {
               className="create-lobby-input"
               type="text"
               value={travelInfo.train_number}
+              pattern="[0-9]"
               placeholder="Je renseigne mon numéro de train"
               onChange={(e) =>
                 setTravelInfo({
