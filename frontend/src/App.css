@@ -329,3 +329,108 @@
   align-self: center;
   grid-area: join-btn;
 }
+
+/*Composant AccountCreation*/
+.contain-account {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 10%;
+}
+
+.input-contain1 {
+  width: 295px;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 30px;
+  text-align: left;
+  color: #151965;
+}
+
+.input-contain2 {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 30px;
+  color: #151965;
+}
+.empty-space {
+  width: 10%;
+}
+
+.input-containerA,
+.input-containerB,
+.input-containerC,
+.input-containerD {
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  top: 728px;
+  background-color: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+
+.input-containerF,
+.input-containerG {
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  right: 100px;
+  top: 1029px;
+  background: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+.input-containerE {
+  width: 100px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  right: 100px;
+  top: 1029px;
+  background: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+.img-kitten {
+  border-radius: 80%;
+}
+
+/*DescribeMe*/
+.buttonSub {
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+  margin-top: 2%;
+  margin-left: 84%;
+}
+.message-describe {
+  display: inline-block;
+  color: #151965;
+  font-size: 1.4rem;
+  padding: 10px;
+  width: 1000px;
+  height: 200px;
+  margin-left: 10%;
+  box-sizing: border-box;
+  box-shadow: inset 3px 3px 5px;
+  border-radius: 10px;
+}
+
+.p-describe {
+  display: inline-block;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+}
+
+.eye {
+  width: 50%;
+}
+.btn-eye {
+  width: 10%;
+  border-radius: 30%;
+  margin-left: 2%;
+}

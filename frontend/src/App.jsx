@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "@components/Footer";
 import Contact from "@pages/Contact";
-import AccountCreation from "@pages/AccountCreation";
+import AccountCreation from "@pages/UserAccountCreation";
 import SignIn from "@pages/SignIn";
 import HomePage from "@pages/HomePage";
 import UserProfile from "@pages/UserProfile";
