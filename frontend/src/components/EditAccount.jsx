@@ -49,8 +49,18 @@ export default function EditAccount() {
     axios.delete(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`);
   }
 
+  const [typeInputPassword, setTypeInputPassword] = useState("password");
+
+  function showHide() {
+    if (typeInputPassword === "password") {
+      setTypeInputPassword("text");
+    } else {
+      setTypeInputPassword("password");
+    }
+  }
+
   return (
-    <div>
+    <div className="editAccount">
       <h2>Je modifie mon compte</h2>
 
       <form
@@ -59,106 +69,135 @@ export default function EditAccount() {
           updateAccount();
         }}
       >
-        <div className="">
-          <input
-            type="text"
-            value={editUser.pseudo}
-            placeholder="Votre pseudo"
-            onChange={(e) =>
-              setEditUser({
-                ...editUser,
-                pseudo: e.target.value,
-              })
-            }
-          />
-          <input
-            type="text"
-            value={editUser.firstname}
-            placeholder="Prénom"
-            onChange={(e) =>
-              setEditUser({
-                ...editUser,
-                firstname: e.target.value,
-              })
-            }
-          />
-          <input
-            type="text"
-            value={editUser.lastname}
-            placeholder="Nom"
-            onChange={(e) =>
-              setEditUser({
-                ...editUser,
-                lastname: e.target.value,
-              })
-            }
-          />
-          <input
-            type="text"
-            value={editUser.email}
-            placeholder="Votre adresse mail"
-            onChange={(e) =>
-              setEditUser({
-                ...editUser,
-                email: e.target.value,
-              })
-            }
-          />
-          <input
-            type="text"
-            value={editUser.password}
-            placeholder="Votre mot de passe"
-            onChange={(e) =>
-              setEditUser({
-                ...editUser,
-                password: e.target.value,
-              })
-            }
-          />
-          <input
-            type="text"
-            value={editUser.age}
-            placeholder="Votre âge"
-            onChange={(e) =>
-              setEditUser({
-                ...editUser,
-                age: e.target.value,
-              })
-            }
-          />
-        </div>
-        <div className="">
-          <img src={editUser.image} alt={editUser.pseudo} />
-          <input
-            className=""
-            type="file"
-            name="file"
-            alt="Avatar"
-            accept="image/*"
-            onChange={(e) => uploadImage(e)}
-          />
-        </div>
-        <div className="">
-          <input
-            type="text"
-            value={editUser.comments}
-            placeholder="Dites en plus sur vous"
-            onChange={(e) =>
-              setEditUser({
-                ...editUser,
-                comments: e.target.value,
-              })
-            }
-          />
-          <button type="submit" value="submit">
-            <span>Mettre à jour</span>
-          </button>
+        <div className="contain-account">
+          <div className="input-contain1">
+            <p>Pseudonyme*</p>
+            <input
+              className="input-containerA"
+              type="text"
+              value={editUser.pseudo}
+              placeholder="Votre pseudo"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  pseudo: e.target.value,
+                })
+              }
+              required
+            />
+            <p>Courriel*</p>
+            <input
+              className="input-containerB"
+              type="text"
+              value={editUser.email}
+              placeholder="Votre adresse mail"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  email: e.target.value,
+                })
+              }
+              required
+            />
+            <p>Mot de passe*</p>
+            <input
+              className="input-containerC"
+              type="text"
+              value={editUser.password}
+              placeholder="Votre mot de passe"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  password: e.target.value,
+                })
+              }
+              required
+            />
+            <p>Confirmation du mot de passe*</p>
 
-          <button type="button" onClick={() => deleteAccount()}>
-            Je supprime mon compte
-          </button>
+            <input
+              className="input-containerD"
+              type="text"
+              value={editUser.password}
+              placeholder="Votre mot de passe"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  cofirmPassword: e.target.value,
+                })
+              }
+              required
+            />
+            <button
+              className="btn-eye"
+              type="button"
+              onClick={() => showHide()}
+              id="eye"
+            >
+              {/* <img className="eye" src={eye} alt="eye" /> */}
+            </button>
+          </div>
+          <span className="empty-space" />
+          <div className="input-contain2">
+            <p>Âge</p>
+            <input
+              className="input-containerE"
+              type="text"
+              value={editUser.age}
+              placeholder="Votre âge"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  age: e.target.value,
+                })
+              }
+            />
+            <p>Prénom</p>
+            <input
+              className="input-containerF"
+              type="text"
+              value={editUser.firstname}
+              placeholder="Prénom"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  firstname: e.target.value,
+                })
+              }
+            />
+            <p>Nom</p>
+            <input
+              className="input-containerG"
+              type="text"
+              value={editUser.lastname}
+              placeholder="Nom"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  lastname: e.target.value,
+                })
+              }
+            />
+          </div>
+          <div className="input-contain3">
+            <img src={editUser.image} alt={editUser.pseudo} />
+            <input
+              className="profile"
+              type="file"
+              alt="Avatar"
+              accept="image/*"
+              onChange={(e) => uploadImage(e)}
+            />
+          </div>
         </div>
+        <br />
+        <button type="submit" value="submit">
+          <span>Mettre à jour</span>
+        </button>
       </form>
+      <button type="button" onClick={() => deleteAccount()}>
+        <span>Je supprime mon compte</span>
+      </button>
     </div>
   );
 }

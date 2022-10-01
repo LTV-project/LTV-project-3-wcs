@@ -238,3 +238,83 @@
   align-self: center;
   grid-area: join-btn;
 }
+
+/* Composants EditAccount */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-contain3 img {
+  border: black solid 1px;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  object-fit: cover;
+}
+
+.contain-account {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 10%;
+}
+
+.input-contain1 {
+  width: 295px;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 30px;
+  text-align: left;
+  color: #151965;
+}
+
+.input-contain2 {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 30px;
+  color: #151965;
+}
+
+.empty-space {
+  width: 10%;
+}
+
+.input-containerA,
+.input-containerB,
+.input-containerC,
+.input-containerD {
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  top: 728px;
+  background-color: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+
+.input-containerF,
+.input-containerG {
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  right: 100px;
+  top: 1029px;
+  background: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+.input-containerE {
+  width: 100px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  right: 100px;
+  top: 1029px;
+  background: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
