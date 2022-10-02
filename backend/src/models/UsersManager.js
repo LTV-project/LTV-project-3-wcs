@@ -39,7 +39,6 @@ class UsersManager extends AbstractManager {
         user.hashedPassword,
         user.image,
         user.id,
-        
       ]
     );
   }
