@@ -269,6 +269,7 @@ h2 {
   line-height: 30px;
   text-align: left;
   color: #151965;
+  margin-top: 15px;
 }
 
 .input-contain2 {
@@ -297,8 +298,7 @@ h2 {
   border-radius: 10px;
 }
 
-.input-containerF,
-.input-containerG {
+.input-containerF {
   width: 250px;
   height: 30px;
   padding: 2%;

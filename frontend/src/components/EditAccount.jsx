@@ -113,21 +113,6 @@ export default function EditAccount() {
               }
               required
             />
-            <p>Confirmation du mot de passe*</p>
-
-            <input
-              className="input-containerD"
-              type="text"
-              value={editUser.password}
-              placeholder="Votre mot de passe"
-              onChange={(e) =>
-                setEditUser({
-                  ...editUser,
-                  cofirmPassword: e.target.value,
-                })
-              }
-              required
-            />
             <button
               className="btn-eye"
               type="button"
@@ -136,38 +121,10 @@ export default function EditAccount() {
             >
               {/* <img className="eye" src={eye} alt="eye" /> */}
             </button>
-          </div>
-          <span className="empty-space" />
-          <div className="input-contain2">
-            <p>Âge</p>
-            <input
-              className="input-containerE"
-              type="text"
-              value={editUser.age}
-              placeholder="Votre âge"
-              onChange={(e) =>
-                setEditUser({
-                  ...editUser,
-                  age: e.target.value,
-                })
-              }
-            />
-            <p>Prénom</p>
-            <input
-              className="input-containerF"
-              type="text"
-              value={editUser.firstname}
-              placeholder="Prénom"
-              onChange={(e) =>
-                setEditUser({
-                  ...editUser,
-                  firstname: e.target.value,
-                })
-              }
-            />
+            <span />
             <p>Nom</p>
             <input
-              className="input-containerG"
+              className="input-containerD"
               type="text"
               value={editUser.lastname}
               placeholder="Nom"
@@ -179,6 +136,7 @@ export default function EditAccount() {
               }
             />
           </div>
+          <span className="empty-space" />
           <div className="input-contain3">
             <img src={editUser.image} alt={editUser.pseudo} />
             <input
@@ -188,6 +146,34 @@ export default function EditAccount() {
               accept="image/*"
               onChange={(e) => uploadImage(e)}
             />
+            <div className="input-contain2">
+              <p>Âge</p>
+              <input
+                className="input-containerE"
+                type="text"
+                value={editUser.age}
+                placeholder="Votre âge"
+                onChange={(e) =>
+                  setEditUser({
+                    ...editUser,
+                    age: e.target.value,
+                  })
+                }
+              />
+              <p>Prénom</p>
+              <input
+                className="input-containerF"
+                type="text"
+                value={editUser.firstname}
+                placeholder="Prénom"
+                onChange={(e) =>
+                  setEditUser({
+                    ...editUser,
+                    firstname: e.target.value,
+                  })
+                }
+              />
+            </div>
           </div>
         </div>
         <br />
