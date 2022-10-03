@@ -28,12 +28,8 @@ class UsersManager extends AbstractManager {
 
   findUserWithDescriptionAndAvatar() {
     return this.connection.query(
-      `SELECT u.id, u.pseudo, i.image, c.description 
-      FROM ${this.table} u
-      INNER JOIN images i 
-      ON i.user_id=u.id
-      LEFT JOIN comments c
-      ON c.id=u.comments_id;`
+      `SELECT id, pseudo, image, description 
+      FROM ${this.table};`
     );
   }
 
