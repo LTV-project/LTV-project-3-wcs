@@ -17,10 +17,11 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.0.0",
-    "husky": "^7.0.0",
-    "nodemon": "^2.0.19"
+    "husky": "^7.0.0"
   },
   "dependencies": {
+    "husky": "^7.0.0",
+    "nodemon": "^2.0.19",
     "argon2": "^0.29.1",
     "axios": "^0.27.2",
     "jsonwebtoken": "^8.5.1",
