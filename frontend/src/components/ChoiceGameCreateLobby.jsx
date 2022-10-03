@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-/* import oldCartes from "template-fullstack/assets/images/oldCartes.jpg"; */
 import LobbyGame from "./LobbyGame";
 
 function ChoiceGameCreateLobby() {
@@ -26,12 +25,7 @@ function ChoiceGameCreateLobby() {
   const handleClickBoard = () => {
     setBoardIsClicked(!boardIsClicked);
   };
-  /*      <img
-        src={oldCartes}
-        className="old-cartes-img"
-        alt="Jeu de 52 cartes tenu dans une main faces visibles"
-      />
-      */
+
   return (
     <div>
       <div className="parent_btn_click_create_lobby">

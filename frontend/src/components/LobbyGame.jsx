@@ -4,11 +4,17 @@ import { useNavigate } from "react-router-dom";
 import { getDate } from "../services/DateManager";
 
 export default function LobbyGame({ selectedValue }) {
-  const id = parseInt(selectedValue, 10);
+  // Une fonction pour convertir l'id du jeu en number
+
+  const filterInt = (value) => {
+    if (/^(-|\+)?(\d+|Infinity)$/.test(value)) return Number(value);
+    return NaN;
+  };
+
   const navigate = useNavigate();
 
   const [lobby, setLobby] = useState({
-    game_id: id,
+    game_id: filterInt(selectedValue),
     number_of_gamers: "",
     name: "",
     commentary: "",
