@@ -63,22 +63,36 @@
   color: #81e8fe;
 }
 
-/* CSS Bannière */
+/* CSS Bannière, classes à réutiliser sur toutes les bannières, seul le contenu des H1 et p sera différent, éventullement l'image*/
 
 .banner {
   height: 380px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .banner img {
   width: 100%;
   opacity: 0.6;
   height: 380px;
+  position: absolute;
+  z-index: -1;
 }
 
 .banner h1 {
-  position: relative;
-  top: -150px;
-  left: 45%;
+  font-size: 4.5rem;
+  color: #151965;
+
+}
+
+.banner p {
+  color:#151965;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 30%;
 }
 
 /* CSS UserDashboard */
