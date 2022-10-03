@@ -43,7 +43,7 @@ function App() {
           <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </AuthContext.Provider>
   );
