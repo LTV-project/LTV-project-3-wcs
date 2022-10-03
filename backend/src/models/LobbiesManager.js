@@ -11,16 +11,30 @@ class lobbiesManager extends AbstractManager {
     );
   }
 
+  findLobbyCreateByUser(lobbyId) {
+    return this.connection.query(
+      `SELECT l.travel_infos_id, l.number_of_gamers, l.game_id, l.category_id, u.pseudo, t.*, c.name
+      FROM ${this.table} AS l
+      LEFT JOIN participants AS p ON l.id=p.lobbie_id
+      LEFT JOIN users AS u ON u.id=p.user_id
+      LEFT JOIN travel_info AS t ON t.id=l.travel_infos_id
+      LEFT JOIN category AS c ON c.id=l.category_id WHERE l.id = ?
+      `,
+      [lobbyId]
+    );
+  }
+
   insert(lobbies) {
     return this.connection.query(
-      `insert into ${this.table} (travel_infos_id, number_of_gamers, theme, name, commentary, creator_id, category_id) values (?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (travel_infos_id, number_of_gamers, theme, name, commentary, game_id, user_id, category_id) values (?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         lobbies.travel_infos_id,
         lobbies.number_of_gamers,
         lobbies.theme,
         lobbies.name,
         lobbies.commentary,
-        lobbies.creator_id,
+        lobbies.game_id,
+        lobbies.user_id,
         lobbies.category_id,
       ]
     );

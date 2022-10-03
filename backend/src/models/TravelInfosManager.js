@@ -7,24 +7,28 @@ class TravelInfosManager extends AbstractManager {
 
   insert(travelInfo) {
     return this.connection.query(
-      `insert into ${this.table} (train_number, coach_number, seat_number, od) values (?, ?, ?, ?)`,
+      `insert into ${this.table} (train_number, coach_number, seat_number, date, arrival, departure) values (?, ?, ?, ?, ?, ?)`,
       [
         travelInfo.train_number,
         travelInfo.coach_number,
         travelInfo.seat_number,
-        travelInfo.od,
+        travelInfo.date,
+        travelInfo.arrival,
+        travelInfo.departure,
       ]
     );
   }
 
   update(travelInfo) {
     return this.connection.query(
-      `update ${this.table} set train_number = ?, coach_number = ?, seat_number = ?, od = ? where id = ?`,
+      `update ${this.table} set train_number = ?, coach_number = ?, seat_number = ?, date = ?, arrival = ?, departure = ? where id = ?`,
       [
         travelInfo.train_number,
         travelInfo.coach_number,
         travelInfo.seat_number,
-        travelInfo.od,
+        travelInfo.date,
+        travelInfo.arrival,
+        travelInfo.departure,
         travelInfo.id,
       ]
     );

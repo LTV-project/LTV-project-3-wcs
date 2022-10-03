@@ -6,11 +6,12 @@ import AccountCreation from "@pages/UserAccountCreation";
 import SignIn from "@pages/SignIn";
 import HomePage from "@pages/HomePage";
 import UserProfile from "@pages/UserProfile";
-import LobbyGameCreation from "@pages/LobbyGameCreation";
+import LobbiesGameCreation from "@pages/LobbiesGameCreation";
 import LobbyTalkCreation from "@pages/LobbyTalkCreation";
 import EditAccount from "@components/EditAccount";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
+// import ValidatedMessage from "@components/ValidatedMessage";
 import AuthApi from "@services/AuthApi";
 import { useState } from "react";
 import AuthContext from "./contexts/AuthContext";
@@ -39,7 +40,7 @@ function App() {
           <Route path="/user-profile/:id" element={<UserProfile />} />
           <Route path="/user-profile/:id/edit" element={<EditAccount />} />
           <Route path="/account-creation" element={<AccountCreation />} />
-          <Route path="/create-lobby-game" element={<LobbyGameCreation />} />
+          <Route path="/create-lobby-game" element={<LobbiesGameCreation />} />
           <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
