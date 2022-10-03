@@ -7,11 +7,12 @@ class TravelInfosManager extends AbstractManager {
 
   insert(travelInfo) {
     return this.connection.query(
-      `insert into ${this.table} (train_number, coach_number, seat_number, arrival, departure) values (?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (train_number, coach_number, seat_number, date, arrival, departure) values (?, ?, ?, ?, ?, ?)`,
       [
         travelInfo.train_number,
         travelInfo.coach_number,
         travelInfo.seat_number,
+        travelInfo.date,
         travelInfo.arrival,
         travelInfo.departure,
       ]
@@ -20,11 +21,12 @@ class TravelInfosManager extends AbstractManager {
 
   update(travelInfo) {
     return this.connection.query(
-      `update ${this.table} set train_number = ?, coach_number = ?, seat_number = ?, arrival = ?, departure = ? where id = ?`,
+      `update ${this.table} set train_number = ?, coach_number = ?, seat_number = ?, date = ?, arrival = ?, departure = ? where id = ?`,
       [
         travelInfo.train_number,
         travelInfo.coach_number,
         travelInfo.seat_number,
+        travelInfo.date,
         travelInfo.arrival,
         travelInfo.departure,
         travelInfo.id,

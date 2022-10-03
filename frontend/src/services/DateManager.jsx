@@ -1,6 +1,6 @@
 // DateManager replace Moment more lighter ^^
 
-// Fonction permettant de générer la date actuel pour mysql
+// Fonction permettant de générer la date actuelle pour mysql
 export const getDate = () => {
   const d = new Date();
   const myDate = `${d.getFullYear()}-${(d.getMonth() + 1)

@@ -24,33 +24,21 @@ export default function LobbyGame({ selectedValue }) {
     seat_number: "",
   });
 
-  const postLobby = () => {
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, { ...lobby })
-      .then((response) => {
-        console.error(response);
-        console.error(response.data);
-      })
-      .catch((error) => console.error(error));
-  };
-
-  const postTravelInfo = () => {
+  function handleSubmitButton() {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/travel_info`, {
         ...travelInfo,
+        date: travelInfo.date,
       })
       .then((response) => {
-        console.error(response.data);
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
+          ...lobby,
+          travel_infos_id: response.data,
+        });
       })
+      .then(() => navigate("/"))
       .catch((error) => console.error(error));
-  };
-
-  function handleSubmitButton() {
-    postLobby();
-    postTravelInfo();
-    navigate("/validatedMessage");
   }
-
   return (
     <div className="createlobby">
       <div>
@@ -59,7 +47,8 @@ export default function LobbyGame({ selectedValue }) {
 
       <div>
         <form
-          onSubmit={() => {
+          onSubmit={(e) => {
+            e.preventDefault();
             handleSubmitButton();
           }}
         >
@@ -67,8 +56,6 @@ export default function LobbyGame({ selectedValue }) {
             <input
               className="create-lobby-input-game"
               type="text"
-              // pattern="[0-9]"
-
               value={lobby.number_of_gamers}
               placeholder="Nombre de joueur souhaité"
               onChange={(e) =>
@@ -82,7 +69,6 @@ export default function LobbyGame({ selectedValue }) {
             <input
               className="create-lobby-input-game"
               type="text"
-              pattern="[0-9]+"
               value={lobby.name}
               placeholder="Nom de la salle"
               onChange={(e) =>
@@ -113,7 +99,6 @@ export default function LobbyGame({ selectedValue }) {
               className="create-lobby-input"
               type="text"
               value={travelInfo.train_number}
-              pattern="[0-9]"
               placeholder="Je renseigne mon numéro de train"
               onChange={(e) =>
                 setTravelInfo({
