@@ -397,13 +397,13 @@
   border-radius: 10px;
 }
 .img-profile {
-    border-radius: 80%;
-    border: black solid 1px;
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-    object-fit: cover;
+  border-radius: 80%;
+  border: black solid 1px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  object-fit: cover;
 }
 
 /*DescribeMe*/

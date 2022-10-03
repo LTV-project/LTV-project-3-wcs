@@ -138,8 +138,10 @@ export default function AccountCreation() {
           <div className="input-contain2">
             <img
               className="img-profile"
-              src={accountCreation.image} alt={accountCreation.pseudo}/>
-              <input
+              src={accountCreation.image}
+              alt={accountCreation.pseudo}
+            />
+            <input
               className="profile"
               type="file"
               alt="avatar"
