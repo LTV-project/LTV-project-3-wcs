@@ -214,6 +214,114 @@ a{
   border-radius: 5px;
 }
 
+/*CSS creation salle de jeux*/
+.title-create-lobby {
+  font-size: 42px;
+  text-align: center;
+  margin: 10px;
+}
+
+.btn_click_create_lobby {
+  background-color: #81e8fe;
+  justify-content: space-evenly;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 30%;
+  height: 30vh;
+}
+
+.parent_btn_click_create_lobby {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 25px;
+}
+
+.btn_click_create_lobby_select {
+  font-size: 20px;
+  width: 25%;
+  height: 10vh;
+  border-radius: 25px;
+}
+
+.createlobby {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.create-lobby-input {
+  margin: 20px;
+  text-align: left;
+  width: 80%;
+  height: 30px;
+  left: 56px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 25px;
+}
+
+.create-lobby-input-od {
+  margin: 20px;
+  text-align: left;
+  width: 50%;
+  height: 30px;
+  left: 56px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 25px;
+}
+
+.create-lobby-input-game {
+  margin: 20px;
+  flex-direction: column;
+  text-align: left;
+  width: 51%;
+  height: 30px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 25px;
+}
+
+.info-create-lobby {
+  background-color: #151965;
+  margin-bottom: 40px;
+  border-radius: 25px;
+}
+
+.infotravel-create-lobby {
+  background-color: #151965;
+  border-radius: 25px;
+}
+
+.commentary-create-lobby {
+  margin-top: 10%;
+  background-color: #151965;
+  height: 195px;
+  border-radius: 25px;
+}
+
+.commentary-create-lobby-input {
+  height: 150px;
+  width: 80%;
+  border-radius: 25px;
+  margin: 20px;
+}
+
+.create-lobby-input-valited {
+  margin: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: 40%;
+  height: 30px;
+  padding: 20px;
+  background-color: #81e8fe;
+  border-radius: 25px;
+  /*justify-content: space-evenly;
+  align-items: center;*/
+}
 /* CSS page recherche de lobbies */
 
 .train-number-input {
@@ -421,6 +529,8 @@ a{
 }
 
 .input-contain2 {
+  display: flex;
+  flex-direction: column;
   font-family: "Avenir";
   font-style: normal;
   font-weight: 800;
@@ -429,7 +539,7 @@ a{
   color: #151965;
 }
 .empty-space {
-  width: 10%;
+  width: 3%;
 }
 
 .input-containerA,
@@ -466,8 +576,14 @@ a{
   background: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
 }
-.img-kitten {
+.img-profile {
   border-radius: 80%;
+  border: black solid 1px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  object-fit: cover;
 }
 
 /*DescribeMe*/
