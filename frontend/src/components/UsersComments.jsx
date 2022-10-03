@@ -5,7 +5,7 @@ function UsersComments() {
   const [userComment, setUserComment] = useState("");
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/images`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users`)
       .then((response) => response.data)
       .then((data) => setUserComment(data));
   }, []);

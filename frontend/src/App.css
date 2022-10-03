@@ -120,6 +120,7 @@
 
 .user-comment {
   display: flex;
+  overflow-y: auto;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
