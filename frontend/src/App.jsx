@@ -6,7 +6,7 @@ import AccountCreation from "@pages/UserAccountCreation";
 import SignIn from "@pages/SignIn";
 import HomePage from "@pages/HomePage";
 import UserProfile from "@pages/UserProfile";
-import LobbiesGameCreation from "@pages/LobbiesGameCreation";
+import LobbyGameCreation from "@pages/LobbyGameCreation";
 import LobbyTalkCreation from "@pages/LobbyTalkCreation";
 import EditAccount from "@components/EditAccount";
 import JoinLobbies from "@pages/JoinLobbies";
