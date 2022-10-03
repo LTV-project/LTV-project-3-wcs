@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import eye from "@assets/images/eye.png";
 
 export default function EditAccount() {
   const params = useParams();
+  const navigate = useNavigate();
 
   const [editUser, setEditUser] = useState({
     pseudo: "",
@@ -15,6 +17,7 @@ export default function EditAccount() {
     description: "",
     image: "",
   });
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   function updateAccount() {
     axios.put(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`, {
@@ -45,10 +48,19 @@ export default function EditAccount() {
       .catch((err) => console.error(err));
   };
 
+  function message() {
+    const msg = "Attention vous êtes sur le point de supprimer votre compte";
+    alert(msg);
+  }
+
   function deleteAccount() {
     axios.delete(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`);
   }
-
+  function handleDelete() {
+    message();
+    deleteAccount();
+    navigate("/");
+  }
   const [typeInputPassword, setTypeInputPassword] = useState("password");
 
   function showHide() {
@@ -63,12 +75,7 @@ export default function EditAccount() {
     <div className="editAccount">
       <h2>Je modifie mon compte</h2>
 
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          updateAccount();
-        }}
-      >
+      <form>
         <div className="contain-account">
           <div className="input-contain1">
             <p>Pseudonyme</p>
@@ -110,28 +117,25 @@ export default function EditAccount() {
                 })
               }
             />
+            <p>Confirmation du mot de passe</p>
+            <input
+              className="input-containerD"
+              type={typeInputPassword}
+              value={confirmPassword}
+              onChange={(e) => {
+                e.preventDefault();
+                setConfirmPassword(e.target.value);
+              }}
+            />
             <button
               className="btn-eye"
               type="button"
               onClick={() => showHide()}
               id="eye"
             >
-              {/* <img className="eye" src={eye} alt="eye" /> */}
+              <img className="eye" src={eye} alt="eye" />
             </button>
             <span />
-            <p>Nom</p>
-            <input
-              className="input-containerD"
-              type="text"
-              value={editUser.lastname}
-              placeholder="Nom"
-              onChange={(e) =>
-                setEditUser({
-                  ...editUser,
-                  lastname: e.target.value,
-                })
-              }
-            />
           </div>
           <span className="empty-space" />
           <div className="input-contain3">
@@ -170,17 +174,52 @@ export default function EditAccount() {
                   })
                 }
               />
+              <p>Nom</p>
+              <input
+                className="input-containerG"
+                type="text"
+                value={editUser.lastname}
+                onChange={(e) => {
+                  setEditUser({
+                    ...editUser,
+                    lastname: e.target.value,
+                  });
+                }}
+              />
             </div>
           </div>
         </div>
-        <br />
-        <button type="submit" value="submit">
+        <div>
+          <p className="p-describe">
+            Vous souhaitez nous en dire plus sur vous ?
+          </p>
+          <textarea
+            className="message-describe"
+            name="message"
+            style={{ backgroundColor: "rgba(81, 85, 133, .2)" }}
+            onChange={(e) => {
+              e.preventDefault();
+              setEditUser({ ...editUser, description: e.target.value });
+            }}
+          />
+        </div>
+      </form>
+      <div className="buttoneditaccount">
+        <button
+          className="btn-editaccount"
+          type="button"
+          onClick={() => handleDelete()}
+        >
+          <span>Je supprime mon compte</span>
+        </button>
+        <button
+          className="btn-editaccount"
+          type="submit"
+          onClick={() => updateAccount()}
+        >
           <span>Mettre à jour</span>
         </button>
-      </form>
-      <button type="button" onClick={() => deleteAccount()}>
-        <span>Je supprime mon compte</span>
-      </button>
+      </div>
     </div>
   );
 }

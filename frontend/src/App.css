@@ -346,7 +346,7 @@
   line-height: 30px;
   text-align: left;
   color: #151965;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .input-contain2 {
@@ -358,7 +358,7 @@
   color: #151965;
 }
 .empty-space {
-  width: 10%;
+  width: 3%;
 }
 
 .input-containerA,
@@ -443,9 +443,24 @@ h2 {
 
 .input-contain3 img {
   border: black solid 1px;
+  border-radius: 80%;
   position: relative;
   width: 120px;
   height: 120px;
   margin: 5px;
   object-fit: cover;
+}
+.buttoneditaccount {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn-editaccount {
+  background-color: #81e8fe;
+  color: #151965;
+  border: none;
+  border-radius: 10px;
+  width: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1rem;
 }
