@@ -331,10 +331,20 @@
 }
 
 /*Composant AccountCreation*/
-.contain-account {
+.editAccount {
   display: flex;
-  justify-content: space-evenly;
-  margin-right: 10%;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.input-contain3 img {
+  border: black solid 1px;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+.input-contain3 {
+  margin-bottom: 15px;
 }
 
 .input-contain1 {
@@ -372,6 +382,7 @@
   top: 728px;
   background-color: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .input-containerF,
@@ -384,6 +395,7 @@
   top: 1029px;
   background: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 .input-containerE {
   width: 100px;
@@ -394,6 +406,7 @@
   top: 1029px;
   background: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 .img-kitten {
   border-radius: 80%;
@@ -408,27 +421,23 @@
   margin-left: 84%;
 }
 .message-describe {
-  display: inline-block;
   color: #151965;
   font-size: 1.4rem;
   padding: 10px;
-  width: 1000px;
+  width: 250px;
   height: 200px;
-  margin-left: 10%;
   box-sizing: border-box;
   box-shadow: inset 3px 3px 5px;
   border-radius: 10px;
 }
 
 .p-describe {
-  display: inline-block;
-  margin-top: 5%;
+  margin-top: 2%;
   margin-bottom: 2%;
-  margin-left: 10%;
 }
 
 .eye {
-  width: 50%;
+  width: 20%;
 }
 .btn-eye {
   width: 10%;
@@ -450,17 +459,21 @@ h2 {
   margin: 5px;
   object-fit: cover;
 }
-.buttoneditaccount {
+.btn-edit-account {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+p {
+  margin-bottom: 5px;
+}
+
 .btn-editaccount {
   background-color: #81e8fe;
   color: #151965;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   width: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 1rem;
+  
 }
