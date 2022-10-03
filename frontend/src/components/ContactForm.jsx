@@ -22,7 +22,10 @@ export default function ContactForm() {
 
   return (
     <div className="contain-form">
-      <div className="contain-form1" style={{backgroundImage: `url(${senior})`, backgroundSize:"cover"}}>
+      <div
+        className="contain-form1"
+        style={{ backgroundImage: `url(${senior})`, backgroundSize: "cover" }}
+      >
         <h2 className="h2form">Vous souhaitez nous contacter ?</h2>
         <p className="pform">Remplissez le formulaire ci-contre</p>
       </div>
@@ -33,7 +36,8 @@ export default function ContactForm() {
             postContact();
           }}
         >
-          <input className="inputform1"
+          <input
+            className="inputform1"
             type="text"
             value={contact.lastname}
             placeholder="Votre Nom"
@@ -44,7 +48,8 @@ export default function ContactForm() {
               })
             }
           />
-          <input className="inputform2"
+          <input
+            className="inputform2"
             type="text"
             value={contact.firstname}
             placeholder="Prénom"
@@ -55,7 +60,8 @@ export default function ContactForm() {
               })
             }
           />
-          <input className="inputform3"
+          <input
+            className="inputform3"
             type="text"
             value={contact.pseudo}
             placeholder="Pseudo"
@@ -66,7 +72,8 @@ export default function ContactForm() {
               })
             }
           />
-          <input className="inputform4"
+          <input
+            className="inputform4"
             type="text"
             value={contact.email}
             placeholder="Votre adresse mail"
@@ -77,7 +84,8 @@ export default function ContactForm() {
               })
             }
           />
-          <input className="inputform5"
+          <input
+            className="inputform5"
             type="text"
             value={contact.content}
             placeholder="Votre message"

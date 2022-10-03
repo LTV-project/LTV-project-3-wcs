@@ -458,24 +458,28 @@
   width: 150%;
   height: 125%;
   margin: 30px;
-  margin-left:150% ;
+  margin-left: 150%;
   background: rgb(21, 25, 101);
 }
-.h2form{
- text-align:left;
- color: #81e8fe;
- margin-top: 5%;
- margin-left: 2%;
+.h2form {
+  text-align: left;
+  color: #81e8fe;
+  margin-top: 5%;
+  margin-left: 2%;
 }
 
-.pform{
-  text-align:left;
- color: #81e8fe;
- margin-top: 45%;
- margin-left: 10%;
+.pform {
+  text-align: left;
+  color: #81e8fe;
+  margin-top: 45%;
+  margin-left: 10%;
 }
 
-.inputform1, .inputform2, .inputform3, .inputform4, .inputform5{
+.inputform1,
+.inputform2,
+.inputform3,
+.inputform4,
+.inputform5 {
   width: 250px;
   height: 30px;
   padding: 2%;
@@ -485,4 +489,4 @@
   background: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
   margin-left: 25%;
-} 
+}
