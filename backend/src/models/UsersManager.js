@@ -26,13 +26,6 @@ class UsersManager extends AbstractManager {
     );
   }
 
-  findUserWithDescriptionAndAvatar() {
-    return this.connection.query(
-      `SELECT id, pseudo, image, description 
-      FROM ${this.table};`
-    );
-  }
-
   update(user) {
     return this.connection.query(
       `update ${this.table} set pseudo = ?, firstname = ?, lastname = ?, age = ?, email = ?, hashedPassword = ? where id = ?`,
