@@ -58,7 +58,10 @@ const add = (req, res) => {
   models.travel_info
     .insert(travelInfo)
     .then(([result]) => {
-      res.location(`/travel_info/${result.insertId}`).sendStatus(201);
+      res
+        .location(`/travel_info/${result.insertId}`)
+        .status(201)
+        .send(`${result.insertId}`);
     })
     .catch((err) => {
       console.error(err);
