@@ -12,7 +12,7 @@ export default function EditAccount() {
     age: "",
     email: "",
     password: "",
-    comments: "",
+    description: "",
     image: "",
   });
 
@@ -71,7 +71,7 @@ export default function EditAccount() {
       >
         <div className="contain-account">
           <div className="input-contain1">
-            <p>Pseudonyme*</p>
+            <p>Pseudonyme</p>
             <input
               className="input-containerA"
               type="text"
@@ -83,9 +83,8 @@ export default function EditAccount() {
                   pseudo: e.target.value,
                 })
               }
-              required
             />
-            <p>Courriel*</p>
+            <p>Courriel</p>
             <input
               className="input-containerB"
               type="text"
@@ -97,9 +96,8 @@ export default function EditAccount() {
                   email: e.target.value,
                 })
               }
-              required
             />
-            <p>Mot de passe*</p>
+            <p>Mot de passe</p>
             <input
               className="input-containerC"
               type="text"
@@ -111,7 +109,6 @@ export default function EditAccount() {
                   password: e.target.value,
                 })
               }
-              required
             />
             <button
               className="btn-eye"
