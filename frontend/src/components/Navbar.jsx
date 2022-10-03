@@ -12,16 +12,16 @@ function Navbar() {
           <Link to="/">
             <li className="nav-item">Accueil</li>
           </Link>
-          <Link to="/signIn">
+          <Link to="/sign-in">
             <li className="nav-item">Se connecter</li>
           </Link>
-          <Link to="/userProfile/:id">
+          <Link to="/user-profile/:id">
             <li className="nav-item">Mon compte</li>
           </Link>
-          <Link to="/accountCreation">
+          <Link to="/account-creation">
             <li className="nav-item">S'inscrire</li>
           </Link>
-          <Link to="contacts">
+          <Link to="contact">
             <li className="nav-item">Contact</li>
           </Link>
         </ul>
