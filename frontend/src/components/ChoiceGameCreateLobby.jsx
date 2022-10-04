@@ -7,7 +7,6 @@ function ChoiceGameCreateLobby() {
   const [cardIsClicked, setCardIsClicked] = useState(false);
   const [boardIsClicked, setBoardIsClicked] = useState(false);
   const [selectedValue, setselectedValue] = useState("");
-
   const handleChange = (e) => {
     setselectedValue(e.target.value);
   };

@@ -6,15 +6,11 @@ import { getDate } from "../services/DateManager";
 export default function LobbyGame({ selectedValue }) {
   // Une fonction pour convertir l'id du jeu en number
 
-  const filterInt = (value) => {
-    if (/^(-|\+)?(\d+|Infinity)$/.test(value)) return Number(value);
-    return NaN;
-  };
+  const id = parseInt(selectedValue, 10);
 
   const navigate = useNavigate();
 
   const [lobby, setLobby] = useState({
-    game_id: filterInt(selectedValue),
     number_of_gamers: "",
     name: "",
     commentary: "",
@@ -40,6 +36,7 @@ export default function LobbyGame({ selectedValue }) {
         axios.post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
           ...lobby,
           travel_infos_id: response.data,
+          game_id: id,
         });
       })
       .then(() => navigate("/"))
