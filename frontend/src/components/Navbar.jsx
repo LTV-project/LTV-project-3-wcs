@@ -30,7 +30,7 @@ function Navbar() {
               <li className="nav-item">Mon compte</li>
             </Link>
           )}
-          <Link to="contact">
+          <Link to="/contact">
             <li className="nav-item">Contact</li>
           </Link>
         </ul>
