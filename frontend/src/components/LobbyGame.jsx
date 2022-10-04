@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +7,7 @@ import { getDate } from "../services/DateManager";
 export default function LobbyGame({ selectedValue }) {
   // Une fonction pour convertir l'id du jeu en number
 
-  const id = parseInt(selectedValue, 10);
+  const id = parseInt(selectedValue);
 
   const navigate = useNavigate();
 
