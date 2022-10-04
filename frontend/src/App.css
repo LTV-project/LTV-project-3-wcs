@@ -50,7 +50,7 @@ a {
   color: #81e8fe;
 }
 
-/* CSS Bannière, classes à réutiliser sur toutes les bannières, seul le contenu des H1 et p sera différent, éventullement l'image*/
+/* CSS Bannière, classes à réutiliser sur toutes les bannières, seul le contenu des H1 et p sera différent, éventuellement l'image*/
 
 .banner {
   height: 380px;
@@ -361,6 +361,11 @@ a {
   width: 30%;
   height: 100%;
   background-color: #151965;
+}
+
+.lobby-choice-page-container {
+  width: 100%;
+  height: 400px;
 }
 
 .choice-btn {

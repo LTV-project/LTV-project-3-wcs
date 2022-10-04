@@ -33,7 +33,7 @@ function LobbyChoice() {
   };
 
   return (
-    <div>
+    <div className="lobby-choice-page-container">
       {isClicked === "" ? (
         <section>
           <input
