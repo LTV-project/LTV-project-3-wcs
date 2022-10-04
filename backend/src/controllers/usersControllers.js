@@ -70,7 +70,7 @@ const edit = (req, res) => {
     });
 };
 
-const add = (req, res) => {
+const add = (req, res, next) => {
   const user = req.body;
 
   // TODO validations (length, format...)
@@ -79,6 +79,7 @@ const add = (req, res) => {
     .insert(user)
     .then(([result]) => {
       res.location(`/users/${result.insertId}`).sendStatus(201);
+      next();
     })
     .catch((err) => {
       console.error(err);

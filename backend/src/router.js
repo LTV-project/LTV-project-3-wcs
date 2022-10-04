@@ -4,6 +4,7 @@ const app = express();
 app.use(express.json());
 
 const router = express.Router();
+const { sendEmail } = require("./sendEmail");
 
 const { hashPassword, verifyPassword, verifyToken } = require("./auth");
 
@@ -17,7 +18,7 @@ const imagesControllers = require("./controllers/imagesControllers");
 const contactControllers = require("./controllers/contactControllers");
 const commentsControllers = require("./controllers/commentsControllers");
 
-router.post("/users", hashPassword, usersControllers.add);
+router.post("/users", hashPassword, usersControllers.add, sendEmail);
 router.post(
   "/login",
   usersControllers.readUserByEmailWithPasswordAndPassToNext,
