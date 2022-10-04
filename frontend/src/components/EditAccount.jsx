@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./Navbar";
+import BannerProfileEdit from "./BannerProfileEdit";
 
 export default function EditAccount() {
   const params = useParams();
@@ -34,7 +36,8 @@ export default function EditAccount() {
 
   return (
     <>
-      <h2>Je modifie mon compte</h2>
+      <Navbar />
+      <BannerProfileEdit />
       <form
         onSubmit={(e) => {
           e.preventDefault();

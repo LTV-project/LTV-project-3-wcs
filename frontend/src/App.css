@@ -63,7 +63,7 @@ a {
 
 .banner img {
   width: 100%;
-  opacity: 0.8;
+  opacity: 0.5;
   height: 250px;
   position: absolute;
   z-index: -1;
@@ -520,7 +520,7 @@ a {
   line-height: 3.5rem;
   width: 100%;
   height: 180px;
-  margin-bottom: -180px;
+  margin-bottom: -300px;
 }
 
 .footer2 li a {
