@@ -1,23 +1,23 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoSNCF from "../assets/logoSNCF.png";
 
 export default function Footer() {
   return (
     <div className="footer-container">
       <div className="footer1">
-        <li>LTV</li>
-        <li>Qui sommes Nous</li>
-        {/* <Link to="/contacts"> */}
-        <li>Contactez-nous</li>
-        {/* </Link> */}
+        <Link to="/">
+          <li>Le Temps d'un Voyage</li>
+        </Link>
+        <li>Qui sommes-nous ?</li>
+        <Link to="/contact">
+          <li>Contactez-nous !</li>
+        </Link>
       </div>
       <div className="footer3">
-        <li className="img">
-          <img src={logoSNCF} alt="logo" />
-        </li>
+        <img src={logoSNCF} alt="logo" className="logo SNCF" />
       </div>
       <div className="footer2">
-        <li>Liens Utiles</li>
+        <li>Liens utiles</li>
         <li>
           <a
             href="https://www.sncf-connect.com/"

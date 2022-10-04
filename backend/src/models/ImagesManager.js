@@ -7,15 +7,15 @@ class ImagesManager extends AbstractManager {
 
   insert(images) {
     return this.connection.query(
-      `insert into ${this.table} (url_image, title) values (?, ?)`,
-      [images.url_image, images.title]
+      `insert into ${this.table} (user_id, image, title) values (?, ?, ?)`,
+      [images.user_id, images.image, images.title]
     );
   }
 
   update(images) {
     return this.connection.query(
-      `update ${this.table} set url_image = ?, title = ? where id = ?`,
-      [images.url_image, images.title, images.id]
+      `update ${this.table} set image = ?, title = ? where id = ?`,
+      [images.image, images.title, images.id]
     );
   }
 }

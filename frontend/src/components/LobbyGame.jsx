@@ -1,14 +1,17 @@
+/* eslint-disable radix */
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getDate } from "../services/DateManager";
 
 export default function LobbyGame({ selectedValue }) {
-  const id = parseInt(selectedValue, 10);
+  // Une fonction pour convertir l'id du jeu en number
+
+  const id = parseInt(selectedValue);
+
   const navigate = useNavigate();
 
   const [lobby, setLobby] = useState({
-    game_id: id,
     number_of_gamers: "",
     name: "",
     commentary: "",
@@ -34,6 +37,7 @@ export default function LobbyGame({ selectedValue }) {
         axios.post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
           ...lobby,
           travel_infos_id: response.data,
+          game_id: id,
         });
       })
       .then(() => navigate("/"))
