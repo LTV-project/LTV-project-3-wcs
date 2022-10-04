@@ -486,7 +486,7 @@ a {
   line-height: 3.5rem;
   width: 100%;
   height: 180px;
-  margin-bottom: -180px;
+  margin-bottom: -350px;
 }
 
 .footer2 li a {
@@ -637,6 +637,7 @@ a {
 .contain-form1 {
   position: absolute;
   margin-left: 80%;
+  margin-top: 5%;
   width: 100%;
   height: 100%;
   top: 0;
@@ -646,7 +647,7 @@ a {
 
 .contain-form2 {
   width: 150%;
-  height: 125%;
+  height: 150%;
   margin: 30px;
   margin-left: 150%;
   background: rgb(21, 25, 101);
@@ -670,13 +671,44 @@ a {
 .inputform3,
 .inputform4,
 .inputform5 {
-  width: 250px;
-  height: 30px;
+  width: 325px;
+  height: 25px;
   padding: 2%;
-  color: #151965;
   right: 100px;
-  top: 1029px;
-  background: rgba(81, 85, 133, 0.5);
+  background-color: #81e8fe;
   border-radius: 10px;
-  margin-left: 25%;
+  margin-left: 22%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.message-contact {
+  display: inline-block;
+  color: #81e8fe;
+  font-size: 1.4rem;
+  padding: 10px;
+  width: 330px;
+  height: 170px;
+  margin-left: 22%;
+  margin-right: 5%;
+  box-sizing: border-box;
+  box-shadow: inset 3px 3px 5px;
+  border-radius: 10px;
+}
+
+.p-contact {
+  display: inline-block;
+  color: #81e8fe;
+  font-style: italic;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 23%;
+}
+
+.buttonContact {
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+  margin-top: 2%;
+  margin-left: 80%;
 }

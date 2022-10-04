@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import senior from "@assets/images/senior.webp";
+import { useNavigate } from "react-router-dom";
 
 export default function ContactForm() {
   const [contact, setContact] = useState({
@@ -11,6 +12,7 @@ export default function ContactForm() {
     email: "",
   });
 
+  const navigate = useNavigate();
   const postContact = () => {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/contacts`, { ...contact })
@@ -20,6 +22,11 @@ export default function ContactForm() {
       });
   };
 
+  function handleSubmitButton() {
+    postContact();
+    navigate("/validatedMessageAccount");
+  }
+
   return (
     <div className="contain-form">
       <div
@@ -27,7 +34,6 @@ export default function ContactForm() {
         style={{ backgroundImage: `url(${senior})`, backgroundSize: "cover" }}
       >
         <h2 className="h2form">Vous souhaitez nous contacter ?</h2>
-        <p className="pform">Remplissez le formulaire ci-contre</p>
       </div>
       <div className="contain-form2">
         <form
@@ -40,7 +46,7 @@ export default function ContactForm() {
             className="inputform1"
             type="text"
             value={contact.lastname}
-            placeholder="Votre Nom"
+            placeholder="Nom"
             onChange={(e) =>
               setContact({
                 ...contact,
@@ -84,20 +90,27 @@ export default function ContactForm() {
               })
             }
           />
-          <input
-            className="inputform5"
-            type="text"
-            value={contact.content}
-            placeholder="Votre message"
-            onChange={(e) =>
+          <p className="p-contact">Laissez nous votre message !</p>
+          <textarea
+            className="message-contact"
+            name="message"
+            style={{ backgroundColor: "rgba(81, 85, 133, .2)" }}
+            onChange={(e) => {
+              e.preventDefault();
               setContact({
                 ...contact,
-                content: e.target.value,
-              })
-            }
+                description: e.target.value,
+              });
+            }}
           />
-          <input type="submit" value="Envoyer" />
         </form>
+        <button
+          className="generic-btn buttonSub buttonContact"
+          type="button"
+          onClick={handleSubmitButton}
+        >
+          Soumettre
+        </button>
       </div>
     </div>
   );
