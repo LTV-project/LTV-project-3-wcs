@@ -74,7 +74,7 @@ export default function EditAccount() {
   return (
     <div className="editAccount">
       <h2>Je modifie mon compte</h2>
-      <div className="input-contain3">
+      <div className="input-editcontain">
         <img src={editUser.image} alt={editUser.pseudo} />
         <input
           className="profile"
@@ -84,10 +84,10 @@ export default function EditAccount() {
           onChange={(e) => uploadImage(e)}
         />
       </div>
-      <form>
+      <form className="form-editcontain">
         <p>Pseudonyme</p>
         <input
-          className="input-containerA"
+          className="input-editcontainA"
           type="text"
           value={editUser.pseudo}
           placeholder="Votre pseudo"
@@ -100,7 +100,7 @@ export default function EditAccount() {
         />
         <p>Courriel</p>
         <input
-          className="input-containerB"
+          className="input-editcontainA"
           type="text"
           value={editUser.email}
           placeholder="Votre adresse mail"
@@ -113,7 +113,7 @@ export default function EditAccount() {
         />
         <p>Mot de passe</p>
         <input
-          className="input-containerC"
+          className="input-editcontainB"
           type="text"
           value={editUser.password}
           placeholder="Votre mot de passe"
@@ -126,7 +126,7 @@ export default function EditAccount() {
         />
         <p>Confirmation du mot de passe</p>
         <input
-          className="input-containerD"
+          className="input-editcontainB"
           type={typeInputPassword}
           value={confirmPassword}
           onChange={(e) => {
@@ -135,16 +135,16 @@ export default function EditAccount() {
           }}
         />
         <button
-          className="btn-eye"
+          className="btn-editeye"
           type="button"
           onClick={() => showHide()}
           id="eye"
         >
-          <img className="eye" src={eye} alt="eye" />
+          <img className="editeye" src={eye} alt="eye" />
         </button>
         <p>Âge</p>
         <input
-          className="input-containerE"
+          className="input-editcontainC"
           type="text"
           value={editUser.age}
           placeholder="Votre âge"
@@ -157,7 +157,7 @@ export default function EditAccount() {
         />
         <p>Prénom</p>
         <input
-          className="input-containerF"
+          className="input-editcontainA"
           type="text"
           value={editUser.firstname}
           placeholder="Prénom"
@@ -170,7 +170,7 @@ export default function EditAccount() {
         />
         <p>Nom</p>
         <input
-          className="input-containerG"
+          className="input-editcontainA"
           type="text"
           value={editUser.lastname}
           onChange={(e) => {
@@ -180,11 +180,9 @@ export default function EditAccount() {
             });
           }}
         />
-        <p className="p-describe">
-          Vous souhaitez nous en dire plus sur vous ?
-        </p>
+        <p>Vous souhaitez nous en dire plus sur vous ?</p>
         <textarea
-          className="message-describe"
+          className="message-edit"
           name="message"
           style={{ backgroundColor: "rgba(81, 85, 133, .2)" }}
           onChange={(e) => {
@@ -196,17 +194,17 @@ export default function EditAccount() {
       <div className="btn-edit-account">
         <button
           className="btn-editaccount"
-          type="submit"
-          onClick={() => updateAccount()}
-        >
-          <span>Mettre à jour</span>
-        </button>
-        <button
-          className="btn-editaccount"
           type="button"
           onClick={() => handleDelete()}
         >
           <span>Je supprime mon compte</span>
+        </button>
+        <button
+          className="btn-editaccount"
+          type="submit"
+          onClick={() => updateAccount()}
+        >
+          <span>Mettre à jour</span>
         </button>
       </div>
     </div>

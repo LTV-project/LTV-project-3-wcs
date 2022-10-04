@@ -331,21 +331,6 @@
 }
 
 /*Composant AccountCreation*/
-.editAccount {
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px;
-}
-.input-contain3 img {
-  border: black solid 1px;
-  position: relative;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-}
-.input-contain3 {
-  margin-bottom: 15px;
-}
 
 .input-contain1 {
   width: 295px;
@@ -382,7 +367,6 @@
   top: 728px;
   background-color: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 
 .input-containerF,
@@ -395,7 +379,6 @@
   top: 1029px;
   background: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 .input-containerE {
   width: 100px;
@@ -406,7 +389,6 @@
   top: 1029px;
   background: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 .img-kitten {
   border-radius: 80%;
@@ -421,6 +403,96 @@
   margin-left: 84%;
 }
 .message-describe {
+  display: inline-block;
+  color: #151965;
+  font-size: 1.4rem;
+  padding: 10px;
+  width: 1000px;
+  height: 200px;
+  margin-left: 10%;
+  box-sizing: border-box;
+  box-shadow: inset 3px 3px 5px;
+  border-radius: 10px;
+}
+
+.p-describe {
+  display: inline-block;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+}
+
+.eye {
+  width: 50%;
+}
+.btn-eye {
+  width: 10%;
+  border-radius: 30%;
+  margin-left: 2%;
+}
+/* Composants EditAccount */
+.editAccount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.editAccount h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-editcontain p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.input-editcontain img {
+  border: black solid 1px;
+  border-radius: 80%;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  object-fit: cover;
+}
+.input-editcontainA {
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  top: 728px;
+  background-color: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+.input-editcontainB {
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  top: 728px;
+  background-color: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+.editeye {
+  width: 25%;
+}
+.btn-editeye {
+  width: 10%;
+  border-radius: 30%;
+  margin-left: 2%;
+}
+.input-editcontainC {
+  width: 100px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  right: 100px;
+  top: 1029px;
+  background: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+.message-edit {
+  display: inline-block;
   color: #151965;
   font-size: 1.4rem;
   padding: 10px;
@@ -431,48 +503,13 @@
   border-radius: 10px;
 }
 
-.p-describe {
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
-
-.eye {
-  width: 20%;
-}
-.btn-eye {
-  width: 10%;
-  border-radius: 30%;
-  margin-left: 2%;
-}
-/* Composants EditAccount */
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.input-contain3 img {
-  border: black solid 1px;
-  border-radius: 80%;
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 5px;
-  object-fit: cover;
-}
-.btn-edit-account {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-p {
-  margin-bottom: 5px;
-}
-
 .btn-editaccount {
   background-color: #81e8fe;
   color: #151965;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   width: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
 }
