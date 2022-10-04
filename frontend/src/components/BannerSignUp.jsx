@@ -1,6 +1,7 @@
-import trainBanner from "@assets/images/train_banner.jpg";
+/* eslint-disable import/no-unresolved */
+import trainBanner from "@assets/images/trainbanner.jpg";
 
-function BannerSignUP() {
+function BannerSignUp() {
   return (
     <div className="banner">
       <img src={trainBanner} alt="train" />
@@ -10,4 +11,4 @@ function BannerSignUP() {
   );
 }
 
-export default BannerSignUP;
+export default BannerSignUp;
