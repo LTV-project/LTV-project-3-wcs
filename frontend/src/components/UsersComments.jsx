@@ -18,7 +18,9 @@ function UsersComments() {
     <div className="users-comments-flex-container">
       {userComment &&
         userComment
-          .filter((comment) => comment.isAdmin !== 1)
+          .filter(
+            (comment) => comment.isAdmin !== 1 && comment.description !== null
+          )
           .map((comment) => (
             <div className="user-comment" key={comment.id}>
               <img src={comment.image} alt="avatar" />
