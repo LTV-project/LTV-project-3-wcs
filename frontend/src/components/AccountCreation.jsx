@@ -88,7 +88,7 @@ export default function AccountCreation() {
             <p>Courriel*</p>
             <input
               className="input-containerB"
-              type="text"
+              type="email"
               value={accountCreation.email}
               onChange={(e) => {
                 e.preventDefault();

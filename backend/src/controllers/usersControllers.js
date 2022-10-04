@@ -28,6 +28,18 @@ const read = (req, res) => {
     });
 };
 
+const browseUserWithDescriptionAndAvatar = (req, res) => {
+  models.users
+    .findUserWithDescriptionAndAvatar()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const readUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
   const { email } = req.body;
   models.users
@@ -109,4 +121,5 @@ module.exports = {
   add,
   destroy,
   readUserByEmailWithPasswordAndPassToNext,
+  browseUserWithDescriptionAndAvatar,
 };
