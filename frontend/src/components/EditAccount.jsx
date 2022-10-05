@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import eye from "@assets/images/eye.png";
+import Navbar from "./Navbar";
+import BannerProfileEdit from "./BannerProfileEdit";
 
 export default function EditAccount() {
   const params = useParams();
@@ -73,7 +75,8 @@ export default function EditAccount() {
 
   return (
     <div className="editAccount">
-      <h2>Je modifie mon compte</h2>
+      <Navbar />
+      <BannerProfileEdit />
       <div className="input-editcontain">
         <img src={editUser.image} alt={editUser.pseudo} />
         <input

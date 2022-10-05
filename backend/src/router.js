@@ -15,7 +15,6 @@ const lobbiesControllers = require("./controllers/lobbiesControllers");
 const travelInfosControllers = require("./controllers/travelInfosControllers");
 const categoryControllers = require("./controllers/categoryControllers");
 const contactControllers = require("./controllers/contactControllers");
-const commentsControllers = require("./controllers/commentsControllers");
 
 router.post("/users", hashPassword, usersControllers.add);
 router.post(
@@ -38,15 +37,14 @@ router.get(
   "/joinlobbies",
   lobbiesControllers.browseLobbiesByCategoryWithTravelInfosAndParticipants
 );
-router.get("/lobbies/:id", lobbiesControllers.read);
+router.get("/lobbies/:id", lobbiesControllers.readLobbyCreateByUser);
+router.get("/lobbies-test/:id", lobbiesControllers.read);
 router.get("/travel_info", travelInfosControllers.browse);
 router.get("/travel_info/:id", travelInfosControllers.read);
 router.get("/category", categoryControllers.browse);
 router.get("/category/:id", categoryControllers.read);
 router.get("/contacts", contactControllers.browse);
 router.get("/contacts/:id", contactControllers.read);
-router.get("/comments", commentsControllers.browse);
-router.get("/comments/:id", commentsControllers.read);
 
 // UPDATE
 router.put("/items/:id", itemControllers.edit);
@@ -56,7 +54,6 @@ router.put("/lobbies/:id", lobbiesControllers.edit);
 router.put("/travel_info/:id", travelInfosControllers.edit);
 router.put("/category/:id", categoryControllers.edit);
 router.put("/contacts/:id", contactControllers.edit);
-router.put("/comments/:id", commentsControllers.edit);
 
 // CREATE
 router.post("/items", itemControllers.add);
@@ -65,7 +62,6 @@ router.post("/lobbies", lobbiesControllers.add);
 router.post("/travel_info", travelInfosControllers.add);
 router.post("/category", categoryControllers.add);
 router.post("/contacts", contactControllers.add);
-router.post("/comments", commentsControllers.add);
 
 // DELETE
 router.delete("/items/:id", itemControllers.destroy);
@@ -75,7 +71,5 @@ router.delete("/lobbies/:id", lobbiesControllers.destroy);
 router.delete("/travel_info/:id", travelInfosControllers.destroy);
 router.delete("/category/:id", categoryControllers.destroy);
 router.delete("/contacts/:id", contactControllers.destroy);
-router.delete("/comments/:id", commentsControllers.destroy);
-router.delete("/comments/:id", commentsControllers.destroy);
 
 module.exports = router;

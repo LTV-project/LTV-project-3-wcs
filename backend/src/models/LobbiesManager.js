@@ -7,20 +7,34 @@ class lobbiesManager extends AbstractManager {
 
   findLobbiesByCategoryWithTravelInfosAndParticipants() {
     return this.connection.query(
-      `select l.id, l.name, l.number_of_gamers, l.commentary as description, l.user_id as participants, u.pseudo, g.name as game, t.train_number, t.coach_number, t.seat_number, t.departure, t.arrival, t.date, c.name as category from ${this.table} as l left join games g on g.id=l.game_id left join travel_info as t on t.id=l.travel_infos_id left join users as u on u.id=l.user_id left join category as c on c.id=l.category_id left join participants ON l.user_id=participants.user_id;`
+      `select l.id, l.category_id, l.name, l.number_of_gamers, l.commentary as description, l.user_id as participants, u.pseudo, g.name as game, g.id as game_id, t.train_number, t.coach_number, t.seat_number, t.departure, t.arrival, t.date, c.name as category from ${this.table} as l left join games g on g.id=l.game_id left join travel_info as t on t.id=l.travel_infos_id left join users as u on u.id=l.user_id left join category as c on c.id=l.category_id left join participants ON l.user_id=participants.user_id;`
+    );
+  }
+
+  findLobbyCreateByUser(lobbyId) {
+    return this.connection.query(
+      `SELECT l.travel_infos_id, l.number_of_gamers, l.game_id, l.category_id, u.pseudo, t.*, c.name
+      FROM ${this.table} AS l
+      LEFT JOIN participants AS p ON l.id=p.lobbie_id
+      LEFT JOIN users AS u ON u.id=p.user_id
+      LEFT JOIN travel_info AS t ON t.id=l.travel_infos_id
+      LEFT JOIN category AS c ON c.id=l.category_id WHERE l.id = ?
+      `,
+      [lobbyId]
     );
   }
 
   insert(lobbies) {
     return this.connection.query(
-      `insert into ${this.table} (travel_infos_id, number_of_gamers, theme, name, commentary, creator_id, category_id) values (?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (travel_infos_id, number_of_gamers, theme, name, commentary, game_id, user_id, category_id) values (?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         lobbies.travel_infos_id,
         lobbies.number_of_gamers,
         lobbies.theme,
         lobbies.name,
         lobbies.commentary,
-        lobbies.creator_id,
+        lobbies.game_id,
+        lobbies.user_id,
         lobbies.category_id,
       ]
     );
