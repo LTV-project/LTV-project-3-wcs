@@ -116,7 +116,7 @@ export default function EditAccount() {
         />
         <p>Mot de passe</p>
         <input
-          className="input-editcontainB"
+          className="input-editcontainB1"
           type="text"
           value={editUser.password}
           placeholder="Votre mot de passe"
@@ -195,13 +195,13 @@ export default function EditAccount() {
         />
       </form>
       <div className="btn-edit-account">
-        <button
+        {/* <button
           className="btn-editaccount"
           type="button"
           onClick={() => handleDelete()}
         >
           <span>Je supprime mon compte</span>
-        </button>
+        </button> */}
         <button
           className="btn-editaccount"
           type="submit"

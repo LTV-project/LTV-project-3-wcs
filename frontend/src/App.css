@@ -558,12 +558,12 @@ a {
 }
 
 /*Composant AccountCreation*/
-<<<<<<< HEAD ======= .contain-account {
+.contain-account {
   display: flex;
   justify-content: space-evenly;
   margin-right: 10%;
 }
->>>>>>>develop .input-contain1 {
+.input-contain1 {
   width: 295px;
   font-family: "Avenir";
   font-style: normal;
@@ -687,8 +687,14 @@ a {
   margin-bottom: 20px;
 }
 .form-editcontain p {
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 10px;
+}
+.input-editcontain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
 }
 .input-editcontain img {
   border: black solid 1px;
@@ -699,7 +705,19 @@ a {
   margin: 5px;
   object-fit: cover;
 }
+.profile {
+  margin: 5%;
+}
 .input-editcontainA {
+  width: 250px;
+  height: 30px;
+  padding: 2%;
+  color: #151965;
+  top: 728px;
+  background-color: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+}
+.input-editcontainB1 {
   width: 250px;
   height: 30px;
   padding: 2%;
@@ -716,6 +734,7 @@ a {
   top: 728px;
   background-color: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
+  margin-left: 12%;
 }
 .editeye {
   width: 25%;
