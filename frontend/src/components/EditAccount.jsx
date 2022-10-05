@@ -58,6 +58,7 @@ export default function EditAccount() {
   function deleteAccount() {
     axios.delete(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`);
   }
+  // eslint-disable-next-line no-unused-vars
   function handleDelete() {
     message();
     deleteAccount();
