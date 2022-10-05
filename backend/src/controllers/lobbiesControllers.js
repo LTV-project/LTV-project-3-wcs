@@ -42,7 +42,7 @@ const read = (req, res) => {
 // Pour créer la route de la table de jointure participants entre users et lobbies
 const readLobbyCreateByUser = (req, res) => {
   models.lobbies
-    .findLobbyCreateByUser(req.params.id)
+    .findLobbyByCategoryWithTravelInfosAndParticipants(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
         res.sendStatus(404);
