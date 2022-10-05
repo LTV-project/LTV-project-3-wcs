@@ -9,6 +9,7 @@ import UserProfile from "@pages/UserProfile";
 import LobbyGameCreation from "@pages/LobbyGameCreation";
 import LobbyTalkCreation from "@pages/LobbyTalkCreation";
 import EditAccount from "@components/EditAccount";
+import FullCard from "@components/FullCard";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
 // import ValidatedMessage from "@components/ValidatedMessage";
@@ -37,6 +38,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/join-lobbies" element={<JoinLobbies />} />
+            <Route path="/lobbies/:id" element={<FullCard />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/user-profile/:id" element={<UserProfile />} />
             <Route path="/user-profile/:id/edit" element={<EditAccount />} />
