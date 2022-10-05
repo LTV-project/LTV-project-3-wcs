@@ -13,6 +13,7 @@ import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
 import AuthApi from "@services/AuthApi";
 import { useState } from "react";
+import ConnexionOrInscription from "@components/ConnexionOrInscription";
 import AuthContext from "./contexts/AuthContext";
 
 import "./fonts/Avenir-Book.ttf";
@@ -42,6 +43,7 @@ function App() {
           <Route path="/create-lobby-game" element={<LobbyGameCreation />} />
           <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/connexion" element={<ConnexionOrInscription />} />
         </Routes>
         <Footer />
       </Router>
