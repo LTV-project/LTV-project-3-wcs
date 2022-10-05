@@ -11,9 +11,9 @@ import LobbyTalkCreation from "@pages/LobbyTalkCreation";
 import EditAccount from "@components/EditAccount";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
+// import ValidatedMessage from "@components/ValidatedMessage";
 import AuthApi from "@services/AuthApi";
 import { useState } from "react";
-import ConnexionOrInscription from "@components/ConnexionOrInscription";
 import AuthContext from "./contexts/AuthContext";
 
 import "./fonts/Avenir-Book.ttf";
@@ -32,20 +32,21 @@ function App() {
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/join-lobbies" element={<JoinLobbies />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/user-profile/:id" element={<UserProfile />} />
-          <Route path="/user-profile/:id/edit" element={<EditAccount />} />
-          <Route path="/account-creation" element={<AccountCreation />} />
-          <Route path="/create-lobby-game" element={<LobbyGameCreation />} />
-          <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="/connexion" element={<ConnexionOrInscription />} />
-        </Routes>
-        <Footer />
+        <div className="app-wrap">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/join-lobbies" element={<JoinLobbies />} />
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/user-profile/:id" element={<UserProfile />} />
+            <Route path="/user-profile/:id/edit" element={<EditAccount />} />
+            <Route path="/account-creation" element={<AccountCreation />} />
+            <Route path="/create-lobby-game" element={<LobbyGameCreation />} />
+            <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
+            <Route path="/admin" element={<AdminPage />} />
+          </Routes>
+          <Footer />
+        </div>
       </Router>
     </AuthContext.Provider>
   );

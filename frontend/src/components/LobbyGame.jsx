@@ -1,14 +1,17 @@
-/* import axios from "axios";
+/* eslint-disable radix */
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getDate } from "../services/DateManager"; 
+import { getDate } from "../services/DateManager";
 
 export default function LobbyGame({ selectedValue }) {
-  const id = parseInt(selectedValue, 10);
+  // Une fonction pour convertir l'id du jeu en number
+
+  const id = parseInt(selectedValue);
+
   const navigate = useNavigate();
 
   const [lobby, setLobby] = useState({
-    game_id: id,
     number_of_gamers: "",
     name: "",
     commentary: "",
@@ -24,33 +27,22 @@ export default function LobbyGame({ selectedValue }) {
     seat_number: "",
   });
 
-  const postLobby = () => {
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, { ...lobby })
-      .then((response) => {
-        console.error(response);
-        console.error(response.data);
-      })
-      .catch((error) => console.error(error));
-  };
-
-  const postTravelInfo = () => {
+  function handleSubmitButton() {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/travel_info`, {
         ...travelInfo,
+        date: travelInfo.date,
       })
       .then((response) => {
-        console.error(response.data);
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
+          ...lobby,
+          travel_infos_id: response.data,
+          game_id: id,
+        });
       })
+      .then(() => navigate("/"))
       .catch((error) => console.error(error));
-  };
-
-  function handleSubmitButton() {
-    postLobby();
-    postTravelInfo();
-    navigate("/validatedMessage");
   }
-
   return (
     <div className="createlobby">
       <div>
@@ -59,7 +51,8 @@ export default function LobbyGame({ selectedValue }) {
 
       <div>
         <form
-          onSubmit={() => {
+          onSubmit={(e) => {
+            e.preventDefault();
             handleSubmitButton();
           }}
         >
@@ -80,7 +73,6 @@ export default function LobbyGame({ selectedValue }) {
             <input
               className="create-lobby-input-game"
               type="text"
-              pattern="[0-9]+"
               value={lobby.name}
               placeholder="Nom de la salle"
               onChange={(e) =>
@@ -111,7 +103,6 @@ export default function LobbyGame({ selectedValue }) {
               className="create-lobby-input"
               type="text"
               value={travelInfo.train_number}
-              pattern="[0-9]"
               placeholder="Je renseigne mon numéro de train"
               onChange={(e) =>
                 setTravelInfo({
@@ -199,4 +190,3 @@ export default function LobbyGame({ selectedValue }) {
     </div>
   );
 }
- */

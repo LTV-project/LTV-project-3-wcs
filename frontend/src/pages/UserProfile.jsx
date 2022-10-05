@@ -1,9 +1,11 @@
-import EditAccount from "@components/EditAccount";
+import BannerProfile from "@components/BannerProfile";
+import Navbar from "@components/Navbar";
 
 function UserProfile() {
   return (
     <div>
-      <EditAccount />
+      <Navbar />
+      <BannerProfile />
     </div>
   );
 }

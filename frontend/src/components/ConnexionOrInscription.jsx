@@ -9,6 +9,7 @@ function ConnexionOrInscription() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
+  // Pour masquer la saisie du password
   const [typeInputPassword, setTypeInputPassword] = useState("password");
   function showHide() {
     if (typeInputPassword === "password") {
@@ -21,7 +22,7 @@ function ConnexionOrInscription() {
   // pour garder les champs saisis dans les inputs
   function login(e) {
     e.preventDefault();
-
+    // Appel BDD via la route login pour vérifier si l'utilisateur existe avec dans le catch, le message d'erreur
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/login`, {
         email: mailAccountUser,
