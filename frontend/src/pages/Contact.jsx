@@ -1,4 +1,4 @@
-// import Banner from "@components/Banner";
+import BannerContact from "@components/BannerContact";
 import ContactForm from "@components/ContactForm";
 import Navbar from "@components/Navbar";
 
@@ -6,7 +6,7 @@ function Contact() {
   return (
     <div>
       <Navbar />
-      {/* <Banner /> */}
+      <BannerContact />
       <ContactForm />
     </div>
   );

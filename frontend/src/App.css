@@ -50,22 +50,51 @@ a {
   color: #81e8fe;
 }
 
-/* CSS Bannière */
+/* CSS Bannière, classes à réutiliser sur toutes les bannières, seul le contenu des H1 et p sera différent, éventuellement l'image*/
 
 .banner {
-  height: 380px;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .banner img {
   width: 100%;
-  opacity: 0.6;
-  height: 380px;
+  opacity: 0.5;
+  height: 250px;
+  position: absolute;
+  z-index: -1;
+}
+.banner-lobbies {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-lobbies img {
+  width: 100%;
+  opacity: 0.8;
+  height: 300px;
+  position: absolute;
+  z-index: -1;
 }
 
 .banner h1 {
-  position: relative;
-  top: -150px;
-  left: 45%;
+  font-size: 4.5rem;
+  color: #151965;
+}
+
+.banner p {
+  color: #151965;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 30%;
 }
 
 /* CSS UserDashboard */
@@ -349,6 +378,11 @@ a {
   background-color: #151965;
 }
 
+.lobby-choice-page-container {
+  width: 100%;
+  height: 400px;
+}
+
 .choice-btn {
   display: inline-block;
   width: 200px;
@@ -486,7 +520,7 @@ a {
   line-height: 3.5rem;
   width: 100%;
   height: 180px;
-  margin-bottom: -350px;
+  margin-bottom: -300px;
 }
 
 .footer2 li a {
@@ -601,12 +635,17 @@ a {
   color: #151965;
   font-size: 1.4rem;
   padding: 10px;
-  width: 1000px;
+  width: 100%;
   height: 200px;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   box-sizing: border-box;
   box-shadow: inset 3px 3px 5px;
   border-radius: 10px;
+}
+
+.users-description-container {
+  width: 70%;
+  margin: auto;
 }
 
 .p-describe {

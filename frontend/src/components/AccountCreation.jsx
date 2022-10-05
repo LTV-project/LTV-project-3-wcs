@@ -1,7 +1,10 @@
+/* eslint-disable import/no-unresolved */
 import { useState } from "react";
 import eye from "@assets/images/eye.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import BannerSignUp from "./BannerSignUp";
 
 export default function AccountCreation() {
   const [accountCreation, setAccountCreation] = useState({
@@ -63,6 +66,8 @@ export default function AccountCreation() {
 
   return (
     <div>
+      <Navbar />
+      <BannerSignUp />
       <form>
         <div className="contain-account">
           <div className="input-contain1">

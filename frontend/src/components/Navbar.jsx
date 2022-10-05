@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../contexts/AuthContext";
-// import Banner from "./Banner";
 
 function Navbar() {
   const { isAuthenticated } = useContext(AuthContext);
@@ -31,7 +30,7 @@ function Navbar() {
               <li className="nav-item">Mon compte</li>
             </Link>
           )}
-          <Link to="contact">
+          <Link to="/contact">
             <li className="nav-item">Contact</li>
           </Link>
         </ul>
