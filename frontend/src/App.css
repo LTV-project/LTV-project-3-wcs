@@ -28,7 +28,7 @@ a {
 
 .app-wrap {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -383,7 +383,15 @@ a {
 
 .lobby-choice-page-container {
   width: 100%;
-  height: 60vh;
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+
+.lobby-choice-page-container h2{
+  font-family: "AvenirMedium";
+  text-align: center;
+  padding: 50px;
+  color: #151965;
 }
 
 .choice-btn {
@@ -412,24 +420,23 @@ a {
 .return-btn-lobbyChoice {
   display: block;
   margin-left: 80%;
-  width: 60px;
-  margin-bottom: 100px;
+  width: 200px;
+  padding: 5px;
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-family: "AvenirMedium";
 }
 
 .dark-body {
   background-color: #151965;
-  height: 85vh;
-  margin-bottom: 150px;
 }
 
 .lobbies-list-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px 50px;
-  width: 90%;
-  margin: auto;
-  height: 80vh;
-  margin-bottom: 100px;
+  width: 100%;
+  padding: 50px;
 }
 
 .mini-card {

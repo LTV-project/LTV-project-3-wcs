@@ -1,11 +1,17 @@
 /* eslint-disable eqeqeq */
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import MiniCard from "./MiniCard";
 
 export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
   const navigate = useNavigate();
+  const [toggleDetails, setToggleDetails] = useState(false);
+  const showFullDetails = () => {
+    setToggleDetails(!toggleDetails);
+  };
   return (
-    <div className="dark-body">
-      <div className="lobbies-list-container">
+    <div>
+      <div className="lobbies-list-container dark-body">
         {displayLobbies &&
           displayLobbies
             .filter(
@@ -15,28 +21,17 @@ export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
             )
             .map((lobby) => (
               <div className="mini-card" key={lobby.id}>
-                <div className="creator-infos">
-                  <img
-                    src="https://placekitten.com/g/50/50"
-                    alt="creator-avatar"
-                    className="creator-avatar"
-                  />
-                  <p className="creator-pseudo">Hôte : {lobby.pseudo}</p>
-                </div>
-                <div className="game-infos">
-                  <p className="mini-card-body">Jeu : {lobby.game}</p>
-                  <p className="mini-card-body">
-                    Nombre de joueurs : {lobby.number_of_gamers}
-                  </p>
-                </div>
-                <p className="mini-card-body">
-                  Participants : {lobby.participants}
-                </p>
-                <p className="mini-card-body">
-                  Description : {lobby.description}
-                </p>
+                <MiniCard
+                  lobby={lobby}
+                  toggleDetails={toggleDetails}
+                  setToggleDetails={setToggleDetails}
+                />
                 <div className="btn-container">
-                  <button type="button" className="details-btn">
+                  <button
+                    type="button"
+                    className="details-btn"
+                    onClick={showFullDetails}
+                  >
                     détails
                   </button>
                   <button type="button" className="join-btn">
@@ -44,6 +39,10 @@ export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
                   </button>
                 </div>
               </div>
+              // <FullCard lobby={lobby}
+              // toggleDetails={toggleDetails}
+              // setToggleDetails={setToggleDetails}
+              // showFullDetails={showFullDetails} />
             ))}
       </div>
       <button
@@ -51,7 +50,7 @@ export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
         className="generic-btn return-btn-lobbyChoice"
         onClick={() => navigate(0)}
       >
-        Retour
+        Revenir à la recherche
       </button>
     </div>
   );
