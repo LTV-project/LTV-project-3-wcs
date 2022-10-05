@@ -1,18 +1,15 @@
 /* eslint-disable eqeqeq */
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import MiniCard from "./MiniCard";
 
 export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
   const navigate = useNavigate();
-  const [toggleDetails, setToggleDetails] = useState(false);
-  const showFullDetails = () => {
-    setToggleDetails(!toggleDetails);
-  };
+
   return (
     <div>
       <div className="lobbies-list-container dark-body">
-        {displayLobbies &&
+        {trainNumberFilter &&
+          displayLobbies &&
           displayLobbies
             .filter(
               (lobby) =>
@@ -21,16 +18,12 @@ export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
             )
             .map((lobby) => (
               <div className="mini-card" key={lobby.id}>
-                <MiniCard
-                  lobby={lobby}
-                  toggleDetails={toggleDetails}
-                  setToggleDetails={setToggleDetails}
-                />
+                <MiniCard lobby={lobby} />
                 <div className="btn-container">
                   <button
                     type="button"
                     className="details-btn"
-                    onClick={showFullDetails}
+                    onClick={() => navigate(`/lobbies/${lobby.id}`)}
                   >
                     détails
                   </button>
@@ -39,10 +32,6 @@ export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
                   </button>
                 </div>
               </div>
-              // <FullCard lobby={lobby}
-              // toggleDetails={toggleDetails}
-              // setToggleDetails={setToggleDetails}
-              // showFullDetails={showFullDetails} />
             ))}
       </div>
       <button
