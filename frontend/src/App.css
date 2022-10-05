@@ -28,7 +28,10 @@ a {
 
 .app-wrap {
   position: relative;
-  min-height: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* CSS Navbar */
@@ -380,7 +383,7 @@ a {
 
 .lobby-choice-page-container {
   width: 100%;
-  height: 400px;
+  height: 60vh;
 }
 
 .choice-btn {
@@ -410,10 +413,13 @@ a {
   display: block;
   margin-left: 80%;
   width: 60px;
+  margin-bottom: 100px;
 }
 
 .dark-body {
   background-color: #151965;
+  height: 85vh;
+  margin-bottom: 150px;
 }
 
 .lobbies-list-container {
@@ -422,9 +428,26 @@ a {
   gap: 50px 50px;
   width: 90%;
   margin: auto;
+  height: 80vh;
+  margin-bottom: 100px;
 }
 
 .mini-card {
+  border-radius: 20px;
+  background-color: #e8e9f2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.6fr 0.5fr 1fr 1fr;
+  gap: 10px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "creator-infos"
+    "."
+    "."
+    "."
+    "btn-container";
+}
+.full-card {
   border-radius: 20px;
   background-color: #e8e9f2;
   display: grid;
@@ -506,10 +529,6 @@ a {
 /* Css footer */
 
 .footer-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-color: rgb(21, 25, 101);
   color: rgb(129, 232, 254);
   list-style-type: none;
@@ -520,7 +539,6 @@ a {
   line-height: 3.5rem;
   width: 100%;
   height: 180px;
-  margin-bottom: -300px;
 }
 
 .footer2 li a {
