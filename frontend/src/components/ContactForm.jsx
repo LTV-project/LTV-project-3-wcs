@@ -24,7 +24,7 @@ export default function ContactForm() {
 
   function handleSubmitButton() {
     postContact();
-    navigate("/validatedMessageAccount");
+    navigate("/");
   }
 
   return (
@@ -82,7 +82,7 @@ export default function ContactForm() {
             className="inputform4"
             type="text"
             value={contact.email}
-            placeholder="Votre adresse mail"
+            placeholder="Courriel"
             onChange={(e) =>
               setContact({
                 ...contact,
@@ -99,7 +99,7 @@ export default function ContactForm() {
               e.preventDefault();
               setContact({
                 ...contact,
-                description: e.target.value,
+                content: e.target.value,
               });
             }}
           />
