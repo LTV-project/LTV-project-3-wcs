@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import jwtDecode from "jwt-decode";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 import eye from "../assets/images/eye.png";
 
 function ConnexionOrInscription() {
   const [mailAccountUser, setMailAccountUser] = useState("");
+  const { setCurrentUser } = useContext(CurrentUserContext);
   const [passwordAccountUser, setPasswordAccountUser] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -35,7 +38,7 @@ function ConnexionOrInscription() {
         window.localStorage.setItem("name", response.data.user.name);
         window.localStorage.setItem("id", response.data.user.id);
         axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
-
+        setCurrentUser(jwtDecode(response.data.token));
         navigate("/userHomePage");
       })
       .catch((error) => {

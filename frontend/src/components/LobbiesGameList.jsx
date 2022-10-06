@@ -1,9 +1,21 @@
 /* eslint-disable eqeqeq */
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 import MiniCard from "./MiniCard";
 
 export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
+  const { currentUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/participants`, {
+        user_id: currentUser.sub,
+      })
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div>
@@ -27,7 +39,11 @@ export default function LobbiesGameList({ displayLobbies, trainNumberFilter }) {
                   >
                     détails
                   </button>
-                  <button type="button" className="join-btn">
+                  <button
+                    type="button"
+                    className="join-btn"
+                    onClick={handleSubmit}
+                  >
                     rejoindre
                   </button>
                 </div>
