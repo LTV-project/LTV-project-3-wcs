@@ -5,7 +5,7 @@ function BannerCreateLobbyGame() {
   return (
     <div className="banner">
       <img src={oldCartes} alt="jeu de cartes dans une main" />
-      <h1>Je crée ma salle de jeu</h1>
+      <h1>Je crée ma salle de jeux</h1>
     </div>
   );
 }

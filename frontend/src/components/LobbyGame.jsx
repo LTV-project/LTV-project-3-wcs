@@ -27,6 +27,7 @@ export default function LobbyGame({ selectedValue }) {
     seat_number: "",
   });
 
+  // Création variable pour créer les boutons suivant et précédent :
   const [step, setStep] = useState(1);
 
   function handleSubmitButton() {
@@ -430,7 +431,7 @@ export default function LobbyGame({ selectedValue }) {
               className="create-lobby-input"
               type="text"
               value={travelInfo.train_number}
-              placeholder="Je renseigne mon numéro de train"
+              placeholder="Mon numéro de train"
               onChange={(e) =>
                 setTravelInfo({
                   ...travelInfo,
