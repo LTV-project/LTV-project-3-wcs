@@ -1,20 +1,36 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { transDate } from "@services/DateManager";
 import { useNavigate, useParams } from "react-router-dom";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 import Banner from "./Banner";
 
 function FullCard() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { currentUser } = useContext(CurrentUserContext);
   const [lobbyFullDetails, setLobbyFullDetails] = useState("");
-
+  const [participants, setParticipants] = useState("");
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${id}`)
       .then((response) => response.data)
       .then((data) => setLobbyFullDetails(data));
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${id}/participants`)
+      .then((response) => response.data)
+      .then((data) => setParticipants(data));
   }, []);
+
+  const handleSubmit = () => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/participants`, {
+        user_id: currentUser.sub,
+        lobbie_id: id,
+      })
+      .then(navigate(0))
+      .catch((error) => console.error(error));
+  };
 
   return (
     <>
@@ -26,7 +42,7 @@ function FullCard() {
             alt="creator-avatar"
             className="creator-avatar"
           />
-          <p className="creator-pseudo">Hôte : {lobbyFullDetails.pseudo}</p>
+          <p className="creator-pseudo">Hôte : {lobbyFullDetails.host}</p>
         </div>
         <div className="game-infos">
           <p className="mini-card-body game-title">
@@ -35,9 +51,13 @@ function FullCard() {
           <p className="mini-card-body nb-players">
             Nombre de joueurs : {lobbyFullDetails.number_of_gamers}
           </p>
-          <p className="participants nb-users">
-            Participants : {lobbyFullDetails.participants}
-          </p>
+          Participants :{" "}
+          {participants &&
+            participants.map((participant) => (
+              <p className="participants nb-users" key={participant.id}>
+                {participant.participants}
+              </p>
+            ))}
         </div>
         <p className="mini-card-body">
           Description : {lobbyFullDetails.description}
@@ -64,7 +84,11 @@ function FullCard() {
         </div>
       </div>
       <div className="full-card-btn-wrapper">
-        <button type="button" className="join-btn join-btn-full-card">
+        <button
+          type="button"
+          className="join-btn join-btn-full-card"
+          onClick={handleSubmit}
+        >
           rejoindre
         </button>
         <div className="empty-space" />
