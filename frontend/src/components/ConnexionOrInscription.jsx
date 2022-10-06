@@ -50,7 +50,7 @@ function ConnexionOrInscription() {
         <h3>Je crée mon compte</h3>
         <button
           type="button"
-          onClick={() => navigate("/accountCreation")}
+          onClick={() => navigate("/account-creation")}
           className="generic-btn-connexion"
         >
           C'est parti !
