@@ -15,6 +15,7 @@ const lobbiesControllers = require("./controllers/lobbiesControllers");
 const travelInfosControllers = require("./controllers/travelInfosControllers");
 const categoryControllers = require("./controllers/categoryControllers");
 const contactControllers = require("./controllers/contactControllers");
+const participantsControllers = require("./controllers/participantsControllers");
 
 router.post("/users", hashPassword, usersControllers.add, sendEmail);
 router.post(
@@ -62,6 +63,7 @@ router.post("/lobbies", lobbiesControllers.add);
 router.post("/travel_info", travelInfosControllers.add);
 router.post("/category", categoryControllers.add);
 router.post("/contacts", contactControllers.add);
+router.post("/participants", participantsControllers.add);
 
 // DELETE
 router.delete("/items/:id", itemControllers.destroy);
