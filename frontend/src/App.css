@@ -450,7 +450,7 @@ a {
   grid-auto-flow: row;
   grid-template-areas:
     "creator-infos"
-    "."
+    "game-infos"
     "mini-card-body"
     "mini-card-footer"
     "btn-container";
@@ -480,26 +480,40 @@ a {
 .creator-avatar {
   border-radius: 80%;
   justify-self: center;
-  align-self: start;
+  align-self: center;
+  padding: 10px;
   grid-area: creator-avatar;
 }
 
 .creator-pseudo {
-  justify-self: center;
+  justify-self: flex-start;
   grid-area: creator-pseudo;
 }
 
 .game-infos {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 1fr;
   grid-area: game-infos;
+  padding: 10px;
+}
+
+.game-title{
+  grid-column: 1/2;
+  grid-row: 1/1;
+}
+
+.nb-players {
+  grid-column: 1/2;
+}
+.nb-users {
+  grid-column: 2/3;
+  grid-row: span 2;
 }
 
 .btn-container {
   display: grid;
-  padding: 5px;
+  padding: 10px;
   grid-template-columns: 1.2fr 1.2fr;
   grid-template-rows: 0.5fr;
   gap: 0px 0px;
@@ -536,6 +550,7 @@ a {
   width: 60%;
   height: 60vh;
   margin: auto;
+  margin-top: 80px;
   grid-template-columns: 1fr;
   grid-template-rows: 0.6fr 0.5fr 0.5fr 0.5fr 0.5fr;
   gap: 10px 0px;
@@ -556,17 +571,55 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  column-gap: 50%;
+  column-gap: 30%;
+  grid-row: span 2;
+  padding: 10px;
+  justify-items: left;
+  align-items: center;
   grid-template-areas:
-    "travel-infos-item6 . travel-infos-item1"
-    "travel-infos-item4 . travel-infos-item2"
-    "travel-infos-item5 . travel-infos-item3";
-  grid-area: travel-infos;
+    "item6 item1"
+    "item4 item2"
+    "item5 item3"; 
   justify-content: center;
 }
 
 [class^="travel-infos-item"] {
   grid-column: span 2;
+}
+
+.travel-infos-item1{
+  grid-area: item1;
+}
+.travel-infos-item2{
+  grid-area: item2;
+}
+.travel-infos-item3{
+  grid-area: item3;
+}
+.travel-infos-item4{
+  grid-area: item4;
+}
+.travel-infos-item5{
+  grid-area: item5;
+}
+.travel-infos-item6{
+  grid-area: item6;
+}
+
+.full-card-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  padding: 50px;
+}
+
+.join-btn-full-card {
+  width: 150px;
+  height: 36px;
+}
+
+.return-lobby-search-btn {
+  width: 150px ;
 }
 
 /* Css footer */
