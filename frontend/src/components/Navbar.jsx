@@ -17,7 +17,7 @@ function Navbar() {
           </Link>
           {!isAuthenticated && (
             <>
-              <Link to="/sign-in">
+              <Link to="/sign">
                 <li className="nav-item">Se connecter</li>
               </Link>
               <Link to="/account-creation">

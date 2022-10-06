@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "@components/Footer";
 import Contact from "@pages/Contact";
 import AccountCreation from "@pages/UserAccountCreation";
-import SignIn from "@pages/SignIn";
+import Sign from "@pages/Sign";
 import HomePage from "@pages/HomePage";
 import UserProfile from "@pages/UserProfile";
 import LobbyGameCreation from "@pages/LobbyGameCreation";
@@ -44,7 +44,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/join-lobbies" element={<JoinLobbies />} />
-              <Route path="/sign-in" element={<SignIn />} />
+              <Route path="/sign" element={<Sign />} />
               <Route path="/user-profile/:id" element={<UserProfile />} />
               <Route path="/user-profile/:id/edit" element={<EditAccount />} />
               <Route path="/account-creation" element={<AccountCreation />} />
