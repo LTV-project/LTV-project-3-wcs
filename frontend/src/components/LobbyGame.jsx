@@ -161,7 +161,7 @@ export default function LobbyGame({ selectedValue }) {
               className="create-lobby-input"
               type="text"
               value={travelInfo.train_number}
-              placeholder="Je renseigne mon numéro de train"
+              placeholder="Mon numéro de train"
               onChange={(e) =>
                 setTravelInfo({
                   ...travelInfo,
