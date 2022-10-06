@@ -38,7 +38,7 @@ a {
   background-color: #151965;
   justify-content: space-around;
   align-items: center;
-  height: 100px;
+  height: 90px;
 }
 
 .navbar li {
@@ -53,7 +53,7 @@ a {
 /* CSS Bannière, classes à réutiliser sur toutes les bannières, seul le contenu des H1 et p sera différent, éventuellement l'image*/
 
 .banner {
-  height: 250px;
+  height: 150px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -688,6 +688,7 @@ a {
   width: 150%;
   height: 150%;
   margin: 30px;
+  margin-top: 60px;
   margin-left: 150%;
   background: rgb(21, 25, 101);
 }
@@ -750,4 +751,113 @@ a {
   height: 20px;
   margin-top: 2%;
   margin-left: 80%;
+}
+
+/* Menu Burger */
+
+/* div contenant les 3 barres du menu burger */
+.burger-menu {
+  display: none;
+}
+/* barres du menu burger */
+.burger-bar {
+  width: 5em;
+  height: 0.5em;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  background-color: #151965;
+  border-radius: 0.5em;
+}
+/* div contenant les liens (apparait au click sur le menu burger) */
+.menu {
+  width: 100%;
+  height: fit-content;
+  background-color: #151965;
+  /* opacity: 0.6; */
+  border-radius: 15px;
+  position: absolute;
+  top: 14vh;
+  left: 0;
+  z-index: 9999;
+}
+
+.menu-mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+/* style des liens */
+.burger-menu-link {
+  font-family: "Jacques-Francois";
+  font-size: 130%;
+  color: #81e8fe;
+}
+/* espacement entre les liens */
+.burger-menu-li {
+  padding: 3%;
+}
+/* ---- slide menu ---- */
+/* la div contenant les liens est cachée */
+.hidden {
+  display: none;
+}
+/* la div contenant les liens est visible */
+.visible {
+  display: block;
+}
+/* ---- animations ---- */
+/* au click sur le menu burger, transformation en croix */
+.burger-bar.clicked:nth-child(1) {
+  transform: rotate(45deg) translate(0.75em, 1.25em);
+  transition: ease-out 0.5s;
+}
+.burger-bar.clicked:nth-child(2) {
+  transform: scale(0.1);
+  transition: ease-out 0.5s;
+}
+.burger-bar.clicked:nth-child(3) {
+  transform: rotate(135deg) translate(-0.5em, 1em);
+  transition: ease-out 0.5s;
+}
+/* au click sur la croix, retour au menu burger */
+.burger-bar.unclicked {
+  transform: rotate(0) translate(0);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+/* Responsive */
+@media screen and (max-width: 780px) {
+  .visible1 {
+    display: none;
+  }
+  .burger {
+    display: block;
+    align-self: flex-start;
+  }
+  .burger-menu {
+    height: 100%;
+    width: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  .menu-desktop {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+  .contain-form2 {
+    margin-left: 75%;
+    margin-top: 195px;
+  }
+  .contain-form1 {
+    margin-left: 5%;
+  }
+  .menu-burger-title {
+    text-align: center;
+    margin: 10px 0;
+  }
 }
