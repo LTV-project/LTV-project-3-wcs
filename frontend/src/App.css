@@ -443,6 +443,7 @@ a {
   border-radius: 20px;
   background-color: #e8e9f2;
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 0.6fr 0.5fr 1fr 1fr;
   gap: 10px 0px;
@@ -450,11 +451,17 @@ a {
   grid-template-areas:
     "creator-infos"
     "."
-    "."
-    "."
+    "mini-card-body"
+    "mini-card-footer"
     "btn-container";
 }
 .mini-card-body {
+  padding: 10px;
+  grid-area: mini-card-body;
+}
+
+.mini-card-footer {
+  grid-area: mini-card-footer;
   padding: 10px;
 }
 
@@ -485,6 +492,9 @@ a {
   
 .game-infos {
   display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
   grid-area: game-infos;
 }
   
@@ -524,7 +534,7 @@ a {
   border-radius: 20px;
   background-color: #e8e9f2;
   display: grid;
-  width: 80%;
+  width: 60%;
   height: 60vh;
   margin: auto;
   grid-template-columns: 1fr;
@@ -534,20 +544,26 @@ a {
   grid-template-areas:
     "creator-infos"
     "game-infos"
-    "."
+    "mini-card-body"
     "travel-infos"
-    "btn-container";
+    "travel-infos";
 }
 
 .participants {
-  margin-left: 40%;
+  padding: 10px;
 }
 
 .travel-infos {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 50%;
   grid-template-areas: 
-    "travel-infos-item6 . travel-infos-item1 . travel-infos-item2 . travel-infos-item3 . travel-infos-item4 . travel-infos-item5 .";
+    "travel-infos-item6 . travel-infos-item1"
+    "travel-infos-item4 . travel-infos-item2"
+    "travel-infos-item5 . travel-infos-item3";
+    grid-area: travel-infos;
+    justify-content: center;
 }
 
 [class^="travel-infos-item"]{

@@ -29,7 +29,7 @@ function FullCard() {
         <p className="mini-card-body">
           Nombre de joueurs : {lobbyFullDetails.number_of_gamers}
         </p>
-        <p className="mini-card-body participants">
+        <p className="participants">
           Participants : {lobbyFullDetails.participants}
         </p>
       </div>
@@ -38,7 +38,7 @@ function FullCard() {
       </p>
       <div className="travel-infos">
         <p className="travel-infos-item6">
-          Date : {transDate(lobbyFullDetails.date)}{" "}
+          Date : {lobbyFullDetails.date && transDate(lobbyFullDetails.date)}{" "}
         </p>
         <p className="travel-infos-item1">
           Numéro de train : {lobbyFullDetails.train_number}
