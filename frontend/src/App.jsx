@@ -14,6 +14,7 @@ import AdminPage from "@pages/AdminPage";
 // import ValidatedMessage from "@components/ValidatedMessage";
 import AuthApi from "@services/AuthApi";
 import { useState } from "react";
+import LobbyGameOneByOne from "@components/LobbyGameOneByOne";
 import AuthContext from "./contexts/AuthContext";
 
 import "./fonts/Avenir-Book.ttf";
@@ -44,6 +45,7 @@ function App() {
             <Route path="/create-lobby-game" element={<LobbyGameCreation />} />
             <Route path="/create-lobby-talk" element={<LobbyTalkCreation />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/lobbygameonebyone" element={<LobbyGameOneByOne />} />;
           </Routes>
           <Footer />
         </div>

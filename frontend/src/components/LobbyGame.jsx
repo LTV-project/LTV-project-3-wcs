@@ -27,6 +27,8 @@ export default function LobbyGame({ selectedValue }) {
     seat_number: "",
   });
 
+  const [step, setStep] = useState(1);
+
   function handleSubmitButton() {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/travel_info`, {
@@ -43,35 +45,14 @@ export default function LobbyGame({ selectedValue }) {
       .then(() => navigate("/"))
       .catch((error) => console.error(error));
   }
-  return (
-    <div className="createlobby">
-      <div>
-        <h2 className="title-create-lobby">Je crée ma salle de jeu</h2>
-      </div>
 
-      <div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmitButton();
-          }}
-        >
-          <div className="info-create-lobby">
+  switch (step) {
+    case 1:
+      return (
+        <div>
+          <form className="form-lobby">
             <input
-              className="create-lobby-input-game"
-              type="text"
-              value={lobby.number_of_gamers}
-              placeholder="Nombre de joueur souhaité"
-              onChange={(e) =>
-                setLobby({
-                  ...lobby,
-                  number_of_gamers: e.target.value.replace(/\D/g, ""),
-                })
-              }
-              required
-            />
-            <input
-              className="create-lobby-input-game"
+              className="create-lobby-input"
               type="text"
               value={lobby.name}
               placeholder="Nom de la salle"
@@ -83,8 +64,354 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-          </div>
-          <div className="infotravel-create-lobby">
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 2:
+      return (
+        <div>
+          <form className="form-lobby">
+            <input
+              className="create-lobby-input"
+              type="text"
+              value={lobby.number_of_gamers}
+              placeholder="Nombre de joueur souhaité"
+              onChange={(e) =>
+                setLobby({
+                  ...lobby,
+                  number_of_gamers: e.target.value.replace(/\D/g, ""),
+                })
+              }
+              required
+            />
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 3:
+      return (
+        <div>
+          <form className="form-lobby">
+            <input
+              className="create-lobby-input"
+              type="date"
+              min={getDate()}
+              value={travelInfo.date}
+              placeholder="Date de mon voyage"
+              onChange={(e) =>
+                setTravelInfo({
+                  ...travelInfo,
+                  date: e.target.value,
+                })
+              }
+              required
+            />
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 4:
+      return (
+        <div>
+          <form className="form-lobby">
+            <input
+              className="create-lobby-input"
+              type="text"
+              value={travelInfo.train_number}
+              placeholder="Je renseigne mon numéro de train"
+              onChange={(e) =>
+                setTravelInfo({
+                  ...travelInfo,
+                  train_number: e.target.value.replace(/\D/g, ""),
+                })
+              }
+              required
+            />
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 5:
+      return (
+        <div>
+          <form className="form-lobby">
+            <input
+              className="create-lobby-input"
+              type="text"
+              value={travelInfo.coach_number}
+              placeholder="Mon numéro de voiture"
+              onChange={(e) =>
+                setTravelInfo({
+                  ...travelInfo,
+                  coach_number: e.target.value.replace(/\D/g, ""),
+                })
+              }
+              required
+            />
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 6:
+      return (
+        <div>
+          <form className="form-lobby">
+            <input
+              className="create-lobby-input"
+              type="text"
+              value={travelInfo.seat_number}
+              placeholder="Mon numéro de place"
+              onChange={(e) =>
+                setTravelInfo({
+                  ...travelInfo,
+                  seat_number: e.target.value.replace(/\D/g, ""),
+                })
+              }
+              required
+            />
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 7:
+      return (
+        <div>
+          <form className="form-lobby">
+            <input
+              className="create-lobby-input"
+              type="text"
+              value={travelInfo.departure}
+              placeholder="Gare de départ de mon voyage"
+              onChange={(e) =>
+                setTravelInfo({
+                  ...travelInfo,
+                  departure: e.target.value,
+                })
+              }
+              required
+            />
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 8:
+      return (
+        <div>
+          <form className="form-lobby">
+            <input
+              className="create-lobby-input"
+              type="text"
+              value={travelInfo.arrival}
+              placeholder="Gare d'arrivée de mon voyage"
+              onChange={(e) =>
+                setTravelInfo({
+                  ...travelInfo,
+                  arrival: e.target.value,
+                })
+              }
+              required
+            />
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 9:
+      return (
+        <div>
+          <form className="form-lobby">
+            <input
+              className="commentary-create-lobby-input"
+              type="text"
+              value={lobby.commentary}
+              placeholder="Je laisse un commentaire"
+              onChange={(e) =>
+                setLobby({
+                  ...lobby,
+                  commentary: e.target.value,
+                })
+              }
+              required
+            />
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step + 1);
+              }}
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
+      );
+    case 10:
+      return (
+        <div>
+          <form onSubmit={handleSubmitButton} className="form-lobby">
+            <input
+              className="create-lobby-input"
+              type="text"
+              value={lobby.name}
+              placeholder="Nom de la salle"
+              onChange={(e) =>
+                setLobby({
+                  ...lobby,
+                  name: e.target.value,
+                })
+              }
+              required
+            />
+            <input
+              className="create-lobby-input"
+              type="text"
+              value={lobby.number_of_gamers}
+              placeholder="Nombre de joueur souhaité"
+              onChange={(e) =>
+                setLobby({
+                  ...lobby,
+                  number_of_gamers: e.target.value.replace(/\D/g, ""),
+                })
+              }
+              required
+            />
+
             <input
               className="create-lobby-input"
               type="date"
@@ -139,7 +466,7 @@ export default function LobbyGame({ selectedValue }) {
               required
             />
             <input
-              className="create-lobby-input-od"
+              className="create-lobby-input"
               type="text"
               value={travelInfo.departure}
               placeholder="Gare de départ de mon voyage"
@@ -152,7 +479,7 @@ export default function LobbyGame({ selectedValue }) {
               required
             />
             <input
-              className="create-lobby-input-od"
+              className="create-lobby-input"
               type="text"
               value={travelInfo.arrival}
               placeholder="Gare d'arrivée de mon voyage"
@@ -164,10 +491,9 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-          </div>
-          <div className="commentary-create-lobby">
+
             <input
-              className="commentary-create-lobby-input"
+              className="create-lobby-input-commentary"
               type="text"
               value={lobby.commentary}
               placeholder="Je laisse un commentaire"
@@ -179,14 +505,14 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-          </div>
-          <input
-            className="create-lobby-input-valited"
-            type="submit"
-            value="Je crée ma salle de jeu"
-          />
-        </form>
-      </div>
-    </div>
-  );
+            <input
+              className="create-lobby-input-valited"
+              type="submit"
+              value="Je crée ma salle de jeu"
+            />
+          </form>
+        </div>
+      );
+    default:
+  }
 }
