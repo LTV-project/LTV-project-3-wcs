@@ -5,15 +5,15 @@ class lobbiesManager extends AbstractManager {
     super({ table: "lobbies" });
   }
 
-  findLobbiesByCategoryWithTravelInfosAndParticipants() {
+  findLobbiesByCategoryWithTravelInfosAndCreator() {
     return this.connection.query(
-      `select l.id, l.category_id, l.name, l.number_of_gamers, l.commentary as description, l.user_id as participants, u.pseudo, g.name as game, g.id as game_id, t.train_number, t.coach_number, t.seat_number, t.departure, t.arrival, t.date, c.name as category from ${this.table} as l left join games g on g.id=l.game_id left join travel_info as t on t.id=l.travel_infos_id left join users as u on u.id=l.user_id left join category as c on c.id=l.category_id left join participants ON l.user_id=participants.user_id;`
+      `select l.id, l.category_id, l.name, l.number_of_gamers, l.commentary as description, l.user_id, u.pseudo as host, g.name as game, g.id as game_id, t.train_number, t.coach_number, t.seat_number, t.departure, t.arrival, t.date, c.name as category from ${this.table} as l left join games g on g.id=l.game_id left join travel_info t on t.id=l.travel_infos_id left join users u on u.id=l.user_id left join category as c on c.id=l.category_id;`
     );
   }
 
-  findLobbyByCategoryWithTravelInfosAndParticipants(lobbyId) {
+  findLobbyByCategoryWithTravelInfosAndCreator(lobbyId) {
     return this.connection.query(
-      `select l.id, l.category_id, l.name, l.number_of_gamers, l.commentary as description, l.user_id as participants, u.pseudo, g.name as game, g.id as game_id, t.train_number, t.coach_number, t.seat_number, t.departure, t.arrival, t.date, c.name as category from ${this.table} as l left join games g on g.id=l.game_id left join travel_info as t on t.id=l.travel_infos_id left join users as u on u.id=l.user_id left join category as c on c.id=l.category_id left join participants ON l.user_id=participants.user_id where l.id = ?;`,
+      `select l.id, l.category_id, l.name, l.number_of_gamers, l.commentary as description, u.pseudo as host, u.id, g.name as game, g.id as game_id, t.train_number, t.coach_number, t.seat_number, t.departure, t.arrival, t.date, c.name as category from ${this.table} as l left join games g on g.id=l.game_id left join travel_info t on t.id=l.travel_infos_id left join users u on u.id=l.user_id left join category as c on c.id=l.category_id where l.id = ?;`,
       [lobbyId]
     );
   }
