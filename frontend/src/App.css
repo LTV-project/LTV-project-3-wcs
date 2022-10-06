@@ -678,8 +678,28 @@ a {
 .editAccount {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   text-align: center;
+}
+
+.proficontain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profil-button-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-top: -15%;
+  padding: 2%;
+  border-right: solid 2px rgb(21, 25, 101);
+}
+
+.profil-button-container button {
+  width: 10vw;
+  margin: 5%;
 }
 
 .editAccount h2 {
@@ -690,6 +710,10 @@ a {
   margin-top: 15px;
   margin-bottom: 10px;
 }
+
+.form-editcontain {
+  margin-right: 40%;
+}
 .input-editcontain {
   display: flex;
   flex-direction: column;
@@ -698,7 +722,7 @@ a {
 }
 .input-editcontain img {
   border: black solid 1px;
-  border-radius: 80%;
+  border-radius: 100%;
   position: relative;
   width: 120px;
   height: 120px;
@@ -706,7 +730,7 @@ a {
   object-fit: cover;
 }
 .profile {
-  margin: 5%;
+  margin: 1%;
 }
 .input-editcontainA {
   width: 250px;
@@ -734,7 +758,6 @@ a {
   top: 728px;
   background-color: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
-  margin-left: 12%;
 }
 .editeye {
   width: 25%;
@@ -771,6 +794,7 @@ a {
   color: #151965;
   border: none;
   border-radius: 10px;
+  margin-top: 5%;
   width: auto;
   margin-top: 5px;
   margin-bottom: 5px;
