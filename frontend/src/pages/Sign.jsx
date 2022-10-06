@@ -1,15 +1,15 @@
 import BannerSign from "@components/BannerSign";
+import ConnexionOrInscription from "@components/ConnexionOrInscription";
 import Navbar from "@components/Navbar";
-import SignInForm from "@components/SignInForm";
 
-function SignIn() {
+function Sign() {
   return (
     <div>
       <Navbar />
       <BannerSign />
-      <SignInForm />
+      <ConnexionOrInscription />
     </div>
   );
 }
 
-export default SignIn;
+export default Sign;
