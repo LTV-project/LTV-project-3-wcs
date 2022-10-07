@@ -27,6 +27,7 @@ function MiniCard({ lobby }) {
         <p className="creator-pseudo">Hôte : {lobby.host}</p>
       </div>
       <div className="game-infos">
+        <p>Nom de la salle : {lobby.name}</p>
         <p>Jeu : {lobby.game}</p>
         <p>Nombre de joueurs : {lobby.number_of_gamers}</p>
       </div>
