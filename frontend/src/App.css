@@ -247,20 +247,22 @@ a {
 
 .btn_click_create_lobby {
   background-color: #81e8fe;
+  margin-top: 50px;
   justify-content: space-evenly;
   border-radius: 25px;
   font-weight: bold;
   font-size: 25px;
-  width: 15%;
   height: 7vh;
   font-family: "AvenirMedium";
+  width: 20%;
 }
 
 .parent_btn_click_create_lobby {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 80px;
+  width: 100%;
+  margin: 15px;
 }
 
 .btn_click_create_lobby_select {
@@ -271,6 +273,7 @@ a {
   display: block;
   margin: auto;
   margin-top: 65px;
+  margin-left: 43.5%;
 }
 
 .createlobby {
@@ -289,6 +292,7 @@ a {
   width: 40%;
   margin: auto;
   margin-top: 100px;
+  margin-left: 32%;
 }
 
 .create-lobby-input {
