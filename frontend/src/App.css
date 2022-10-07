@@ -18,7 +18,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Avenir-Medium";
+  font-family: "AvenirBook";
   text-decoration: none;
 }
 
@@ -404,6 +404,7 @@ a {
   border: none;
   border-radius: 20px;
   width: auto;
+  padding: 5px;
 }
 
 .return-btn-lobbyChoice {
@@ -648,7 +649,6 @@ a {
   padding: 10px;
   width: 100%;
   height: 200px;
-  /* margin-left: 10%; */
   box-sizing: border-box;
   box-shadow: inset 3px 3px 5px;
   border-radius: 10px;
@@ -675,130 +675,92 @@ a {
   margin-left: 2%;
 }
 /* Composants EditAccount */
-.editAccount {
+
+.user-profile-container {
   display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  text-align: center;
+  height: 80vh;
+  margin-top: 50px;
 }
 
-.proficontain {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.profil-button-container {
+.user-profile-dashboard {
   display: flex;
   flex-direction: column;
-  margin-left: 5%;
-  margin-top: -15%;
-  padding: 2%;
+  align-self: center;
+  justify-content: space-evenly;
+  height: 60vh;
+  width: 15vw;
+  padding: 20px;
   border-right: solid 2px rgb(21, 25, 101);
 }
 
-.profil-button-container button {
-  width: 10vw;
-  margin: 5%;
-}
-
-.editAccount h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.form-editcontain p {
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-
-.form-editcontain {
-  margin-right: 40%;
-}
-.input-editcontain {
+.user-profile-edit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5px;
+  margin-top: 50px;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
-.input-editcontain img {
+
+.user-profile-edit-form input::placeholder {
+  text-align: center;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 17vh;
+}
+
+.avatar img {
   border: black solid 1px;
-  border-radius: 100%;
-  position: relative;
+  border-radius: 80%;
   width: 120px;
   height: 120px;
-  margin: 5px;
-  object-fit: cover;
 }
-.profile {
-  margin: 1%;
+
+.user-profile-edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  align-items: center;
+  justify-content: space-between;
 }
-.input-editcontainA {
-  width: 250px;
-  height: 30px;
-  padding: 2%;
+
+.user-profile-edit-form-secu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.input-edit-profile {
   color: #151965;
-  top: 728px;
   background-color: rgba(81, 85, 133, 0.5);
   border-radius: 10px;
+  width: 200px;
 }
-.input-editcontainB1 {
-  width: 250px;
-  height: 30px;
-  padding: 2%;
-  color: #151965;
-  top: 728px;
-  background-color: rgba(81, 85, 133, 0.5);
-  border-radius: 10px;
-}
-.input-editcontainB {
-  width: 250px;
-  height: 30px;
-  padding: 2%;
-  color: #151965;
-  top: 728px;
-  background-color: rgba(81, 85, 133, 0.5);
-  border-radius: 10px;
-}
-.editeye {
-  width: 25%;
-}
-.btn-editeye {
-  width: 10%;
-  border-radius: 30%;
-  margin-left: 2%;
-}
-.input-editcontainC {
-  width: 100px;
-  height: 30px;
-  padding: 2%;
-  color: #151965;
-  right: 100px;
-  top: 1029px;
-  background: rgba(81, 85, 133, 0.5);
-  border-radius: 10px;
-}
-.message-edit {
-  display: inline-block;
+
+.user-describe {
   color: #151965;
   font-size: 1.4rem;
   padding: 10px;
-  width: 250px;
-  height: 200px;
+  width: 30%;
+  height: 120px;
   box-sizing: border-box;
   box-shadow: inset 3px 3px 5px;
-  border-radius: 10px;
+  border-radius: 10px
 }
 
 .btn-editaccount {
-  background-color: #81e8fe;
-  color: #151965;
-  border: none;
-  border-radius: 10px;
-  margin-top: 5%;
-  width: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  width: 150px;
+  margin-top: 10px;
 }
 
 /*CSS contact form*/

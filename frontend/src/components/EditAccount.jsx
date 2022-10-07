@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "./Navbar";
-import BannerProfileEdit from "./BannerProfileEdit";
 
 export default function EditAccount() {
   const params = useParams();
@@ -18,6 +16,14 @@ export default function EditAccount() {
     description: "",
     image: "",
   });
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`)
+      .then((response) => response.data)
+      .then((data) => setEditUser(data));
+  }, []);
+
   const [confirmPassword, setConfirmPassword] = useState("");
 
   function updateAccount() {
@@ -25,12 +31,6 @@ export default function EditAccount() {
       ...editUser,
     });
   }
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`)
-      .then((response) => response.data)
-      .then((data) => setEditUser(data));
-  }, []);
 
   const uploadImage = (e) => {
     const data = new FormData();
@@ -49,187 +49,184 @@ export default function EditAccount() {
       .catch((err) => console.error(err));
   };
 
-  function message() {
-    const msg = "Attention vous êtes sur le point de supprimer votre compte";
-    alert(msg);
-  }
-
   function deleteAccount() {
     axios.delete(`${import.meta.env.VITE_BACKEND_URL}/users/${params.id}`);
   }
-  // eslint-disable-next-line no-unused-vars
   function handleDelete() {
-    message();
     deleteAccount();
     navigate("/");
   }
+
   const [typeInputPassword] = useState("password");
 
   const [dataInput, setDataInput] = useState(true);
 
   return (
-    <div className="editAccount">
-      <Navbar />
-      <BannerProfileEdit />
-      <div className="input-editcontain">
-        <h2>Profil de {editUser.pseudo}</h2>
-        <img src={editUser.image} alt={editUser.pseudo} />
-        <input
-          className="profile"
-          type="file"
-          alt="Avatar"
-          accept="image/*"
-          onChange={(e) => uploadImage(e)}
-        />
+    <div className="user-profile-container">
+      <div className="user-profile-dashboard">
+        <button
+          className="generic-btn btn-editaccount"
+          type="button"
+          onClick={() => setDataInput(true)}
+        >
+          Mon Profil
+        </button>
+        <button
+          className="generic-btn btn-editaccount"
+          type="button"
+          onClick={() => setDataInput(false)}
+        >
+          Sécurité
+        </button>
+        <button
+          className="generic-btn btn-editaccount"
+          type="button"
+          onClick={handleDelete}
+        >
+          Supprimer mon compte
+        </button>
       </div>
-      <div className="proficontain">
-        <div className="profil-button-container">
-          <button
-            className="btn-editaccount"
-            type="button"
-            onClick={() => setDataInput(true)}
-          >
-            Mon Profil
-          </button>
-          <button
-            className="btn-editaccount"
-            type="button"
-            onClick={() => setDataInput(false)}
-          >
-            Sécurité
-          </button>
+      <div className="user-profile-edit">
+        <div className="avatar">
+          <img src={editUser.image} alt={editUser.pseudo} />
+          <input
+            className="profile"
+            type="file"
+            alt="Avatar"
+            accept="image/*"
+            onChange={(e) => uploadImage(e)}
+          />
         </div>
-        <form className="form-editcontain">
-          {dataInput ? (
-            <div className="info1">
-              <p>Pseudonyme</p>
-              <input
-                className="input-editcontainA"
-                type="text"
-                value={editUser.pseudo}
-                placeholder="Votre pseudo"
-                onChange={(e) =>
-                  setEditUser({
-                    ...editUser,
-                    pseudo: e.target.value,
-                  })
-                }
-              />
-              <p>Courriel</p>
-              <input
-                className="input-editcontainA"
-                type="text"
-                value={editUser.email}
-                placeholder="Votre adresse mail"
-                onChange={(e) =>
-                  setEditUser({
-                    ...editUser,
-                    email: e.target.value,
-                  })
-                }
-              />
-              <p>Vous souhaitez nous en dire plus sur vous ?</p>
-              <textarea
-                className="message-edit"
-                name="message"
-                style={{ backgroundColor: "rgba(81, 85, 133, .2)" }}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setEditUser({ ...editUser, description: e.target.value });
-                }}
-              />
-              <br />
-              <button
-                className="btn-editaccount"
-                type="submit"
-                onClick={() => updateAccount()}
-              >
-                <span>Mettre à jour</span>
-              </button>
-            </div>
-          ) : (
-            <div className="info2">
-              <p>Mot de passe</p>
-              <input
-                className="input-editcontainB1"
-                type="text"
-                value={editUser.password}
-                placeholder="Votre mot de passe"
-                onChange={(e) =>
-                  setEditUser({
-                    ...editUser,
-                    password: e.target.value,
-                  })
-                }
-              />
-              <p>Confirmation du mot de passe</p>
-              <input
-                className="input-editcontainB"
-                type={typeInputPassword}
-                value={confirmPassword}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setConfirmPassword(e.target.value);
-                }}
-              />
-              <p>Âge</p>
-              <input
-                className="input-editcontainC"
-                type="text"
-                value={editUser.age}
-                placeholder="Votre âge"
-                onChange={(e) =>
-                  setEditUser({
-                    ...editUser,
-                    age: e.target.value,
-                  })
-                }
-              />
-              <p>Prénom</p>
-              <input
-                className="input-editcontainA"
-                type="text"
-                value={editUser.firstname}
-                placeholder="Prénom"
-                onChange={(e) =>
-                  setEditUser({
-                    ...editUser,
-                    firstname: e.target.value,
-                  })
-                }
-              />
-              <p>Nom</p>
-              <input
-                className="input-editcontainA"
-                type="text"
-                value={editUser.lastname}
-                onChange={(e) => {
-                  setEditUser({
-                    ...editUser,
-                    lastname: e.target.value,
-                  });
-                }}
-              />
-
-              <div className="btn-edit-account">
-                {/* <button
-                  className="btn-editaccount"
-                  type="button"
-                  onClick={() => handleDelete()}
-                >
-                  <span>Je supprime mon compte</span>
-                </button> */}
-                <button
-                  className="btn-editaccount"
-                  type="submit"
-                  onClick={() => updateAccount()}
-                >
-                  <span>Mettre à jour</span>
-                </button>
-              </div>
-            </div>
-          )}
-        </form>
+        {dataInput ? (
+          <form className="user-profile-edit-form">
+            <label htmlFor="pseudo">Pseudonyme :</label>
+            <input
+              className="input-edit-profile"
+              id="pseudo"
+              type="text"
+              value={editUser.pseudo}
+              placeholder="Votre pseudo"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  pseudo: e.target.value,
+                })
+              }
+            />
+            <label htmlFor="age">Âge :</label>
+            <input
+              className="input-edit-profile"
+              type="text"
+              id="age"
+              value={editUser.age}
+              placeholder="Votre âge"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  age: e.target.value,
+                })
+              }
+            />
+            <label htmlFor="firstname">Prénom :</label>
+            <input
+              className="input-edit-profile"
+              type="text"
+              id="firstname"
+              value={editUser.firstname}
+              placeholder="Prénom"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  firstname: e.target.value,
+                })
+              }
+            />
+            <label htmlFor="lastname">Nom :</label>
+            <input
+              className="input-edit-profile"
+              type="text"
+              id="lastname"
+              value={editUser.lastname}
+              onChange={(e) => {
+                setEditUser({
+                  ...editUser,
+                  lastname: e.target.value,
+                });
+              }}
+            />
+            <label htmlFor="describe">
+              Vous souhaitez en dire plus sur vous ?
+            </label>
+            <textarea
+              className="user-describe"
+              name="message"
+              id="describe"
+              style={{ backgroundColor: "rgba(81, 85, 133, .2)" }}
+              onChange={(e) => {
+                e.preventDefault();
+                setEditUser({ ...editUser, description: e.target.value });
+              }}
+            />
+            <button
+              className="btn-editaccount generic-btn"
+              type="submit"
+              onClick={() => updateAccount()}
+            >
+              Mettre à jour
+            </button>
+          </form>
+        ) : (
+          <form className="user-profile-edit-form-secu">
+            <label htmlFor="email">Courriel :</label>
+            <input
+              className="input-edit-profile"
+              type="email"
+              id="email"
+              value={editUser.email}
+              placeholder="Votre adresse mail"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  email: e.target.value,
+                })
+              }
+            />
+            <label htmlFor="password">Mot de passe :</label>
+            <input
+              className="input-edit-profile"
+              type="password"
+              id="password"
+              value={editUser.password}
+              placeholder="Votre mot de passe"
+              onChange={(e) =>
+                setEditUser({
+                  ...editUser,
+                  password: e.target.value,
+                })
+              }
+            />
+            <label htmlFor="password-confim">
+              Confirmation du mot de passe :
+            </label>
+            <input
+              className="input-edit-profile"
+              type={typeInputPassword}
+              id="password-confirm"
+              value={confirmPassword}
+              onChange={(e) => {
+                e.preventDefault();
+                setConfirmPassword(e.target.value);
+              }}
+            />
+            <button
+              className="btn-editaccount generic-btn"
+              type="submit"
+              onClick={() => updateAccount()}
+            >
+              Mettre à jour
+            </button>
+          </form>
+        )}{" "}
       </div>
     </div>
   );
