@@ -66,7 +66,7 @@ export default function LobbyGame({ selectedValue }) {
               required
             />
             <p className="parag-lobby-create">
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
             <button
               type="button"
@@ -90,7 +90,7 @@ export default function LobbyGame({ selectedValue }) {
               className="create-lobby-input"
               type="text"
               value={lobby.number_of_gamers}
-              placeholder="Nombre de joueur souhaité"
+              placeholder="Nombre de joueurs souhaité"
               onChange={(e) =>
                 setLobby({
                   ...lobby,
@@ -104,9 +104,9 @@ export default function LobbyGame({ selectedValue }) {
                 lobby.number_of_gamers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -152,9 +152,9 @@ export default function LobbyGame({ selectedValue }) {
             <p
               className={travelInfo.date ? "parag-fixed" : "parag-lobby-create"}
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -201,9 +201,9 @@ export default function LobbyGame({ selectedValue }) {
                 travelInfo.train_number ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -250,9 +250,9 @@ export default function LobbyGame({ selectedValue }) {
                 travelInfo.coach_number ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -299,9 +299,9 @@ export default function LobbyGame({ selectedValue }) {
                 travelInfo.seat_number ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -348,9 +348,9 @@ export default function LobbyGame({ selectedValue }) {
                 travelInfo.departure ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -397,9 +397,9 @@ export default function LobbyGame({ selectedValue }) {
                 travelInfo.arrival ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -446,17 +446,8 @@ export default function LobbyGame({ selectedValue }) {
                 lobby.commentary ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
-            >
-              Précédent
-            </button>
             <button
               type="button"
               className="create-lobby-input-valited"
@@ -467,6 +458,15 @@ export default function LobbyGame({ selectedValue }) {
               }}
             >
               Suivant
+            </button>
+            <button
+              type="button"
+              className="create-lobby-input-valited"
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              Précédent
             </button>
           </form>
         </div>
@@ -603,7 +603,7 @@ export default function LobbyGame({ selectedValue }) {
               required
             />
             <input
-              className="create-lobby-input-valited"
+              className="generic-btn confirm-creation"
               type="submit"
               value="Je crée ma salle de jeu"
             />

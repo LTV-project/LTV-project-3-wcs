@@ -249,31 +249,40 @@ a {
   background-color: #81e8fe;
   margin-top: 50px;
   justify-content: space-evenly;
-  border-radius: 25px;
+  border-radius: 20px;
   font-weight: bold;
   font-size: 25px;
   height: 7vh;
   font-family: "AvenirMedium";
-  width: 20%;
+  width: 30%;
+}
+
+.lobby-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 70vh;
+  width: 80vw;
+  margin: auto;
 }
 
 .parent_btn_click_create_lobby {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  margin: 15px;
+  justify-content: space-evenly;
+  width: 60%;
 }
 
 .btn_click_create_lobby_select {
   font-size: 20px;
-  width: 15%;
+  /* width: 18%; */
   height: 5vh;
-  border-radius: 25px;
-  display: block;
-  margin: auto;
-  margin-top: 65px;
-  margin-left: 43.5%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  /* display: block; */
+  /* margin: auto; */
+  /* margin-top: 65px; */
+  /* margin-left: 43.5%; */
 }
 
 .createlobby {
@@ -284,15 +293,12 @@ a {
 
 .form-lobby {
   background-color: #151965;
-  border-radius: 25px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  margin: auto;
-  margin-top: 50px;
-  margin-left: 32%;
+  width: 450px;
 }
 
 .create-lobby-input {
@@ -321,8 +327,9 @@ a {
   background: #ffffff;
 }
 
-.btn-container {
+.btn-container-create-lobby {
   display: flex;
+  width: 100%;
 }
 
 .create-lobby-input-valited {
@@ -339,6 +346,12 @@ a {
   height: 70px;
   padding: 20px;
   background-color: #81e8fe;
+}
+
+.confirm-creation {
+  padding: 10px;
+  font-family: "AvenirBlack";
+  margin-bottom: 15px;
 }
 
 .parag-lobby-create {

@@ -26,7 +26,7 @@ function ChoiceGameCreateLobby() {
   }, [handleClickCard]);
 
   return (
-    <div>
+    <div className="lobby-form-wrapper">
       <div className="parent_btn_click_create_lobby">
         {!boardIsClicked ? (
           <button
