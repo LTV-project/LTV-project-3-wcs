@@ -10,7 +10,7 @@ function FullCard() {
   const navigate = useNavigate();
   const { currentUser } = useContext(CurrentUserContext);
   const [lobbyFullDetails, setLobbyFullDetails] = useState("");
-  const [participants, setParticipants] = useState([{}]);
+  const [participants, setParticipants] = useState();
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${id}`)
@@ -19,7 +19,7 @@ function FullCard() {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${id}/participants`)
       .then((response) => response.data)
-      .then((data) => setParticipants(data.push));
+      .then((data) => setParticipants(data));
   }, []);
   const handleSubmit = () => {
     axios
@@ -50,12 +50,13 @@ function FullCard() {
           <p className="mini-card-body nb-players">
             Nombre de joueurs : {lobbyFullDetails.number_of_gamers}
           </p>
-          {participants &&
-            participants.map((participant) => (
-              <p className="participants nb-users" key={participant.id}>
-                Participants :{participant.participants}
-              </p>
-            ))}
+          <ul className="participants nb-users">
+            Participants :
+            {participants &&
+              participants.map((participant) => (
+                <li key={participant.id}>{participant.participants}</li>
+              ))}
+          </ul>
         </div>
         <p className="mini-card-body">
           Description : {lobbyFullDetails.description}
