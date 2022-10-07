@@ -2,15 +2,15 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { transDate } from "@services/DateManager";
 import { useNavigate, useParams } from "react-router-dom";
+import BannerLobbyById from "./BannerLobbyById";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import Banner from "./Banner";
 
 function FullCard() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { currentUser } = useContext(CurrentUserContext);
   const [lobbyFullDetails, setLobbyFullDetails] = useState("");
-  const [participants, setParticipants] = useState("");
+  const [participants, setParticipants] = useState([{}]);
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${id}`)
@@ -19,9 +19,8 @@ function FullCard() {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${id}/participants`)
       .then((response) => response.data)
-      .then((data) => setParticipants(data));
+      .then((data) => setParticipants(data.push));
   }, []);
-
   const handleSubmit = () => {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/participants`, {
@@ -34,7 +33,7 @@ function FullCard() {
 
   return (
     <>
-      <Banner />
+      <BannerLobbyById lobbyFullDetails={lobbyFullDetails} />
       <div className="full-card">
         <div className="creator-infos">
           <img
@@ -51,11 +50,10 @@ function FullCard() {
           <p className="mini-card-body nb-players">
             Nombre de joueurs : {lobbyFullDetails.number_of_gamers}
           </p>
-          Participants :{" "}
           {participants &&
             participants.map((participant) => (
               <p className="participants nb-users" key={participant.id}>
-                {participant.participants}
+                Participants :{participant.participants}
               </p>
             ))}
         </div>
