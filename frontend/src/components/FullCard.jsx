@@ -54,7 +54,9 @@ function FullCard() {
             Participants :
             {participants &&
               participants.map((participant) => (
-                <li key={participant.id}>{participant.participants}</li>
+                <li className="participant" key={participant.id}>
+                  {participant.participants}
+                </li>
               ))}
           </ul>
         </div>

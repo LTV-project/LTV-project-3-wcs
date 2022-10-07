@@ -491,10 +491,11 @@ a {
 
 .game-infos {
   display: grid;
-  grid-template-columns: 1fr, 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 1fr, 1fr;
   grid-area: game-infos;
   padding: 10px;
+  align-items:flex-start;
 }
 
 .game-infos p {
@@ -508,10 +509,11 @@ a {
 
 .nb-players {
   grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: center;
 }
 .nb-users {
-  grid-column: 2/3;
-  grid-row: span 2;
+  grid-column: 3/4;
 }
 
 .btn-container {
@@ -548,14 +550,16 @@ a {
 
 .full-card {
   border-radius: 20px;
-  background-color: #e8e9f2;
+  background-color:rgb(21, 25, 101, 0.9);
+  color:#81e8fe;
+  font-size: 1.2rem;
   display: grid;
   width: 60%;
-  height: 60vh;
+  height: 80vh;
   margin: auto;
   margin-top: 80px;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.6fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: 0.6fr 1fr 0.5fr 0.5fr 0.5fr;
   gap: 10px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -567,7 +571,7 @@ a {
 }
 
 .participants {
-  padding: 10px;
+  line-height: 1.8rem;
 }
 
 .travel-infos {
@@ -618,11 +622,13 @@ a {
 
 .join-btn-full-card {
   width: 150px;
-  height: 36px;
+  padding: 10px;
 }
 
 .return-lobby-search-btn {
-  width: 150px ;
+  width: 180px ;
+  height: 42px;
+  padding: 5px;
 }
 
 /* Css footer */
