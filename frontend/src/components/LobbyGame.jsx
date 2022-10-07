@@ -475,6 +475,7 @@ export default function LobbyGame({ selectedValue }) {
       return (
         <div>
           <form onSubmit={handleSubmitButton} className="form-lobby">
+            <p className="parag-lobby-create-recap">Nom de la salle</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -488,6 +489,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Nombre de joueurs</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -501,7 +503,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-
+            <p className="parag-lobby-create-recap">Date de mon voyage</p>
             <input
               className="create-lobby-input"
               type="date"
@@ -516,6 +518,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Mon numéro de train</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -529,6 +532,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Mon numéro de voiture</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -542,6 +546,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Mon numéro de place</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -555,6 +560,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Ma gare de départ</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -568,6 +574,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Ma gare d'arrivée</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -581,7 +588,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-
+            <p className="parag-lobby-create-recap">Je laisse un commentaire</p>
             <input
               className="create-lobby-input-commentary"
               type="text"

@@ -11,19 +11,19 @@ function ChoiceGameCreateLobby() {
     setselectedValue(e.target.value);
   };
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/games`)
-      .then((response) => response.data)
-      .then((data) => setGames(data));
-  }, []);
-
   const handleClickCard = () => {
     setCardIsClicked(!cardIsClicked);
   };
   const handleClickBoard = () => {
     setBoardIsClicked(!boardIsClicked);
   };
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/games`)
+      .then((response) => response.data)
+      .then((data) => setGames(data));
+  }, [handleClickCard]);
 
   return (
     <div>

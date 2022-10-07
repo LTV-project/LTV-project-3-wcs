@@ -524,6 +524,7 @@ export default function LobbyTalk({ selectedValue }) {
       return (
         <div>
           <form onSubmit={handleSubmitButton} className="form-lobby">
+            <p className="parag-lobby-create-recap">Nom de la salle</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -537,6 +538,9 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">
+              Nombre de participants souhaités
+            </p>
             <input
               className="create-lobby-input"
               type="text"
@@ -550,6 +554,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Sujet d'échange souhaité</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -563,6 +568,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Date de mon voyage</p>
             <input
               className="create-lobby-input"
               type="date"
@@ -577,6 +583,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Mon numéro de train</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -590,6 +597,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Mon numéro de voiture</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -603,6 +611,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Mon numéro de place</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -616,6 +625,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Ma gare de départ</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -629,6 +639,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p className="parag-lobby-create-recap">Ma gare d'arrivée</p>
             <input
               className="create-lobby-input"
               type="text"
@@ -642,7 +653,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-
+            <p className="parag-lobby-create-recap">Mon commentaire</p>
             <input
               className="create-lobby-input-commentary"
               type="text"
