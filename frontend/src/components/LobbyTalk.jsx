@@ -65,6 +65,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
+            <p>Veuiller renseigner ce champ avant de poursuivre</p>
             <button
               type="button"
               className="create-lobby-input-valited"
@@ -94,24 +95,35 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (talk.number_of_talkers) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -132,7 +144,23 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            {/* {talk.theme != "" ? (
+            <p
+              className={talk.theme.date ? "parag-fixed" : "parag-lobby-create"}
+            >
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (talk.theme) {
+                    setStep(step - 1);
+                  }
+                }}
+              >
+                Précédent
+              </button>
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -142,9 +170,7 @@ export default function LobbyTalk({ selectedValue }) {
               >
                 Suivant
               </button>
-            ) : (
-              "Merci de compléter ce champ"
-            )} */}
+            </div>
           </form>
         </div>
       );
@@ -166,24 +192,35 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.date) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -204,24 +241,35 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.train_number) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -242,24 +290,35 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.coach_number) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -280,24 +339,35 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.seat_number) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -318,24 +388,35 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.departure) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -356,24 +437,35 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.arrival) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -394,24 +486,35 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (talk.commentary) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );

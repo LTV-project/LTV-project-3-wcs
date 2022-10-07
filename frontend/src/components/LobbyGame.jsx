@@ -65,6 +65,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
+            <p>Veuiller renseigner ce champ avant de poursuivre</p>
             <button
               type="button"
               className="create-lobby-input-valited"
@@ -94,24 +95,35 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                lobby.number_of_gamers ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (lobby.number_of_gamers) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -133,24 +145,33 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={travelInfo.date ? "parag-fixed" : "parag-lobby-create"}
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.date) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -171,24 +192,35 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                travelInfo.train_number ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.train_number) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -209,24 +241,35 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                travelInfo.coach_number ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.coach_number) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -247,24 +290,35 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                travelInfo.seat_number ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.seat_number) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -285,24 +339,35 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                travelInfo.departure ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.departure) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -323,24 +388,35 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step - 1);
-              }}
+            <p
+              className={
+                travelInfo.arrival ? "parag-fixed" : "parag-lobby-create"
+              }
             >
-              Précédent
-            </button>
-            <button
-              type="button"
-              className="create-lobby-input-valited"
-              onClick={() => {
-                setStep(step + 1);
-              }}
-            >
-              Suivant
-            </button>
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
+            <div className="btn-container">
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  setStep(step - 1);
+                }}
+              >
+                Précédent
+              </button>
+              <button
+                type="button"
+                className="create-lobby-input-valited"
+                onClick={() => {
+                  if (travelInfo.arrival) {
+                    setStep(step + 1);
+                  }
+                }}
+              >
+                Suivant
+              </button>
+            </div>
           </form>
         </div>
       );
@@ -361,6 +437,13 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
+            <p
+              className={
+                lobby.commentary ? "parag-fixed" : "parag-lobby-create"
+              }
+            >
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
             <button
               type="button"
               className="create-lobby-input-valited"
@@ -374,7 +457,9 @@ export default function LobbyGame({ selectedValue }) {
               type="button"
               className="create-lobby-input-valited"
               onClick={() => {
-                setStep(step + 1);
+                if (lobby.commentary) {
+                  setStep(step + 1);
+                }
               }}
             >
               Suivant

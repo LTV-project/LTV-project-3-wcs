@@ -317,9 +317,9 @@ a {
   background: #ffffff;
 }
 
-/*.create-lobby-input-commentary {
-  text-align: center;
-}*/
+.btn-container {
+  display: flex;
+}
 
 .create-lobby-input-valited {
   margin: auto;
@@ -331,10 +331,19 @@ a {
   align-items: center;
   font-weight: bold;
   font-size: 20px;
-  width: 30%;
+  width: 90%;
   height: 70px;
   padding: 20px;
   background-color: #81e8fe;
+}
+
+.parag-lobby-create {
+  color: white;
+  display: block;
+}
+
+.parag-fixed {
+  display: none;
 }
 
 /* CSS page recherche de lobbies */
