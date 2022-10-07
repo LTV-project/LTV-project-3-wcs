@@ -5,7 +5,6 @@ import Contact from "@pages/Contact";
 import AccountCreation from "@pages/UserAccountCreation";
 import SignIn from "@pages/SignIn";
 import HomePage from "@pages/HomePage";
-import UserProfile from "@pages/UserProfile";
 import LobbyGameCreation from "@pages/LobbyGameCreation";
 import LobbyTalkCreation from "@pages/LobbyTalkCreation";
 import EditUserProfile from "@pages/EditUserProfile";
@@ -38,7 +37,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/join-lobbies" element={<JoinLobbies />} />
             <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/user-profile/:id" element={<UserProfile />} />
+            <Route path="/user-profile/:id" element={<EditUserProfile />} />
             <Route
               path="/user-profile/:id/edit"
               element={<EditUserProfile />}
