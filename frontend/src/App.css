@@ -404,6 +404,7 @@ a {
   border: none;
   border-radius: 20px;
   width: auto;
+  padding: 5px;
 }
 
 .return-btn-lobbyChoice {
@@ -553,6 +554,16 @@ a {
   margin-right: 10%;
 }
 
+.footer2 {
+  align-items: flex-end;
+}
+
+/*Composant AccountCreation*/
+.contain-account {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 10%;
+}
 .input-contain1 {
   width: 295px;
   font-family: "Avenir";
@@ -562,6 +573,7 @@ a {
   line-height: 30px;
   text-align: left;
   color: #151965;
+  margin-top: 10px;
 }
 
 .input-contain2 {
@@ -637,7 +649,6 @@ a {
   padding: 10px;
   width: 100%;
   height: 200px;
-  /* margin-left: 10%; */
   box-sizing: border-box;
   box-shadow: inset 3px 3px 5px;
   border-radius: 10px;
@@ -662,6 +673,95 @@ a {
   width: 10%;
   border-radius: 30%;
   margin-left: 2%;
+}
+/* Composants EditAccount */
+
+.user-profile-container {
+  display: flex;
+  height: 100vh;
+  margin-top: 50px;
+}
+
+.user-profile-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: space-evenly;
+  height: 60vh;
+  width: 15vw;
+  padding: 20px;
+  border-right: solid 2px rgb(21, 25, 101);
+}
+
+.user-profile-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.user-profile-edit-form input::placeholder {
+  text-align: center;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 17vh;
+  margin-bottom: 50px;
+}
+
+.avatar img {
+  border: black solid 1px;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+
+.user-profile-edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-profile-edit-form-secu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.input-edit-profile {
+  color: #151965;
+  background-color: rgba(81, 85, 133, 0.5);
+  border-radius: 10px;
+  width: 200px;
+}
+
+.user-describe {
+  color: #151965;
+  font-size: 1.4rem;
+  padding: 10px;
+  width: 30%;
+  height: 120px;
+  box-sizing: border-box;
+  box-shadow: inset 3px 3px 5px;
+  border-radius: 10px
+}
+
+.btn-editaccount {
+  font-size: 1.2rem;
+  width: 150px;
+  margin-top: 10px;
 }
 
 /*CSS contact form*/

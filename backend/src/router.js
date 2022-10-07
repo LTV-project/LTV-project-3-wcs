@@ -9,6 +9,7 @@ const { sendEmail } = require("./sendEmail");
 const { hashPassword, verifyPassword, verifyToken } = require("./auth");
 
 const itemControllers = require("./controllers/itemControllers");
+// eslint-disable-next-line import/no-unresolved
 const gamesControllers = require("./controllers/gamesControllers");
 const usersControllers = require("./controllers/usersControllers");
 const lobbiesControllers = require("./controllers/lobbiesControllers");

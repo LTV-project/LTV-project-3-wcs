@@ -6,10 +6,10 @@ import Contact from "@pages/Contact";
 import AccountCreation from "@pages/UserAccountCreation";
 import Sign from "@pages/Sign";
 import HomePage from "@pages/HomePage";
-import UserProfile from "@pages/UserProfile";
 import LobbyGameCreation from "@pages/LobbyGameCreation";
 import LobbyTalkCreation from "@pages/LobbyTalkCreation";
-import EditAccount from "@components/EditAccount";
+import EditUserProfile from "@pages/EditUserProfile";
+import UserProfile from "@pages/UserProfile";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
 // import ValidatedMessage from "@components/ValidatedMessage";
@@ -46,7 +46,10 @@ function App() {
               <Route path="/join-lobbies" element={<JoinLobbies />} />
               <Route path="/sign" element={<Sign />} />
               <Route path="/user-profile/:id" element={<UserProfile />} />
-              <Route path="/user-profile/:id/edit" element={<EditAccount />} />
+              <Route
+                path="/user-profile/:id/edit"
+                element={<EditUserProfile />}
+              />
               <Route path="/account-creation" element={<AccountCreation />} />
               <Route path="/unauthorized" element={<UnauthorizedPage />} />
               <Route
