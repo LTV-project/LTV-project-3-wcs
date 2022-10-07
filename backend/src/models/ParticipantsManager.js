@@ -5,11 +5,14 @@ class participantsManager extends AbstractManager {
     super({ table: "participants" });
   }
 
-  findAllParticipantsFromLobby() {
+  findAllParticipantsFromLobby(id) {
     return this.connection.query(
-      `SELECT u.pseudo AS participants, u.id AS id FROM users u
+      `SELECT u.pseudo AS participants, u.id, p.lobbie_id FROM users u
       INNER JOIN ${this.table} p ON u.id=p.user_id
-      INNER JOIN lobbies l ON l.id=p.lobbie_id`
+      INNER JOIN lobbies l ON l.id=p.lobbie_id
+      WHERE l.id = ?
+      `,
+      [id]
     );
   }
 

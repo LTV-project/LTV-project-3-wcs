@@ -39,7 +39,7 @@ router.get(
   lobbiesControllers.browseLobbiesByCategoryWithTravelInfosAndCreator
 );
 router.get("/lobbies/:id", lobbiesControllers.readLobbyCreateByUser);
-router.get("/lobbies/:id/participants", participantsControllers.browse);
+router.get("/lobbies/:id/participants", participantsControllers.read);
 router.get("/lobbies-test/:id", lobbiesControllers.read);
 router.get("/travel_info", travelInfosControllers.browse);
 router.get("/travel_info/:id", travelInfosControllers.read);
