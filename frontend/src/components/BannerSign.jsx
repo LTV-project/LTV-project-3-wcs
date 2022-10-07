@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import trainBanner from "@assets/images/trainbanner.jpg";
-import Burger from "./burger";
+import Burger from "./Burger";
 
 function BannerSign() {
   return (
