@@ -10,7 +10,6 @@ function BannerSign() {
         <Burger />
       </div>
       <h1>Connexion / Inscription</h1>
-      <p>*champs obligatoires</p>
     </div>
   );
 }
