@@ -65,12 +65,16 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <p>Veuiller renseigner ce champ avant de poursuivre</p>
+            <p className="parag-lobby-create">
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
             <button
               type="button"
               className="create-lobby-input-valited"
               onClick={() => {
-                setStep(step + 1);
+                if (talk.name) {
+                  setStep(step + 1);
+                }
               }}
             >
               Suivant
@@ -134,7 +138,7 @@ export default function LobbyTalk({ selectedValue }) {
             <input
               className="create-lobby-input"
               type="text"
-              value={talk.name}
+              value={talk.theme}
               placeholder="Sujet d'échange souhaité"
               onChange={(e) =>
                 setTalk({
@@ -144,9 +148,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <p
-              className={talk.theme.date ? "parag-fixed" : "parag-lobby-create"}
-            >
+            <p className={talk.theme ? "parag-fixed" : "parag-lobby-create"}>
               Veuiller renseigner ce champ avant de poursuivre
             </p>
             <div className="btn-container">
@@ -154,9 +156,7 @@ export default function LobbyTalk({ selectedValue }) {
                 type="button"
                 className="create-lobby-input-valited"
                 onClick={() => {
-                  if (talk.theme) {
-                    setStep(step - 1);
-                  }
+                  setStep(step - 1);
                 }}
               >
                 Précédent
@@ -165,7 +165,9 @@ export default function LobbyTalk({ selectedValue }) {
                 type="button"
                 className="create-lobby-input-valited"
                 onClick={() => {
-                  setStep(step + 1);
+                  if (talk.theme) {
+                    setStep(step + 1);
+                  }
                 }}
               >
                 Suivant
@@ -474,7 +476,7 @@ export default function LobbyTalk({ selectedValue }) {
         <div>
           <form className="form-lobby">
             <input
-              className="commentary-create-lobby-input"
+              className="create-lobby-input-commentary"
               type="text"
               value={talk.commentary}
               placeholder="Je laisse un commentaire"
@@ -525,7 +527,7 @@ export default function LobbyTalk({ selectedValue }) {
             <input
               className="create-lobby-input"
               type="text"
-              value={setTalk.name}
+              value={talk.name}
               placeholder="Nom de la salle"
               onChange={(e) =>
                 setTalk({
@@ -551,7 +553,7 @@ export default function LobbyTalk({ selectedValue }) {
             <input
               className="create-lobby-input"
               type="text"
-              value={talk.name}
+              value={talk.theme}
               placeholder="Sujet d'échange souhaité"
               onChange={(e) =>
                 setTalk({

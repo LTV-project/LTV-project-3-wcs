@@ -65,12 +65,16 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <p>Veuiller renseigner ce champ avant de poursuivre</p>
+            <p className="parag-lobby-create">
+              Veuiller renseigner ce champ avant de poursuivre
+            </p>
             <button
               type="button"
               className="create-lobby-input-valited"
               onClick={() => {
-                setStep(step + 1);
+                if (lobby.name) {
+                  setStep(step + 1);
+                }
               }}
             >
               Suivant
