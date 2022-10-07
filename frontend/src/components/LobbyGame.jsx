@@ -349,7 +349,7 @@ export default function LobbyGame({ selectedValue }) {
         <div>
           <form className="form-lobby">
             <input
-              className="commentary-create-lobby-input"
+              className="create-lobby-input-commentary"
               type="text"
               value={lobby.commentary}
               placeholder="Je laisse un commentaire"
