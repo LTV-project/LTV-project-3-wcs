@@ -38,7 +38,7 @@ a {
   background-color: #151965;
   justify-content: space-around;
   align-items: center;
-  height: 90px;
+  height: 100px;
 }
 
 .navbar li {
@@ -53,7 +53,7 @@ a {
 /* CSS Bannière, classes à réutiliser sur toutes les bannières, seul le contenu des H1 et p sera différent, éventuellement l'image*/
 
 .banner {
-  height: 150px;
+  height: 250px;
   width: 100%;
   display: flex;
   flex-direction: column;
