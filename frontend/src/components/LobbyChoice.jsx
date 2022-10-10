@@ -43,12 +43,18 @@ function LobbyChoice() {
       )}
       {isClicked === "" ? (
         <section>
-          <input
-            type="text"
-            className="train-number-input"
-            value={trainNumberFilter}
-            onChange={handleChange}
-          />
+          <div className="input-train-container">
+            <p className="input-label">
+              Renseignez votre numéro de train pour afficher la liste des salles
+              disponibles :
+            </p>
+            <input
+              type="text"
+              className="train-number-input"
+              value={trainNumberFilter}
+              onChange={handleChange}
+            />
+          </div>
           <div className="lobby-choice-wrapper">
             <div className="lobby-choice">
               <button
