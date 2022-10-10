@@ -3,17 +3,17 @@ import { useContext } from "react";
 // eslint-disable-next-line import/no-unresolved
 import AuthApi from "@services/AuthApi";
 // eslint-disable-next-line import/no-unresolved
-import CurrentUserContext from "@contexts/CurrentUserContext";
+// import CurrentUserContext from "../CurrentUserContext";
 import AuthContext from "../contexts/AuthContext";
 
 function Navbar() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
-  const { setCurrentUser } = useContext(CurrentUserContext);
+  // const { setCurrentUser } = useContext(CurrentUserContext);
 
   const handleLogout = () => {
     AuthApi.logout();
     setIsAuthenticated(false);
-    setCurrentUser({});
+    // setCurrentUser({});
   };
 
   return (
