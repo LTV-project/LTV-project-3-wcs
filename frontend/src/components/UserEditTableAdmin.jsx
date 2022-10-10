@@ -71,6 +71,15 @@ export default function UserEditTableAdmin({ user }) {
           />
         </td>
         <td>
+          <input
+            type="number"
+            value={editUser.isAdmin}
+            onChange={(e) =>
+              setEditUser({ ...editUser, isAdmin: e.target.value })
+            }
+          />
+        </td>
+        <td>
           <button type="button" onClick={updateUser}>
             Éditer
           </button>

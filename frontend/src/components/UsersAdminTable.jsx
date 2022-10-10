@@ -14,9 +14,9 @@ export default function UsersAdminTable() {
   }, []);
 
   return (
-    <div>
+    <div className="tables-wrapper">
       <UserAddTableAdmin />
-      <table className="admin-table">
+      <table className="admin-table admin-table-edit">
         <thead>
           <tr>
             <th>Pseudo</th>
@@ -25,6 +25,7 @@ export default function UsersAdminTable() {
             <th>Courriel</th>
             <th>Password</th>
             <th>Âge</th>
+            <th>isAdmin</th>
           </tr>
         </thead>
         {users &&
