@@ -44,10 +44,12 @@ function UserDashboard() {
             <h2>Rejoindre</h2>
           </div>
         </Link>
-        <div className="dash dash4">
-          <img src={userProfileIcon} alt="" />
-          <h2>Mon compte</h2>
-        </div>
+        <Link to="/user-profile/:id">
+          <div className="dash dash4">
+            <img src={userProfileIcon} alt="" />
+            <h2>Mon compte</h2>
+          </div>
+        </Link>
       </div>
     </div>
   );
