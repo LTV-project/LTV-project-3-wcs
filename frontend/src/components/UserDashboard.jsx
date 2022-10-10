@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import backgroundDashGame from "@assets/images/game_illu.jpg";
+import backgroundDashGame from "@assets/images/gameIllu.jpg";
 import backgroundDashJoin from "@assets/images/join_illu.jpg";
 import backgroundDashTalk from "@assets/images/talk_illu.jpg";
 import userProfileIcon from "@assets/images/user-profile-icon.png";
