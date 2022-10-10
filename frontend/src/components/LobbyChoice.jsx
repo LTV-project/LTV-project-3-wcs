@@ -34,6 +34,13 @@ function LobbyChoice() {
 
   return (
     <div className="lobby-choice-page-container">
+      {isClicked !== "" ? (
+        <h2>
+          Liste des salles disponibles dans votre train {trainNumberFilter} :
+        </h2>
+      ) : (
+        ""
+      )}
       {isClicked === "" ? (
         <section>
           <input

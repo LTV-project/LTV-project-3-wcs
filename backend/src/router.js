@@ -16,6 +16,7 @@ const lobbiesControllers = require("./controllers/lobbiesControllers");
 const travelInfosControllers = require("./controllers/travelInfosControllers");
 const categoryControllers = require("./controllers/categoryControllers");
 const contactControllers = require("./controllers/contactControllers");
+const participantsControllers = require("./controllers/participantsControllers");
 
 router.post("/users", hashPassword, usersControllers.add, sendEmail);
 router.post(
@@ -36,9 +37,10 @@ router.get("/users/:id", usersControllers.read);
 router.get("/lobbies", lobbiesControllers.browse);
 router.get(
   "/joinlobbies",
-  lobbiesControllers.browseLobbiesByCategoryWithTravelInfosAndParticipants
+  lobbiesControllers.browseLobbiesByCategoryWithTravelInfosAndCreator
 );
 router.get("/lobbies/:id", lobbiesControllers.readLobbyCreateByUser);
+router.get("/lobbies/:id/participants", participantsControllers.read);
 router.get("/lobbies-test/:id", lobbiesControllers.read);
 router.get("/travel_info", travelInfosControllers.browse);
 router.get("/travel_info/:id", travelInfosControllers.read);
@@ -63,6 +65,7 @@ router.post("/lobbies", lobbiesControllers.add);
 router.post("/travel_info", travelInfosControllers.add);
 router.post("/category", categoryControllers.add);
 router.post("/contacts", contactControllers.add);
+router.post("/participants", participantsControllers.add);
 
 // DELETE
 router.delete("/items/:id", itemControllers.destroy);

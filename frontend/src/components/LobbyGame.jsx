@@ -1,13 +1,15 @@
 /* eslint-disable radix */
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 import { getDate } from "../services/DateManager";
 
 export default function LobbyGame({ selectedValue }) {
   // Une fonction pour convertir l'id du jeu en number
 
   const id = parseInt(selectedValue);
+  const { currentUser } = useContext(CurrentUserContext);
 
   const navigate = useNavigate();
 
@@ -38,6 +40,7 @@ export default function LobbyGame({ selectedValue }) {
           ...lobby,
           travel_infos_id: response.data,
           game_id: id,
+          user_id: currentUser.sub,
         });
       })
       .then(() => navigate("/"))

@@ -12,9 +12,9 @@ const browse = (req, res) => {
     });
 };
 
-const browseLobbiesByCategoryWithTravelInfosAndParticipants = (req, res) => {
+const browseLobbiesByCategoryWithTravelInfosAndCreator = (req, res) => {
   models.lobbies
-    .findLobbiesByCategoryWithTravelInfosAndParticipants()
+    .findLobbiesByCategoryWithTravelInfosAndCreator()
     .then(([rows]) => {
       res.send(rows);
     })
@@ -42,7 +42,7 @@ const read = (req, res) => {
 // Pour créer la route de la table de jointure participants entre users et lobbies
 const readLobbyCreateByUser = (req, res) => {
   models.lobbies
-    .findLobbyCreateByUser(req.params.id)
+    .findLobbyByCategoryWithTravelInfosAndCreator(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
         res.sendStatus(404);
@@ -112,7 +112,7 @@ const destroy = (req, res) => {
 
 module.exports = {
   browse,
-  browseLobbiesByCategoryWithTravelInfosAndParticipants,
+  browseLobbiesByCategoryWithTravelInfosAndCreator,
   read,
   readLobbyCreateByUser,
   edit,
