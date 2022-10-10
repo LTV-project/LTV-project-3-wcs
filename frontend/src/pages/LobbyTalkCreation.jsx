@@ -7,7 +7,9 @@ function LobbyTalkCreation() {
     <div>
       <Navbar />
       <BannerCreateLobbyTalk />
-      <LobbyTalk />
+      <div className="lobby-form-wrapper-talk">
+        <LobbyTalk />
+      </div>
     </div>
   );
 }
