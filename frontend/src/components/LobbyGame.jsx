@@ -109,7 +109,7 @@ export default function LobbyGame({ selectedValue }) {
             >
               Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container-create-lobby-create-lobby">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -453,7 +453,7 @@ export default function LobbyGame({ selectedValue }) {
             </p>
             <button
               type="button"
-              className="create-lobby-input-valited"
+              className="create-lobby-input-valited step9-btn"
               onClick={() => {
                 if (lobby.commentary) {
                   setStep(step + 1);
@@ -464,7 +464,7 @@ export default function LobbyGame({ selectedValue }) {
             </button>
             <button
               type="button"
-              className="create-lobby-input-valited"
+              className="create-lobby-input-valited step9-btn"
               onClick={() => {
                 setStep(step - 1);
               }}

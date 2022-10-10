@@ -26,6 +26,19 @@ a {
   color: inherit;
 }
 
+/* classe générique pour les boutons */
+
+.generic-btn {
+  background-color: #81e8fe;
+  color: #151965;
+  border: none;
+  border-radius: 20px;
+  width: auto;
+  padding: 5px;
+}
+
+/* ******************* */
+
 .app-wrap {
   position: relative;
   min-height: 100vh;
@@ -264,28 +277,41 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 70vh;
+  justify-content: space-evenly;
+  height: auto;
   width: 80vw;
   margin: auto;
+  margin-bottom: 250px;
+}
+
+.lobby-form-wrapper-talk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 250px;
+  margin-top: 80px;
 }
 
 .parent_btn_click_create_lobby {
   display: flex;
   justify-content: space-evenly;
   width: 60%;
+  margin-bottom: 40px;
 }
 
 .btn_click_create_lobby_select {
   font-size: 20px;
-  /* width: 18%; */
   height: 5vh;
   margin-bottom: 20px;
   border-radius: 20px;
-  /* display: block; */
-  /* margin: auto; */
-  /* margin-top: 65px; */
-  /* margin-left: 43.5%; */
+}
+
+.step9-btn {
+  margin: 0;
 }
 
 .createlobby {
@@ -301,7 +327,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 450px;
+  width: 480px;
 }
 
 .create-lobby-input {
@@ -355,6 +381,7 @@ a {
   padding: 10px;
   font-family: "AvenirBlack";
   margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
 .parag-lobby-create {
@@ -426,14 +453,6 @@ a {
 
 /* Composants LobbiesTalkList & LobbiesGameList */
 
-.generic-btn {
-  background-color: #81e8fe;
-  color: #151965;
-  border: none;
-  border-radius: 20px;
-  width: auto;
-  padding: 5px;
-}
 
 .return-btn-lobbyChoice {
   display: block;
