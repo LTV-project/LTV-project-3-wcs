@@ -47,7 +47,7 @@ export default function LobbyGame({ selectedValue }) {
             user_id: 50,
           })
           .then((res) =>
-            navigate("/create-lobby-game/validated-message", {
+            navigate("/validated-message", {
               state: { id: res.data },
             })
           );
@@ -73,7 +73,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <p className="parag-lobby-create">
+            <p className={lobby.name ? "parag-fixed" : "parag-lobby-create"}>
               Veuillez renseigner ce champ avant de poursuivre
             </p>
             <button
@@ -437,7 +437,7 @@ export default function LobbyGame({ selectedValue }) {
         <div>
           <form className="form-lobby">
             <input
-              className="create-lobby-input-commentary"
+              className="create-lobby-commentary"
               type="text"
               value={lobby.commentary}
               placeholder="Je laisse un commentaire"
@@ -481,7 +481,7 @@ export default function LobbyGame({ selectedValue }) {
       );
     case 10:
       return (
-        <div>
+        <div className="container-recap-creation">
           <form onSubmit={handleSubmitButton} className="form-lobby">
             <p className="parag-lobby-create-recap">Nom de la salle</p>
             <input
@@ -598,7 +598,7 @@ export default function LobbyGame({ selectedValue }) {
             />
             <p className="parag-lobby-create-recap">Je laisse un commentaire</p>
             <input
-              className="create-lobby-input-commentary"
+              className="create-lobby-commentary"
               type="text"
               value={lobby.commentary}
               placeholder="Je laisse un commentaire"
@@ -610,11 +610,6 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            {/* <input
-              className="generic-btn confirm-creation"
-              type="submit"
-              value="Je crée ma salle de jeu"
-            /> */}
           </form>
           <button
             type="button"

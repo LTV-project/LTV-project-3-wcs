@@ -62,10 +62,7 @@ function App() {
                 path="/create-lobby-talk"
                 element={<LobbyTalkCreation />}
               />
-              <Route
-                path="/create-lobby-game/validated-message"
-                element={<ValidatedMessage />}
-              />
+              <Route path="/validated-message" element={<ValidatedMessage />} />
               <Route
                 path="/admin"
                 element={
