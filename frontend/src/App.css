@@ -68,20 +68,6 @@ a {
   width: 100%;
 }
 
-/*.navbar-btn-logout {
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: flex-start;
-margin: 5px;
-font-size: 1.7rem;
-background-color: #151965;
-color: white;
-width: 400px;
-text-align: center;
-/* color: #81e8fe; 
-}*/
-
 .parag-deconnexion {
   display: flex;
   flex-direction: row;
