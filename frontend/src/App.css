@@ -345,6 +345,24 @@ a {
   width: 480px;
 }
 
+.validated-message-container {
+  background-color: #151965;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+}
+
+.validated-message-title {
+  font-size: 20px;
+}
+
+.parag-validated {
+  height: 15vh;
+  margin: 50vh;
+}
+
 .create-lobby-input {
   margin: 10px;
   width: 70%;

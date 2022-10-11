@@ -1,20 +1,29 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function ValidatedMessage() {
   const [lobbyCreateByUser, setLobbyCreate] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/lobbies/1`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/lobbies/${location.state.id}`)
       .then((response) => response.data)
       .then((data) => setLobbyCreate(data))
       .catch((error) => console.error(error));
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/");
+    }, 10000);
+  }, []);
+
   return (
-    <div>
-      <h2>
+    <div className="validated-message-container">
+      <h2 className="validated-message-title">
         Félicitations{" "}
         {lobbyCreateByUser.pseudo
           ? lobbyCreateByUser.pseudo
@@ -22,27 +31,39 @@ function ValidatedMessage() {
         !!!
       </h2>
       {lobbyCreateByUser.category_id === "game" ? (
-        <p>
-          Vous venez de créer la salle de jeu :{" "}
+        <div className="validated-message-text">
+          <p className="parag-validated">
+            Vous venez de créer la salle de jeu :{" "}
+          </p>
           {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}
-          N'oubliez pas d'apporter votre jeu !!! Rappels concernant votre voyage
-          : Date du voyage : {lobbyCreateByUser.date}
-          Numéro de train : {lobbyCreateByUser.train_number}
-          Numéro de voiture : {lobbyCreateByUser.coach_number}
-        </p>
+          <p className="parag-validated">
+            N'oubliez pas d'apporter votre jeu !
+          </p>
+          <p className="parag-validated">Rappels concernant votre voyage :</p>
+          <p className="parag-validated">
+            Date du voyage : {lobbyCreateByUser.date}
+          </p>
+          <p className="parag-validated">
+            Numéro de train : {lobbyCreateByUser.train_number}
+          </p>
+          <p className="parag-validated">
+            Numéro de voiture : {lobbyCreateByUser.coach_number}
+          </p>
+        </div>
       ) : (
-        <p>
-          Vous venez de créer la salle de discussion :{" "}
+        <div className="validated-message-text">
+          <p>Vous venez de créer la salle de discussion : </p>
           {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}
-          Rappels concernant votre voyage : Date du voyage :{" "}
+          <p>Rappels concernant votre voyage :</p>
+          <p>Date du voyage : </p>
           {lobbyCreateByUser.date}
-          Numéro de train : {lobbyCreateByUser.train_number}
-          Numéro de voiture : {lobbyCreateByUser.coach_number}
-        </p>
+          <p>Numéro de train : {lobbyCreateByUser.train_number}</p>
+          <p>Numéro de voiture : {lobbyCreateByUser.coach_number}</p>
+        </div>
       )}
-      <button type="button" className="generic-btn return-btn-lobbyChoice">
+      {/* <button type="button" className="generic-btn return-btn-lobbyChoice">
         Retour
-      </button>
+      </button> */}
     </div>
   );
 }

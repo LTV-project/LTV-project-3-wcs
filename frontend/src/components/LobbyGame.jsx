@@ -17,7 +17,7 @@ export default function LobbyGame({ selectedValue }) {
     number_of_gamers: "",
     name: "",
     commentary: "",
-    category_id: 2,
+    category_id: currentUser.sub,
   });
 
   const [travelInfo, setTravelInfo] = useState({
@@ -39,14 +39,19 @@ export default function LobbyGame({ selectedValue }) {
         date: travelInfo.date,
       })
       .then((response) => {
-        axios.post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
-          ...lobby,
-          travel_infos_id: response.data,
-          game_id: id,
-          user_id: currentUser.sub,
-        });
+        axios
+          .post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
+            ...lobby,
+            travel_infos_id: response.data,
+            game_id: id,
+            user_id: 50,
+          })
+          .then((res) =>
+            navigate("/create-lobby-game/validated-message", {
+              state: { id: res.data },
+            })
+          );
       })
-      .then(() => navigate("/"))
       .catch((error) => console.error(error));
   }
 
@@ -605,12 +610,19 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <input
+            {/* <input
               className="generic-btn confirm-creation"
               type="submit"
               value="Je crée ma salle de jeu"
-            />
+            /> */}
           </form>
+          <button
+            type="button"
+            className="generic-btn confirm-creation"
+            onClick={handleSubmitButton}
+          >
+            Je crée ma salle de jeu
+          </button>
         </div>
       );
     default:

@@ -7,6 +7,7 @@ import AuthContext from "../contexts/AuthContext";
 
 function HomePage() {
   const { isAuthenticated } = useContext(AuthContext);
+
   return (
     <div>
       <Navbar />

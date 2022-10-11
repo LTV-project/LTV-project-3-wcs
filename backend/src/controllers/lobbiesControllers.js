@@ -86,7 +86,10 @@ const add = (req, res) => {
   models.lobbies
     .insert(lobbies)
     .then(([result]) => {
-      res.location(`/lobbies/${result.insertId}`).sendStatus(201);
+      res
+        .location(`/lobbies/${result.insertId}`)
+        .status(201)
+        .send(`${result.insertId}`);
     })
     .catch((err) => {
       console.error(err);
