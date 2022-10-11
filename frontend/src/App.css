@@ -171,6 +171,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
+  margin-bottom: 80px;
   width: 100%;
   height: 400px;
   overflow-x: scroll;
@@ -180,6 +181,7 @@ a {
   font-family: "AvenirBlack";
   color: #151965;
   font-size: 2.1rem;
+  margin-bottom: 60px;
 }
 
 .user-comment {
