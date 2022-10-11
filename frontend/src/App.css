@@ -168,10 +168,18 @@ a {
 
 .users-comments-flex-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 100px;
   width: 100%;
   height: 400px;
   overflow-x: scroll;
+}
+
+.users-comments-title {
+  font-family: "AvenirBlack";
+  color: #151965;
+  font-size: 2.1rem;
 }
 
 .user-comment {
