@@ -8,9 +8,19 @@ import inscriptionPicto from "@assets/images/KQ8B_blanc_grand.png";
 import homePicto from "@assets/images/KR97_blanc_grand.png";
 import logo from "@assets/images/logo-ltv-transparent.png";
 import AuthContext from "../contexts/AuthContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import AuthApi from "../services/AuthApi";
 
 function Navbar() {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { setCurrentUser } = useContext(CurrentUserContext);
+
+  function handleLogout() {
+    AuthApi.logout();
+    setIsAuthenticated(false);
+    setCurrentUser({});
+  }
+
   return (
     <header>
       <nav>
@@ -30,26 +40,30 @@ function Navbar() {
               Accueil
             </li>
           </Link>
-          <Link to="/sign">
-            <li className="nav-item">
-              <img
-                src={signPicto}
-                alt="home-picto"
-                className="picto-navbar-sign"
-              />
-              Se connecter
-            </li>
-          </Link>
-          <Link to="/account-creation">
-            <li className="nav-item">
-              <img
-                src={inscriptionPicto}
-                alt="home-picto"
-                className="picto-navbar-inscription"
-              />
-              S'inscrire
-            </li>
-          </Link>
+          {!isAuthenticated && (
+            <>
+              <Link to="/sign">
+                <li className="nav-item">
+                  <img
+                    src={signPicto}
+                    alt="home-picto"
+                    className="picto-navbar-sign"
+                  />
+                  Se connecter
+                </li>
+              </Link>
+              <Link to="/account-creation">
+                <li className="nav-item">
+                  <img
+                    src={inscriptionPicto}
+                    alt="home-picto"
+                    className="picto-navbar-inscription"
+                  />
+                  S'inscrire
+                </li>
+              </Link>
+            </>
+          )}
           {isAuthenticated && (
             <>
               <Link to="/user-profile/:id">
@@ -62,14 +76,14 @@ function Navbar() {
                   Mon compte
                 </li>
               </Link>
-              <li>
+              <button type="button" onClick={handleLogout}>
                 <img
                   src={logoutPicto}
                   alt="cadenas fermé"
                   className="picto-navbar-sign"
                 />
                 Déconnexion
-              </li>
+              </button>
             </>
           )}
 

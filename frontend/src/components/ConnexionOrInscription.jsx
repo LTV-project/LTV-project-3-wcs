@@ -4,10 +4,12 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import eye from "../assets/images/eye.png";
+import AuthContext from "../contexts/AuthContext";
 
 function ConnexionOrInscription() {
   const [mailAccountUser, setMailAccountUser] = useState("");
   const { setCurrentUser } = useContext(CurrentUserContext);
+  const { setIsAuthenticated } = useContext(AuthContext)
   const [passwordAccountUser, setPasswordAccountUser] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -39,6 +41,7 @@ function ConnexionOrInscription() {
         window.localStorage.setItem("id", response.data.user.id);
         axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
         setCurrentUser(jwtDecode(response.data.token));
+        setIsAuthenticated(true);
         navigate("/");
       })
       .catch((error) => {
