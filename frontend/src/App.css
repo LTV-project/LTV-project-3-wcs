@@ -113,6 +113,27 @@ a {
   margin-left: 30%;
 }
 
+/* CSS CTA section */
+
+.CTA-container {
+  background-color: #151965;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.CTA-container video {
+  margin-bottom: 20px;
+}
+
+.CTA-btn {
+  padding: 10px;
+  font-family: "AvenirBlack";
+  font-size: 1.4rem;
+  margin-bottom: 80px;
+}
+
 /* CSS UserDashboard */
 
 .user-dashboard-container {
