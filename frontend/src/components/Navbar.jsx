@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import logoutPicto from "@assets/images/K6XD_blanc_grand.png";
+import myAccountPicto from "@assets/images/user-profile-icon.png";
 import signPicto from "@assets/images/K6XK_blanc_grand.png";
 import contactPicto from "@assets/images/KSSH_blanc_grand.png";
 import inscriptionPicto from "@assets/images/KQ8B_blanc_grand.png";
@@ -9,7 +11,6 @@ import AuthContext from "../contexts/AuthContext";
 
 function Navbar() {
   const { isAuthenticated } = useContext(AuthContext);
-
   return (
     <header>
       <nav>
@@ -52,14 +53,26 @@ function Navbar() {
           {isAuthenticated && (
             <>
               <Link to="/user-profile/:id">
-                <li className="nav-item">Mon compte</li>
+                <li className="nav-item">
+                  <img
+                    src={myAccountPicto}
+                    alt=""
+                    className="picto-navbar-account"
+                  />
+                  Mon compte
+                </li>
               </Link>
-              <div className="logout">
-                <button type="button">Déconnexion</button>
-                <img src="" alt="cadenas fermé" />
-              </div>
+              <li>
+                <img
+                  src={logoutPicto}
+                  alt="cadenas fermé"
+                  className="picto-navbar-sign"
+                />
+                Déconnexion
+              </li>
             </>
           )}
+
           <Link to="/contact">
             <li className="nav-item">
               <img
