@@ -66,7 +66,7 @@ export default function LobbyTalk({ selectedValue }) {
               required
             />
             <p className="parag-lobby-create">
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
             <button
               type="button"
@@ -104,9 +104,9 @@ export default function LobbyTalk({ selectedValue }) {
                 talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -149,9 +149,9 @@ export default function LobbyTalk({ selectedValue }) {
               required
             />
             <p className={talk.theme ? "parag-fixed" : "parag-lobby-create"}>
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -199,9 +199,9 @@ export default function LobbyTalk({ selectedValue }) {
                 talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -248,9 +248,9 @@ export default function LobbyTalk({ selectedValue }) {
                 talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -297,9 +297,9 @@ export default function LobbyTalk({ selectedValue }) {
                 talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -346,9 +346,9 @@ export default function LobbyTalk({ selectedValue }) {
                 talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -395,9 +395,9 @@ export default function LobbyTalk({ selectedValue }) {
                 talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -444,9 +444,9 @@ export default function LobbyTalk({ selectedValue }) {
                 talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -493,9 +493,9 @@ export default function LobbyTalk({ selectedValue }) {
                 talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
               }
             >
-              Veuiller renseigner ce champ avant de poursuivre
+              Veuillez renseigner ce champ avant de poursuivre
             </p>
-            <div className="btn-container">
+            <div className="btn-container-create-lobby">
               <button
                 type="button"
                 className="create-lobby-input-valited"
@@ -668,7 +668,7 @@ export default function LobbyTalk({ selectedValue }) {
               required
             />
             <input
-              className="create-lobby-input-valited"
+              className="generic-btn confirm-creation"
               type="submit"
               value="Je crée ma salle d'échange"
             />

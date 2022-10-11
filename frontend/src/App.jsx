@@ -9,7 +9,7 @@ import HomePage from "@pages/HomePage";
 import LobbyGameCreation from "@pages/LobbyGameCreation";
 import LobbyTalkCreation from "@pages/LobbyTalkCreation";
 import EditUserProfile from "@pages/EditUserProfile";
-import UserProfile from "@pages/UserProfile";
+import UserProfilePage from "@pages/UserProfilePage";
 import FullCard from "@components/FullCard";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
@@ -47,7 +47,7 @@ function App() {
               <Route path="/join-lobbies" element={<JoinLobbies />} />
               <Route path="/lobbies/:id" element={<FullCard />} />
               <Route path="/sign" element={<Sign />} />
-              <Route path="/user-profile/:id" element={<UserProfile />} />
+              <Route path="/user-profile/:id" element={<UserProfilePage />} />
               <Route
                 path="/user-profile/:id/edit"
                 element={<EditUserProfile />}

@@ -26,6 +26,19 @@ a {
   color: inherit;
 }
 
+/* classe générique pour les boutons */
+
+.generic-btn {
+  background-color: #81e8fe;
+  color: #151965;
+  border: none;
+  border-radius: 20px;
+  width: auto;
+  padding: 5px;
+}
+
+/* ******************* */
+
 .app-wrap {
   position: relative;
   min-height: 100vh;
@@ -227,10 +240,21 @@ a {
 
 /* CSS de la page admin */
 
+.admin-page-container {
+  display: flex;
+  width: 100%;
+}
+
+.tables-wrapper {
+  height: 685px;
+}
+
 .dashboard-wrapper {
   margin-top: 5%;
-  width: 20%;
-  height: 80vh;
+  width: 250px;
+  height: 100vh;
+  margin-bottom: 100px;
+  margin-right: 15pxs;
   background-color: #eef3f4;
   border: solid 3px #47bed8;
   border-radius: 15px;
@@ -248,12 +272,12 @@ a {
 .admin-workflow {
   display: flex;
   justify-content: space-between;
+  height: 200vh;
 }
 
 .admin-table {
   border: 1px solid #1c6ea4;
   background-color: #eeeeee;
-  width: 70%;
   text-align: left;
   border-collapse: collapse;
 }
@@ -296,6 +320,10 @@ a {
   border-radius: 5px;
 }
 
+.admin-table-edit {
+  height: 100%;
+  margin-bottom: 150px;
+}
 /*CSS creation salle de jeux*/
 
 .btn_click_create_lobby {
@@ -314,28 +342,41 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 70vh;
+  justify-content: space-evenly;
+  height: auto;
   width: 80vw;
   margin: auto;
+  margin-bottom: 250px;
+}
+
+.lobby-form-wrapper-talk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 250px;
+  margin-top: 80px;
 }
 
 .parent_btn_click_create_lobby {
   display: flex;
   justify-content: space-evenly;
   width: 60%;
+  margin-bottom: 40px;
 }
 
 .btn_click_create_lobby_select {
   font-size: 20px;
-  /* width: 18%; */
   height: 5vh;
   margin-bottom: 20px;
   border-radius: 20px;
-  /* display: block; */
-  /* margin: auto; */
-  /* margin-top: 65px; */
-  /* margin-left: 43.5%; */
+}
+
+.step9-btn {
+  margin: 0;
 }
 
 .createlobby {
@@ -351,7 +392,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 450px;
+  width: 480px;
 }
 
 .create-lobby-input {
@@ -372,7 +413,7 @@ a {
   border-radius: 25px;
 }
 
-.create-lobby-input-commentary {
+.create-lobby-commentary {
   margin: 20px;
   width: 70%;
   height: 30px;
@@ -405,6 +446,7 @@ a {
   padding: 10px;
   font-family: "AvenirBlack";
   margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
 .parag-lobby-create {
@@ -423,9 +465,14 @@ a {
 }
 /* CSS page recherche de lobbies */
 
+.input-train-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .train-number-input {
-  margin: 5% 50% 0;
-  width: 50px;
+  width: 80px;
 }
 
 .train-number-input::placeholder {
@@ -460,6 +507,12 @@ a {
   padding: 50px;
   color: #151965;
 }
+.input-label {
+  font-family: "AvenirMedium";
+  font-size: 1.8rem;
+  padding: 50px;
+  color: #151965;
+}
 
 .choice-btn {
   display: inline-block;
@@ -476,14 +529,6 @@ a {
 
 /* Composants LobbiesTalkList & LobbiesGameList */
 
-.generic-btn {
-  background-color: #81e8fe;
-  color: #151965;
-  border: none;
-  border-radius: 20px;
-  width: auto;
-  padding: 5px;
-}
 
 .return-btn-lobbyChoice {
   display: block;
@@ -559,18 +604,18 @@ a {
 
 .game-infos {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr, 1fr;
   grid-area: game-infos;
   padding: 10px;
-  align-items:flex-start;
+  align-items: flex-start;
 }
 
 .game-infos p {
   padding: 5px;
 }
 
-.game-title{
+.game-title {
   grid-column: 1/2;
   grid-row: 1/1;
 }
@@ -618,8 +663,8 @@ a {
 
 .full-card {
   border-radius: 20px;
-  background-color:rgb(21, 25, 101, 0.9);
-  color:#81e8fe;
+  background-color: rgb(21, 25, 101, 0.9);
+  color: #81e8fe;
   font-size: 1.2rem;
   display: grid;
   width: 60%;
@@ -654,7 +699,7 @@ a {
   grid-template-areas:
     "item6 item1"
     "item4 item2"
-    "item5 item3"; 
+    "item5 item3";
   justify-content: center;
 }
 
@@ -662,22 +707,22 @@ a {
   grid-column: span 2;
 }
 
-.travel-infos-item1{
+.travel-infos-item1 {
   grid-area: item1;
 }
-.travel-infos-item2{
+.travel-infos-item2 {
   grid-area: item2;
 }
-.travel-infos-item3{
+.travel-infos-item3 {
   grid-area: item3;
 }
-.travel-infos-item4{
+.travel-infos-item4 {
   grid-area: item4;
 }
-.travel-infos-item5{
+.travel-infos-item5 {
   grid-area: item5;
 }
-.travel-infos-item6{
+.travel-infos-item6 {
   grid-area: item6;
 }
 
@@ -694,7 +739,7 @@ a {
 }
 
 .return-lobby-search-btn {
-  width: 180px ;
+  width: 180px;
   height: 42px;
   padding: 5px;
 }
@@ -738,32 +783,57 @@ a {
 
 /*Composant AccountCreation*/
 
-.contain-account {
+.contain-form3 {
   display: flex;
-  justify-content: space-evenly;
-  margin-right: 10%;
+  justify-content: space-between;
+  position: absolute;
+  background-color:#151965;
+  margin-left: 17%;
+  margin-top: 27%;
+  width: 33%;
+  height: 40%;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
-.footer2 {
-  align-items: flex-end;
+.img-profile-container {
+  width: 50%;
 }
 
-/*Composant AccountCreation*/
-.contain-account {
-  display: flex;
-  justify-content: space-evenly;
-  margin-right: 10%;
+.img-profile-container label{
+  font-size: small;
+  border:solid 2px white;
+  border-radius: 10px;
+  color: white;
+  margin-top: 5%;
+}
+
+input[type="file"] {
+  display: none;
+}
+.contain-form4 {
+  width: 45%;
+  height: 60%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 40%;
+  background:#81e8fe;
+}
+.p-account{
+  margin-left: 3%;
 }
 .input-contain1 {
-  width: 295px;
   font-family: "Avenir";
   font-style: normal;
   font-weight: 800;
   font-size: 1rem;
   line-height: 30px;
   text-align: left;
-  color: #151965;
+  color:white;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-contain2 {
@@ -774,44 +844,36 @@ a {
   font-weight: 800;
   font-size: 1rem;
   line-height: 30px;
-  color: #151965;
+  color:white;
 }
-.empty-space {
-  width: 3%;
-}
+
 
 .input-containerA,
 .input-containerB,
 .input-containerC,
-.input-containerD {
+.input-containerD, 
+.input-containerF,
+.input-containerG {
   width: 250px;
+  margin-left: 2%;
   height: 30px;
   padding: 2%;
   color: #151965;
   top: 728px;
-  background-color: rgba(81, 85, 133, 0.5);
+  background-color:white;
   border-radius: 10px;
 }
 
-.input-containerF,
-.input-containerG {
-  width: 250px;
-  height: 30px;
-  padding: 2%;
-  color: #151965;
-  right: 100px;
-  top: 1029px;
-  background: rgba(81, 85, 133, 0.5);
-  border-radius: 10px;
-}
+
 .input-containerE {
   width: 100px;
   height: 30px;
+  margin-left: 2%;
   padding: 2%;
   color: #151965;
   right: 100px;
   top: 1029px;
-  background: rgba(81, 85, 133, 0.5);
+  background-color: white;
   border-radius: 10px;
 }
 .img-profile {
@@ -820,27 +882,30 @@ a {
   position: relative;
   width: 100px;
   height: 100px;
-  margin: 5px;
+  margin-left: 4%;
+  margin-top: 5%;
   object-fit: cover;
 }
 
 /*DescribeMe*/
 .buttonSub {
-  display: inline-block;
-  width: 70px;
-  height: 20px;
-  margin-top: 2%;
-  margin-left: 84%;
+  background-color: #151965;
+  color: #81e8fe;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  margin-left: 82%;
 }
 .message-describe {
   display: inline-block;
-  color: #151965;
+  color:white;
   font-size: 1.4rem;
-  padding: 10px;
-  width: 100%;
-  height: 200px;
+  padding: 25px;
+  width: 70%;
+  height: 450px;
+  margin-top: 5%;
+  margin-left: 25%;
   box-sizing: border-box;
-  box-shadow: inset 3px 3px 5px;
+  box-shadow: inset 7px 7px 10px;
   border-radius: 10px;
 }
 
@@ -851,9 +916,12 @@ a {
 
 .p-describe {
   display: inline-block;
+  font-style: italic;
+  font-weight: 200;
+  font-size: large;
   margin-top: 5%;
-  margin-bottom: 2%;
-  margin-left: 10%;
+  margin-bottom: 1%;
+  margin-left: 25%;
 }
 
 .eye {
@@ -887,7 +955,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   width: 100%;
   font-size: 1.2rem;
   line-height: 2rem;
@@ -901,8 +969,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 17vh;
-  margin-bottom: 50px;
+  height: 22vh;
+  margin-bottom: 10px;
 }
 
 .avatar img {
@@ -945,13 +1013,14 @@ a {
   height: 120px;
   box-sizing: border-box;
   box-shadow: inset 3px 3px 5px;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 .btn-editaccount {
   font-size: 1.2rem;
   width: 150px;
   margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 /*CSS contact form*/
@@ -1018,7 +1087,7 @@ a {
   font-size: 1.4rem;
   padding: 10px;
   width: 330px;
-  height: 170px;
+  height: 165px;
   margin-left: 22%;
   margin-right: 5%;
   box-sizing: border-box;
@@ -1038,9 +1107,9 @@ a {
 .buttonContact {
   display: inline-block;
   width: 70px;
-  height: 20px;
-  margin-top: 2%;
   margin-left: 80%;
+  background: #81e8fe;
+  color: #151965;
 }
 
 /* Menu Burger */
@@ -1121,6 +1190,7 @@ a {
   display: flex;
   justify-content: space-evenly;
   margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .container-accounte-user {
@@ -1180,6 +1250,35 @@ a {
   margin-top: 10px;
   margin-bottom: 60px;
 }
+/*Page mon compte*/
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  border-radius: 20px;
+  background-color: rgb(21, 25, 101, 0.9);
+  color: #81e8fe;
+  width: 60%;
+  height: 80vh;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.user-profile-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  text-align: center;
+}
 
 /* Responsive */
 @media screen and (max-width: 780px) {
@@ -1207,14 +1306,56 @@ a {
     display: none;
   }
   .contain-form2 {
-    margin-left: 75%;
+    margin-left: 80%;
     margin-top: 195px;
   }
   .contain-form1 {
     margin-left: 5%;
   }
+
   .menu-burger-title {
     text-align: center;
     margin: 10px 0;
   }
+
+  .account-form-page {
+    display: flex;
+    flex-direction: column;
+  }
+  .contain-form3 {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 5%;
+    margin-top: 40%;
+    width: 40%;
+    height: 45%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  .contain-form4 {
+    width: 55%;
+    height: 60%;
+    margin-top: 22%;
+    margin-bottom: 5%;
+    margin-left: 40%;
+    background:#81e8fe;
+  }
+.input-account-creation-container{
+  font-display: flex;
+ 
+}
+
+.message-describe {
+  width: 82%;
+  height: 450px;
+  margin-top: 5%;
+  margin-left: 12%;
+}
+.p-describe {
+  margin-left: 15%;
+}
+.buttonSub{
+  margin-left: 75%;
+}
 }

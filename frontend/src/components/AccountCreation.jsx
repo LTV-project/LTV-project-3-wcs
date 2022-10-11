@@ -68,10 +68,10 @@ export default function AccountCreation() {
     <div>
       <Navbar />
       <BannerSignUp />
-      <form>
-        <div className="contain-account">
+      <div className="account-form-page">
+        <form className="contain-form3">
           <div className="input-contain1">
-            <p>Pseudonyme*</p>
+            <p className="p-account">Pseudonyme*</p>
             <input
               className="input-containerA"
               type="text"
@@ -86,7 +86,7 @@ export default function AccountCreation() {
               required
             />
 
-            <p>Courriel*</p>
+            <p className="p-account">Courriel*</p>
             <input
               className="input-containerB"
               type="email"
@@ -101,7 +101,7 @@ export default function AccountCreation() {
               required
             />
 
-            <p>Mot de passe*</p>
+            <p className="p-account">Mot de passe*</p>
 
             <input
               className="input-containerC"
@@ -117,43 +117,30 @@ export default function AccountCreation() {
               required
             />
 
-            <p>Confirmation du mot de passe*</p>
+            <p className="p-account">Confirmation du mot de passe*</p>
+            <div>
+              <input
+                className="input-containerD"
+                type={typeInputPassword}
+                value={confirmPassword}
+                onChange={(e) => {
+                  e.preventDefault();
+                  setConfirmPassword(e.target.value);
+                }}
+                required
+              />
+              <button
+                className="btn-eye"
+                type="button"
+                onClick={() => showHide()}
+                id="eye"
+              >
+                <img className="eye" src={eye} alt="eye" />
+              </button>
+            </div>
 
-            <input
-              className="input-containerD"
-              type={typeInputPassword}
-              value={confirmPassword}
-              onChange={(e) => {
-                e.preventDefault();
-                setConfirmPassword(e.target.value);
-              }}
-              required
-            />
-            <button
-              className="btn-eye"
-              type="button"
-              onClick={() => showHide()}
-              id="eye"
-            >
-              <img className="eye" src={eye} alt="eye" />
-            </button>
-          </div>
-          <span className="empty-space" />
-
-          <div className="input-contain2">
-            <img
-              className="img-profile"
-              src={accountCreation.image}
-              alt={accountCreation.pseudo}
-            />
-            <input
-              className="profile"
-              type="file"
-              alt="avatar"
-              accept="image/*"
-              onChange={(e) => uploadImage(e)}
-            />
-            <p>Âge</p>
+            {/* <div className="input-contain2"> */}
+            <p className="p-account">Âge</p>
 
             <input
               className="input-containerE"
@@ -168,7 +155,7 @@ export default function AccountCreation() {
               }}
             />
 
-            <p>Prénom</p>
+            <p className="p-account">Prénom</p>
 
             <input
               className="input-containerF"
@@ -183,7 +170,7 @@ export default function AccountCreation() {
               }}
             />
 
-            <p>Nom</p>
+            <p className="p-account">Nom</p>
             <input
               className="input-containerG"
               type="text"
@@ -196,34 +183,54 @@ export default function AccountCreation() {
                 });
               }}
             />
+            {/* </div> */}
+          </div>
+          <div className="img-profile-container">
+            <img
+              className="img-profile"
+              src={accountCreation.image}
+              alt={accountCreation.pseudo}
+            />
+            <label htmlFor="files">Ajoutez une photo</label>
+            <input
+              id="files"
+              className="profile"
+              type="file"
+              alt="avatar"
+              accept="image/*"
+              onChange={(e) => uploadImage(e)}
+            />
+          </div>
+        </form>
+
+        <div className="contain-form4">
+          <div className="users-container">
+            <form>
+              <p className="p-describe">
+                Vous souhaitez nous en dire plus sur vous ?
+              </p>
+              <textarea
+                className="message-describe"
+                name="message"
+                style={{ backgroundColor: "#151965" }}
+                onChange={(e) => {
+                  e.preventDefault();
+                  setAccountCreation({
+                    ...accountCreation,
+                    description: e.target.value,
+                  });
+                }}
+              />
+            </form>
+            <button
+              className="generic-btn buttonSub"
+              type="button"
+              onClick={handleSubmitButton}
+            >
+              Soumettre
+            </button>
           </div>
         </div>
-      </form>
-      <div className="users-container">
-        <form>
-          <p className="p-describe">
-            Vous souhaitez nous en dire plus sur vous ?
-          </p>
-          <textarea
-            className="message-describe"
-            name="message"
-            style={{ backgroundColor: "rgba(81, 85, 133, .2)" }}
-            onChange={(e) => {
-              e.preventDefault();
-              setAccountCreation({
-                ...accountCreation,
-                description: e.target.value,
-              });
-            }}
-          />
-        </form>
-        <button
-          className="generic-btn buttonSub"
-          type="button"
-          onClick={handleSubmitButton}
-        >
-          Soumettre
-        </button>
       </div>
     </div>
   );
