@@ -8,7 +8,6 @@ function Video() {
 
   return (
     <div className="CTA-container">
-      // eslint-disable-next-line jsx-a11y/media-has-caption
       <video src={CTA} width="540" height="300" controls autoPlay loop />
       <button
         type="button"
