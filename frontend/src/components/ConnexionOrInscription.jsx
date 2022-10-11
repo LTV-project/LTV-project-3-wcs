@@ -39,7 +39,7 @@ function ConnexionOrInscription() {
         window.localStorage.setItem("id", response.data.user.id);
         axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
         setCurrentUser(jwtDecode(response.data.token));
-        navigate("/userHomePage");
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
