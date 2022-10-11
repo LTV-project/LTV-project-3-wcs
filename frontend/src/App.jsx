@@ -13,7 +13,7 @@ import UserProfilePage from "@pages/UserProfilePage";
 import FullCard from "@components/FullCard";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
-// import ValidatedMessage from "@components/ValidatedMessage";
+import ValidatedMessage from "@components/ValidatedMessage";
 
 import { useState } from "react";
 import AdminRoute from "@components/AdminRoute";
@@ -62,6 +62,7 @@ function App() {
                 path="/create-lobby-talk"
                 element={<LobbyTalkCreation />}
               />
+              <Route path="/validated-message" element={<ValidatedMessage />} />
               <Route
                 path="/admin"
                 element={
