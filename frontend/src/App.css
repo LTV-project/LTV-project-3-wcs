@@ -57,12 +57,69 @@ a {
   height: 100px;
 }
 
+.logo-container {
+  width: 90px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
+}
+
+.picto-navbar {
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin-right: 15px;
+}
+
+.picto-navbar-account {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.picto-navbar-sign {
+  display: block;
+  width: 38px;
+  height: 42px;
+  margin-right: 15px;
+}
+
+.picto-navbar-inscription {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+}
+
+.picto-navbar:hover {
+  color: #81e8fe;
+}
+
+.picto-navbar-home {
+  display: block;
+  width: 34px;
+  height: 28.px;
+  margin-right: 15px;
+}
+
 .navbar li {
-  background-color: #515585;
-  border-radius: 20px;
+  /* background-color: #515585; */
+  /* border-radius: 20px; */
   font-size: 1.7rem;
-  width: 200px;
+  color: white;
+  width: 240px;
   text-align: center;
+  /* color: #81e8fe; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item:hover {
   color: #81e8fe;
 }
 

@@ -16,7 +16,7 @@ import AdminPage from "@pages/AdminPage";
 // import ValidatedMessage from "@components/ValidatedMessage";
 
 import { useState } from "react";
-import AdminRoute from "@components/AdminRoute";
+// import AdminRoute from "@components/AdminRoute";
 import UnauthorizedPage from "@pages/UnauthorizedPage";
 import AuthApi from "@services/AuthApi";
 import AuthContext from "./contexts/AuthContext";
@@ -65,9 +65,9 @@ function App() {
               <Route
                 path="/admin"
                 element={
-                  <AdminRoute>
-                    <AdminPage />
-                  </AdminRoute>
+                  // <AdminRoute>
+                  <AdminPage />
+                  // </AdminRoute>
                 }
               />
             </Routes>
