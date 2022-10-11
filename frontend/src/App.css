@@ -739,9 +739,9 @@ a {
   position: absolute;
   background-color:#151965;
   margin-left: 17%;
-  margin-top: 27%;
+  margin-top: 30%;
   width: 33%;
-  height: 40%;
+  height: 35%;
   top: 0;
   left: 0;
   z-index: 999;
@@ -753,7 +753,7 @@ a {
 
 .img-profile-container label{
   font-size: small;
-  border:solid 2px white;
+  border:solid 3px white;
   border-radius: 10px;
   color: white;
   margin-top: 5%;
