@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 function ValidatedMessage() {
   const [lobbyCreateByUser, setLobbyCreate] = useState("");
   const navigate = useNavigate();
+  // import useLocation pour récupérer les données du composant précédent LobbyGame ou LobbyTalk
   const location = useLocation();
 
   useEffect(() => {
@@ -14,7 +15,7 @@ function ValidatedMessage() {
       .then((data) => setLobbyCreate(data))
       .catch((error) => console.error(error));
   }, []);
-
+  // Création useEffect pour le timeOut de 10sec avec retour page d'accueil
   useEffect(() => {
     setTimeout(() => {
       navigate("/");
@@ -61,9 +62,6 @@ function ValidatedMessage() {
           <p>Numéro de voiture : {lobbyCreateByUser.coach_number}</p>
         </div>
       )}
-      {/* <button type="button" className="generic-btn return-btn-lobbyChoice">
-        Retour
-      </button> */}
     </div>
   );
 }
