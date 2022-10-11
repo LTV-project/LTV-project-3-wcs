@@ -479,7 +479,6 @@ a {
 
 /* Composants LobbiesTalkList & LobbiesGameList */
 
-
 .return-btn-lobbyChoice {
   display: block;
   margin-left: 80%;
@@ -864,7 +863,7 @@ a {
 .user-profile-container {
   display: flex;
   height: 100vh;
-  margin-top: 50px;
+  margin-top: 2%;
 }
 
 .user-profile-dashboard {
@@ -882,36 +881,51 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 50px; */
-  width: 100%;
   font-size: 1.2rem;
   line-height: 2rem;
+  border-radius: 20px;
+  background-color: rgb(21, 25, 101, 0.9);
+  color: #81e8fe;
+  width: 60%;
+  margin: auto;
+  margin-top: 10px;
+  height: auto;
 }
 
 .user-profile-edit-form input::placeholder {
   text-align: center;
 }
-
+.labeledit {
+  font-size: small;
+  border: solid 2px #81e8fe;
+  border-radius: 10px;
+  color: #81e8fe;
+  margin-top: 5%;
+}
 .avatar {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 22vh;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .avatar img {
-  border: black solid 1px;
+  border: #81e8fe 1px;
   border-radius: 100%;
-  width: 100px;
+  width: 90px;
   height: 100px;
+}
+
+input[type="file"] {
+  display: none;
 }
 
 .user-profile-edit-form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 500px;
+  height: 400px;
   align-items: center;
   justify-content: space-between;
 }
@@ -936,7 +950,7 @@ a {
   color: #151965;
   font-size: 1.4rem;
   padding: 10px;
-  width: 30%;
+  width: auto;
   height: 120px;
   box-sizing: border-box;
   box-shadow: inset 3px 3px 5px;
@@ -945,7 +959,7 @@ a {
 
 .btn-editaccount {
   font-size: 1.2rem;
-  width: 150px;
+  width: 130px;
   margin-top: 10px;
   margin-bottom: 15px;
 }
