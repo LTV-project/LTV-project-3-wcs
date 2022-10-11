@@ -76,17 +76,22 @@ function Navbar() {
                   Mon compte
                 </li>
               </Link>
-              <button type="button" onClick={handleLogout}>
-                <img
-                  src={logoutPicto}
-                  alt="cadenas fermé"
-                  className="picto-navbar-sign"
-                />
-                Déconnexion
-              </button>
+              <div className="navbar-btn-logout">
+                <button
+                  type="button"
+                  className="btn-nav-logout"
+                  onClick={handleLogout}
+                >
+                  <img
+                    src={logoutPicto}
+                    alt="cadenas fermé"
+                    className="picto-navbar-sign"
+                  />
+                  <p className="parag-deconnexion">Déconnexion</p>
+                </button>
+              </div>
             </>
           )}
-
           <Link to="/contact">
             <li className="nav-item">
               <img

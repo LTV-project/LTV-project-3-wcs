@@ -9,7 +9,7 @@ import AuthContext from "../contexts/AuthContext";
 function ConnexionOrInscription() {
   const [mailAccountUser, setMailAccountUser] = useState("");
   const { setCurrentUser } = useContext(CurrentUserContext);
-  const { setIsAuthenticated } = useContext(AuthContext)
+  const { setIsAuthenticated } = useContext(AuthContext);
   const [passwordAccountUser, setPasswordAccountUser] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();

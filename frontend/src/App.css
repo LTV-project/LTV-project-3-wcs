@@ -68,6 +68,26 @@ a {
   width: 100%;
 }
 
+/*.navbar-btn-logout {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+margin: 5px;
+font-size: 1.7rem;
+background-color: #151965;
+/*color: white;*/
+width: 400px;
+text-align: center;
+/* color: #81e8fe; 
+}*/
+
+.parag-deconnexion {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.7rem;
+}
+
 .picto-navbar {
   display: block;
   width: 34px;
@@ -83,9 +103,19 @@ a {
 
 .picto-navbar-sign {
   display: block;
-  width: 38px;
+  width: 70px;
   height: 42px;
   margin-right: 15px;
+}
+
+.btn-nav-logout {
+  display: flex;
+  width: auto;
+  background-color: #151965;
+  color: white;
+  align-items: center;
+  font-size: 1.7rem;
+  border: #151965;
 }
 
 .picto-navbar-inscription {
@@ -102,7 +132,7 @@ a {
 .picto-navbar-home {
   display: block;
   width: 34px;
-  height: 28.px;
+  height: 28px;
   margin-right: 15px;
 }
 
@@ -811,7 +841,7 @@ a {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  background-color:#151965;
+  background-color: #151965;
   margin-left: 17%;
   margin-top: 30%;
   width: 33%;
@@ -825,9 +855,9 @@ a {
   width: 50%;
 }
 
-.img-profile-container label{
+.img-profile-container label {
   font-size: small;
-  border:solid 3px white;
+  border: solid 3px white;
   border-radius: 10px;
   color: white;
   margin-top: 5%;
@@ -842,9 +872,9 @@ input[type="file"] {
   margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 40%;
-  background:#81e8fe;
+  background: #81e8fe;
 }
-.p-account{
+.p-account {
   margin-left: 3%;
 }
 .input-contain1 {
@@ -854,7 +884,7 @@ input[type="file"] {
   font-size: 1rem;
   line-height: 30px;
   text-align: left;
-  color:white;
+  color: white;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -868,14 +898,13 @@ input[type="file"] {
   font-weight: 800;
   font-size: 1rem;
   line-height: 30px;
-  color:white;
+  color: white;
 }
-
 
 .input-containerA,
 .input-containerB,
 .input-containerC,
-.input-containerD, 
+.input-containerD,
 .input-containerF,
 .input-containerG {
   width: 250px;
@@ -884,10 +913,9 @@ input[type="file"] {
   padding: 2%;
   color: #151965;
   top: 728px;
-  background-color:white;
+  background-color: white;
   border-radius: 10px;
 }
-
 
 .input-containerE {
   width: 100px;
@@ -921,7 +949,7 @@ input[type="file"] {
 }
 .message-describe {
   display: inline-block;
-  color:white;
+  color: white;
   font-size: 1.4rem;
   padding: 25px;
   width: 70%;
@@ -1363,23 +1391,22 @@ input[type="file"] {
     margin-top: 22%;
     margin-bottom: 5%;
     margin-left: 40%;
-    background:#81e8fe;
+    background: #81e8fe;
   }
-.input-account-creation-container{
-  font-display: flex;
- 
-}
+  .input-account-creation-container {
+    font-display: flex;
+  }
 
-.message-describe {
-  width: 82%;
-  height: 450px;
-  margin-top: 5%;
-  margin-left: 12%;
-}
-.p-describe {
-  margin-left: 15%;
-}
-.buttonSub{
-  margin-left: 75%;
-}
+  .message-describe {
+    width: 82%;
+    height: 450px;
+    margin-top: 5%;
+    margin-left: 12%;
+  }
+  .p-describe {
+    margin-left: 15%;
+  }
+  .buttonSub {
+    margin-left: 75%;
+  }
 }
