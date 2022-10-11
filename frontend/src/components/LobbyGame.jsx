@@ -44,7 +44,7 @@ export default function LobbyGame({ selectedValue }) {
             ...lobby,
             travel_infos_id: response.data,
             game_id: id,
-            user_id: 50,
+            user_id: id,
           })
           .then((res) =>
             navigate("/validated-message", {

@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { getDate } from "@services/DateManager";
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import { getDate } from "../services/DateManager";
 
 export default function LobbyTalk({ selectedValue }) {
   // Une fonction pour convertir l'id du jeu en number
 
   const id = parseInt(selectedValue, 10);
+  const { currentUser } = useContext(CurrentUserContext);
 
   const navigate = useNavigate();
 
@@ -15,7 +17,7 @@ export default function LobbyTalk({ selectedValue }) {
     theme: "",
     name: "",
     commentary: "",
-    category_id: 1,
+    category_id: currentUser.sub,
   });
 
   const [travelInfo, setTravelInfo] = useState({
@@ -37,13 +39,19 @@ export default function LobbyTalk({ selectedValue }) {
         date: travelInfo.date,
       })
       .then((response) => {
-        axios.post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
-          ...talk,
-          travel_infos_id: response.data,
-          game_id: id,
-        });
+        axios
+          .post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
+            ...talk,
+            travel_infos_id: response.data,
+            game_id: id,
+            user_id: id,
+          })
+          .then((res) =>
+            navigate("/validated-message", {
+              state: { id: res.data },
+            })
+          );
       })
-      .then(() => navigate("/"))
       .catch((error) => console.error(error));
   }
 
@@ -65,7 +73,7 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <p className="parag-lobby-create">
+            <p className={talk.name ? "parag-fixed" : "parag-lobby-create"}>
               Veuillez renseigner ce champ avant de poursuivre
             </p>
             <button
@@ -476,7 +484,7 @@ export default function LobbyTalk({ selectedValue }) {
         <div>
           <form className="form-lobby">
             <input
-              className="create-lobby-input-commentary"
+              className="create-lobby-commentary"
               type="text"
               value={talk.commentary}
               placeholder="Je laisse un commentaire"
@@ -522,7 +530,7 @@ export default function LobbyTalk({ selectedValue }) {
       );
     case 11:
       return (
-        <div>
+        <div className="container-recap-creation">
           <form onSubmit={handleSubmitButton} className="form-lobby">
             <p className="parag-lobby-create-recap">Nom de la salle</p>
             <input
@@ -655,7 +663,7 @@ export default function LobbyTalk({ selectedValue }) {
             />
             <p className="parag-lobby-create-recap">Mon commentaire</p>
             <input
-              className="create-lobby-input-commentary"
+              className="create-lobby-commentary"
               type="text"
               value={talk.commentary}
               placeholder="Je laisse un commentaire"
@@ -667,12 +675,14 @@ export default function LobbyTalk({ selectedValue }) {
               }
               required
             />
-            <input
-              className="generic-btn confirm-creation"
-              type="submit"
-              value="Je crée ma salle d'échange"
-            />
           </form>
+          <button
+            type="button"
+            className="generic-btn confirm-creation"
+            onClick={handleSubmitButton}
+          >
+            Je crée ma salle d'échange
+          </button>
         </div>
       );
     default:
