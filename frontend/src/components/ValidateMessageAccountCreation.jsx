@@ -30,7 +30,9 @@ function ValidateMessageAccountCreation() {
         {accountCreateByUser.pseudo
           ? accountCreateByUser.pseudo
           : "place du pseudo"}{" "}
-        vous venez de créer votre compte !!!
+        , votre compte vient d'être créer avec succès ! Vous recevrez d'ici
+        quelques minutes un courriel de confirmation. Profitez dès maintenant de
+        vos nouveaux services.
       </h2>
     </div>
   );
