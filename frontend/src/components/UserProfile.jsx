@@ -60,7 +60,7 @@ export default function UserProfile() {
             type="button"
             onClick={() => {
               setDataInput(true);
-              navigate(`/admin/`);
+              navigate(`/admin`);
             }}
           >
             Administrateur
