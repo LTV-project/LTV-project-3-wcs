@@ -36,8 +36,8 @@ function ConnexionOrInscription() {
       .then((response) => {
         console.warn(response.data);
         window.localStorage.setItem("authToken", response.data.token);
-        window.localStorage.setItem("mail", response.data.user.mail);
-        window.localStorage.setItem("name", response.data.user.name);
+        window.localStorage.setItem("mail", response.data.user.email);
+        window.localStorage.setItem("name", response.data.user.pseudo);
         window.localStorage.setItem("id", response.data.user.id);
         axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
         setCurrentUser(jwtDecode(response.data.token));
