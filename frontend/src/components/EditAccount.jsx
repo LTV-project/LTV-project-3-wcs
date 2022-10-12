@@ -78,13 +78,17 @@ export default function EditAccount() {
         >
           Sécurité
         </button>
-        <button
-          className="generic-btn btn-editaccount"
-          type="button"
-          onClick={handleDelete}
-        >
-          Supprimer mon compte
-        </button>
+        {editUser.isAdmin === 0 ? (
+          <button
+            className="generic-btn btn-editaccount"
+            type="button"
+            onClick={handleDelete}
+          >
+            Supprimer mon compte
+          </button>
+        ) : (
+          ""
+        )}
       </div>
       <div className="user-profile-edit">
         <div className="avatar">
@@ -165,7 +169,7 @@ export default function EditAccount() {
               className="user-describe"
               name="message"
               id="describe"
-              style={{ backgroundColor: "rgba(81, 85, 133, .2)" }}
+              style={{ backgroundColor: "white" }}
               onChange={(e) => {
                 e.preventDefault();
                 setEditUser({ ...editUser, description: e.target.value });

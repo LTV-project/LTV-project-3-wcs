@@ -54,16 +54,35 @@ export default function UserProfile() {
         >
           Éditer mon profil
         </button>
-        <button
-          className="generic-btn btn-editaccount"
-          type="button"
-          onClick={() => {
-            setDataInput(false);
-            navigate(`/lobbies/${params.id}/`);
-          }}
-        >
-          Mes salles
-        </button>
+        {user.isAdmin === 1 ? (
+          <button
+            className="generic-btn btn-editaccount"
+            type="button"
+            onClick={() => {
+              setDataInput(true);
+              navigate(`/admin/`);
+            }}
+          >
+            Administrateur
+          </button>
+        ) : (
+          ""
+        )}
+
+        {user.isAdmin === 0 ? (
+          <button
+            className="generic-btn btn-editaccount"
+            type="button"
+            onClick={() => {
+              setDataInput(false);
+              navigate(`/lobbies/${params.id}/`);
+            }}
+          >
+            Mes salles
+          </button>
+        ) : (
+          ""
+        )}
       </div>
       <div className="user-profile">
         <div className="avatar">

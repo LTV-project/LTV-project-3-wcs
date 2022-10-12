@@ -1057,6 +1057,7 @@ input[type="file"] {
   border-radius: 10px;
   color: #81e8fe;
   margin-top: 5%;
+  padding: 5px;
 }
 .avatar {
   display: flex;
@@ -1097,7 +1098,7 @@ input[type="file"] {
 
 .input-edit-profile {
   color: #151965;
-  background-color: rgba(81, 85, 133, 0.5);
+  background-color: white;
   border-radius: 10px;
   width: 200px;
 }

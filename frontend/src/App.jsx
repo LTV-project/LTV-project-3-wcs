@@ -14,6 +14,7 @@ import FullCard from "@components/FullCard";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
 import ValidatedMessage from "@components/ValidatedMessage";
+import AdminRoute from "@components/AdminRoute";
 
 import { useState } from "react";
 // import AdminRoute from "@components/AdminRoute";
@@ -66,9 +67,9 @@ function App() {
               <Route
                 path="/admin"
                 element={
-                  // <AdminRoute>
-                  <AdminPage />
-                  // </AdminRoute>
+                  <AdminRoute>
+                    <AdminPage />
+                  </AdminRoute>
                 }
               />
             </Routes>
