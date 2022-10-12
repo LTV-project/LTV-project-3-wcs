@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { transDate } from "../services/DateManager";
 
 function ValidatedMessage() {
   const [lobbyCreateByUser, setLobbyCreate] = useState("");
@@ -15,6 +16,7 @@ function ValidatedMessage() {
       .then((data) => setLobbyCreate(data))
       .catch((error) => console.error(error));
   }, []);
+
   // Création useEffect pour le timeOut de 10sec avec retour page d'accueil
   useEffect(() => {
     setTimeout(() => {
@@ -42,7 +44,8 @@ function ValidatedMessage() {
           </p>
           <p className="parag-validated">Rappels concernant votre voyage :</p>
           <p className="parag-validated">
-            Date du voyage : {lobbyCreateByUser.date}
+            {/* Date du voyage : {lobbyCreateByUser.date} */}
+            Date du voyage : {transDate(lobbyCreateByUser.date)}
           </p>
           <p className="parag-validated">
             Numéro de train : {lobbyCreateByUser.train_number}
