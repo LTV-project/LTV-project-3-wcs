@@ -21,7 +21,7 @@ function HomePage() {
           <UserDashboard />
         </div>
       )}
-      <Video />
+      {!isAuthenticated && <Video />}
       <UsersComments />
     </div>
   );
