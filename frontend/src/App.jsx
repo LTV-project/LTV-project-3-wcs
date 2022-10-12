@@ -14,6 +14,7 @@ import FullCard from "@components/FullCard";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
 import ValidatedMessage from "@components/ValidatedMessage";
+import ValidateMessageAccountCreation from "@components/ValidateMessageAccountCreation";
 
 import { useState } from "react";
 // import AdminRoute from "@components/AdminRoute";
@@ -53,6 +54,10 @@ function App() {
                 element={<EditUserProfile />}
               />
               <Route path="/account-creation" element={<AccountCreation />} />
+              <Route
+                path="/validate-message-account-creation"
+                element={<ValidateMessageAccountCreation />}
+              />
               <Route path="/unauthorized" element={<UnauthorizedPage />} />
               <Route
                 path="/create-lobby-game"
