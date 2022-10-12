@@ -207,6 +207,7 @@ export default function EditAccount() {
               className="user-describe"
               name="message"
               id="describe"
+              value={editUser.description}
               style={{ backgroundColor: "white" }}
               onChange={(e) => {
                 e.preventDefault();

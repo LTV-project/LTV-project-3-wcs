@@ -68,11 +68,8 @@ export default function UserProfile() {
           <p>Pseudonyme : {user.pseudo}</p>
           <p>Email: {user.email}</p>
 
-          <p className="description">
-            Ma description
-            <br />
-            {user.description}
-          </p>
+          <p className="description">Ma description :</p>
+          <p className="description">{user.description}</p>
         </form>
       </div>
     </div>
