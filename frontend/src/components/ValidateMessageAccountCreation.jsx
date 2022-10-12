@@ -19,21 +19,21 @@ function ValidateMessageAccountCreation() {
   // Création useEffect pour le timeOut de 10sec avec retour page d'accueil
   useEffect(() => {
     setTimeout(() => {
-      navigate("/");
+      navigate("/sign");
     }, 10000);
   }, []);
 
   return (
     <div className="validated-message-container">
-      <h2 className="validated-message-title">
+      <p className="validated-message-title">
         Félicitations{" "}
         {accountCreateByUser.pseudo
           ? accountCreateByUser.pseudo
-          : "place du pseudo"}{" "}
-        , votre compte vient d'être créer avec succès ! Vous recevrez d'ici
+          : "place du pseudo"}
+        , votre compte vient d'être créé avec succès ! Vous recevrez d'ici
         quelques minutes un courriel de confirmation. Profitez dès maintenant de
         vos nouveaux services.
-      </h2>
+      </p>
     </div>
   );
 }

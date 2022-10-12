@@ -462,6 +462,7 @@ a {
   text-align: center;
   width: 40%;
   margin: auto;
+  padding: 10px;
 }
 
 .validated-message-title {
