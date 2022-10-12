@@ -2,6 +2,7 @@ import Banner from "@components/Banner";
 import Navbar from "@components/Navbar";
 import UserDashboard from "@components/UserDashboard";
 import UsersComments from "@components/UsersComments";
+import Video from "@components/Video";
 import { useContext } from "react";
 import AuthContext from "../contexts/AuthContext";
 
@@ -16,12 +17,11 @@ function HomePage() {
       }
       {isAuthenticated && (
         <div>
+          <Banner />
           <UserDashboard />
-          <UsersComments />
         </div>
       )}
-      <Banner />
-      <UserDashboard />
+      <Video />
       <UsersComments />
     </div>
   );

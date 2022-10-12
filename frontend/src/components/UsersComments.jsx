@@ -13,9 +13,9 @@ function UsersComments() {
   }, []);
 
   return (
-    // Map pour afficher automatiquement tous les utilisateurs, sauf les admins exclus avec le filter.
-
+    // Map pour afficher automatiquement tous les utilisateurs, sauf les admins exclus avec le filter, de même que ceux n'ayant pas de description
     <div className="users-comments-flex-container">
+      <h2 className="users-comments-title">Vos futurs compagnons de voyage</h2>
       {userComment &&
         userComment
           .filter(
