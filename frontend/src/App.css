@@ -1048,6 +1048,38 @@ input[type="file"] {
   height: auto;
 }
 
+.alert-message-show {
+  width: 60%;
+  margin: auto;
+  background-color: #eeeeee;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid red;
+}
+
+.alert-message-show p {
+  padding: 10px;
+  font-size: 1.4rem;
+  margin: auto;
+  text-align: center;
+  color: #151965;
+  font-family: "AvenirMedium";
+}
+.cancel-delete-btn {
+  background-color: red;
+  margin-left: 25px;
+  width: 80px;
+  padding: 8px;
+  font-family: "AvenirBlack";
+}
+.confirm-delete-btn {
+  background-color: #81e8fe;
+  width: 80px;
+  padding: 8px;
+  font-family: "AvenirBlack";
+}
 .user-profile-edit-form input::placeholder {
   text-align: center;
 }
@@ -1057,6 +1089,7 @@ input[type="file"] {
   border-radius: 10px;
   color: #81e8fe;
   margin-top: 5%;
+  padding: 5px;
 }
 .avatar {
   display: flex;
@@ -1097,7 +1130,7 @@ input[type="file"] {
 
 .input-edit-profile {
   color: #151965;
-  background-color: rgba(81, 85, 133, 0.5);
+  background-color: white;
   border-radius: 10px;
   width: 200px;
 }
