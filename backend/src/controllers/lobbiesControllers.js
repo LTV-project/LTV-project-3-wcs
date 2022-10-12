@@ -40,7 +40,7 @@ const read = (req, res) => {
     });
 };
 // Pour créer la route de la table de jointure participants entre users et lobbies
-const readLobbyCreateByUser = (req, res) => {
+const readLobbyByCategoryWithTravelInfosAndCreator = (req, res) => {
   models.lobbies
     .findLobbyByCategoryWithTravelInfosAndCreator(req.params.id)
     .then(([rows]) => {
@@ -49,6 +49,18 @@ const readLobbyCreateByUser = (req, res) => {
       } else {
         res.send(rows[0]);
       }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const readLobbyCreatedByUser = (req, res) => {
+  models.lobbies
+    .findLobbyCreatedByUser()
+    .then(([rows]) => {
+      res.send(rows);
     })
     .catch((err) => {
       console.error(err);
@@ -117,7 +129,8 @@ module.exports = {
   browse,
   browseLobbiesByCategoryWithTravelInfosAndCreator,
   read,
-  readLobbyCreateByUser,
+  readLobbyCreatedByUser,
+  readLobbyByCategoryWithTravelInfosAndCreator,
   edit,
   add,
   destroy,

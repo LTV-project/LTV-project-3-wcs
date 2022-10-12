@@ -53,6 +53,7 @@ function App() {
                 path="/user-profile/:id/edit"
                 element={<EditUserProfile />}
               />
+              <Route path="/users/:id/lobbies" element={<FullCard />} />
               <Route path="/account-creation" element={<AccountCreation />} />
               <Route
                 path="/validate-message-account-creation"

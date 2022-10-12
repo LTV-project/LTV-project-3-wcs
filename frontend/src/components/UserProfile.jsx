@@ -46,12 +46,12 @@ export default function UserProfile() {
           ""
         )}
 
-        {user.isAdmin === 0 ? (
+        {user.isAdmin === 0 || user.isAdmin === 1 ? (
           <button
             className="generic-btn btn-editaccount"
             type="button"
             onClick={() => {
-              navigate(`/lobbies/${params.id}/`);
+              navigate(`/users/${params.id}/lobbies`);
             }}
           >
             Mes salles
