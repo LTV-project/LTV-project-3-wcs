@@ -56,7 +56,6 @@ export default function EditAccount() {
       .then((res) => res.json())
       .then((data1) => {
         setEditUser({ ...editUser, image: data1.url });
-        //   a changer suivant la page setgetuser et getuser
       })
       .catch((err) => console.error(err));
   };
