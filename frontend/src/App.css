@@ -68,6 +68,16 @@ a {
   width: 100%;
 }
 
+.parag-deconnexion {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.7rem;
+}
+
+.parag-deconnexion:hover {
+  color: #81e8fe;
+}
+
 .picto-navbar {
   display: block;
   width: 34px;
@@ -83,9 +93,19 @@ a {
 
 .picto-navbar-sign {
   display: block;
-  width: 38px;
+  width: 70px;
   height: 42px;
   margin-right: 15px;
+}
+
+.btn-nav-logout {
+  display: flex;
+  width: auto;
+  background-color: #151965;
+  color: white;
+  align-items: center;
+  font-size: 1.7rem;
+  border: #151965;
 }
 
 .picto-navbar-inscription {
@@ -102,7 +122,7 @@ a {
 .picto-navbar-home {
   display: block;
   width: 34px;
-  height: 28.px;
+  height: 28px;
   margin-right: 15px;
 }
 
@@ -111,7 +131,7 @@ a {
   /* border-radius: 20px; */
   font-size: 1.7rem;
   color: white;
-  width: 240px;
+  width: 250px;
   text-align: center;
   /* color: #81e8fe; */
   display: flex;
@@ -178,6 +198,7 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 40px;
+  margin-top: 50px;
 }
 
 .CTA-container video {
@@ -246,9 +267,7 @@ a {
 
 .users-comments-flex-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 100px;
   margin-bottom: 80px;
   width: 100%;
   height: 400px;
@@ -260,6 +279,8 @@ a {
   color: #151965;
   font-size: 2.1rem;
   margin-bottom: 60px;
+  margin-top: 60px;
+  text-align: center;
 }
 
 .user-comment {
@@ -431,6 +452,25 @@ a {
   justify-content: center;
   align-items: center;
   width: 480px;
+  margin-bottom: 50px;
+}
+
+.validated-message-container {
+  background-color: #151965;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+}
+
+.validated-message-title {
+  font-size: 20px;
+}
+
+.parag-validated {
+  height: 15vh;
+  margin: 50vh;
 }
 
 .create-lobby-input {
@@ -463,6 +503,12 @@ a {
   display: flex;
   width: 100%;
 }
+.container-recap-creation {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-top: 15px;
+}
 
 .create-lobby-input-valited {
   margin: auto;
@@ -481,9 +527,10 @@ a {
 }
 
 .confirm-creation {
+  align-items: center;
   padding: 10px;
   font-family: "AvenirBlack";
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
   font-size: 1.4rem;
 }
 
@@ -824,7 +871,7 @@ a {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  background-color:#151965;
+  background-color: #151965;
   margin-left: 17%;
   margin-top: 30%;
   width: 33%;
@@ -838,9 +885,9 @@ a {
   width: 50%;
 }
 
-.img-profile-container label{
+.img-profile-container label {
   font-size: small;
-  border:solid 3px white;
+  border: solid 3px white;
   border-radius: 10px;
   color: white;
   margin-top: 5%;
@@ -855,9 +902,9 @@ input[type="file"] {
   margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 40%;
-  background:#81e8fe;
+  background: #81e8fe;
 }
-.p-account{
+.p-account {
   margin-left: 3%;
 }
 .input-contain1 {
@@ -867,7 +914,7 @@ input[type="file"] {
   font-size: 1rem;
   line-height: 30px;
   text-align: left;
-  color:white;
+  color: white;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -881,14 +928,13 @@ input[type="file"] {
   font-weight: 800;
   font-size: 1rem;
   line-height: 30px;
-  color:white;
+  color: white;
 }
-
 
 .input-containerA,
 .input-containerB,
 .input-containerC,
-.input-containerD, 
+.input-containerD,
 .input-containerF,
 .input-containerG {
   width: 250px;
@@ -897,10 +943,9 @@ input[type="file"] {
   padding: 2%;
   color: #151965;
   top: 728px;
-  background-color:white;
+  background-color: white;
   border-radius: 10px;
 }
-
 
 .input-containerE {
   width: 100px;
@@ -934,7 +979,7 @@ input[type="file"] {
 }
 .message-describe {
   display: inline-block;
-  color:white;
+  color: white;
   font-size: 1.4rem;
   padding: 25px;
   width: 70%;
@@ -1391,23 +1436,22 @@ input[type="file"] {
     margin-top: 22%;
     margin-bottom: 5%;
     margin-left: 40%;
-    background:#81e8fe;
+    background: #81e8fe;
   }
-.input-account-creation-container{
-  font-display: flex;
- 
-}
+  .input-account-creation-container {
+    font-display: flex;
+  }
 
-.message-describe {
-  width: 82%;
-  height: 450px;
-  margin-top: 5%;
-  margin-left: 12%;
-}
-.p-describe {
-  margin-left: 15%;
-}
-.buttonSub{
-  margin-left: 75%;
-}
+  .message-describe {
+    width: 82%;
+    height: 450px;
+    margin-top: 5%;
+    margin-left: 12%;
+  }
+  .p-describe {
+    margin-left: 15%;
+  }
+  .buttonSub {
+    margin-left: 75%;
+  }
 }

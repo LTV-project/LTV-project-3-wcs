@@ -21,5 +21,5 @@ export const transDate = (date) => {
   const day = myDate[2];
   // const sec = myHours[2];
   // return `${day}-${month}-${years} ${hours + 2}h${min}m${sec}s`;
-  return `${day}-${month}-${years}`;
+  return `${day + 1}-${month}-${years}`;
 };

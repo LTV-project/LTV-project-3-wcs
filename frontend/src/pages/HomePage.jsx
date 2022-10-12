@@ -1,5 +1,5 @@
 import Banner from "@components/Banner";
-import Navbar from "@components/Navbar";
+import NavbarHome from "@components/NavbarHome";
 import UserDashboard from "@components/UserDashboard";
 import UsersComments from "@components/UsersComments";
 import Video from "@components/Video";
@@ -8,9 +8,10 @@ import AuthContext from "../contexts/AuthContext";
 
 function HomePage() {
   const { isAuthenticated } = useContext(AuthContext);
+
   return (
     <div>
-      <Navbar />
+      <NavbarHome />
       {
         // préparation d'un contexte d'affichage si utilisateur connecté
       }
@@ -20,7 +21,7 @@ function HomePage() {
           <UserDashboard />
         </div>
       )}
-      <Video />
+      {!isAuthenticated && <Video />}
       <UsersComments />
     </div>
   );

@@ -14,21 +14,25 @@ function UsersComments() {
 
   return (
     // Map pour afficher automatiquement tous les utilisateurs, sauf les admins exclus avec le filter, de même que ceux n'ayant pas de description
-    <div className="users-comments-flex-container">
+    <>
       <h2 className="users-comments-title">Vos futurs compagnons de voyage</h2>
-      {userComment &&
-        userComment
-          .filter(
-            (comment) => comment.isAdmin !== 1 && comment.description !== null
-          )
-          .map((comment) => (
-            <div className="user-comment" key={comment.id}>
-              <img src={comment.image} alt="avatar" />
-              <p>{comment.pseudo}</p>
-              <p>{comment.description ? comment.description : "Lorem ipsum"}</p>
-            </div>
-          ))}
-    </div>
+      <div className="users-comments-flex-container">
+        {userComment &&
+          userComment
+            .filter(
+              (comment) => comment.isAdmin !== 1 && comment.description !== null
+            )
+            .map((comment) => (
+              <div className="user-comment" key={comment.id}>
+                <img src={comment.image} alt="avatar" />
+                <p>{comment.pseudo}</p>
+                <p>
+                  {comment.description ? comment.description : "Lorem ipsum"}
+                </p>
+              </div>
+            ))}
+      </div>
+    </>
   );
 }
 

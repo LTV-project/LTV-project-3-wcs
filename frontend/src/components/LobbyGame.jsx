@@ -17,7 +17,7 @@ export default function LobbyGame({ selectedValue }) {
     number_of_gamers: "",
     name: "",
     commentary: "",
-    category_id: 2,
+    category_id: currentUser.sub,
   });
 
   const [travelInfo, setTravelInfo] = useState({
@@ -39,14 +39,19 @@ export default function LobbyGame({ selectedValue }) {
         date: travelInfo.date,
       })
       .then((response) => {
-        axios.post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
-          ...lobby,
-          travel_infos_id: response.data,
-          game_id: id,
-          user_id: currentUser.sub,
-        });
+        axios
+          .post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
+            ...lobby,
+            travel_infos_id: response.data,
+            game_id: id,
+            user_id: id,
+          })
+          .then((res) =>
+            navigate("/validated-message", {
+              state: { id: res.data },
+            })
+          );
       })
-      .then(() => navigate("/"))
       .catch((error) => console.error(error));
   }
 
@@ -68,7 +73,7 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <p className="parag-lobby-create">
+            <p className={lobby.name ? "parag-fixed" : "parag-lobby-create"}>
               Veuillez renseigner ce champ avant de poursuivre
             </p>
             <button
@@ -432,7 +437,7 @@ export default function LobbyGame({ selectedValue }) {
         <div>
           <form className="form-lobby">
             <input
-              className="create-lobby-input-commentary"
+              className="create-lobby-commentary"
               type="text"
               value={lobby.commentary}
               placeholder="Je laisse un commentaire"
@@ -476,7 +481,7 @@ export default function LobbyGame({ selectedValue }) {
       );
     case 10:
       return (
-        <div>
+        <div className="container-recap-creation">
           <form onSubmit={handleSubmitButton} className="form-lobby">
             <p className="parag-lobby-create-recap">Nom de la salle</p>
             <input
@@ -593,7 +598,7 @@ export default function LobbyGame({ selectedValue }) {
             />
             <p className="parag-lobby-create-recap">Je laisse un commentaire</p>
             <input
-              className="create-lobby-input-commentary"
+              className="create-lobby-commentary"
               type="text"
               value={lobby.commentary}
               placeholder="Je laisse un commentaire"
@@ -605,12 +610,14 @@ export default function LobbyGame({ selectedValue }) {
               }
               required
             />
-            <input
-              className="generic-btn confirm-creation"
-              type="submit"
-              value="Je crée ma salle de jeu"
-            />
           </form>
+          <button
+            type="button"
+            className="generic-btn confirm-creation"
+            onClick={handleSubmitButton}
+          >
+            Je crée ma salle de jeu
+          </button>
         </div>
       );
     default:
