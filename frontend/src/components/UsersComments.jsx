@@ -20,14 +20,17 @@ function UsersComments() {
         {userComment &&
           userComment
             .filter(
-              (comment) => comment.isAdmin !== 1 && comment.description !== null
+              (comment) =>
+                comment.image &&
+                comment.isAdmin !== 1 &&
+                comment.description !== null
             )
             .map((comment) => (
               <div className="user-comment" key={comment.id}>
                 <img src={comment.image} alt="avatar" />
-                <p>{comment.pseudo}</p>
-                <p>
-                  {comment.description ? comment.description : "Lorem ipsum"}
+                <p className="uc-pseudo">{comment.pseudo}</p>
+                <p className="uc-description">
+                  {comment.description && comment.description}
                 </p>
               </div>
             ))}
