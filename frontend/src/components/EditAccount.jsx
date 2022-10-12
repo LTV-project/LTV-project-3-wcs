@@ -89,7 +89,11 @@ export default function EditAccount() {
       <div className="user-profile-edit">
         <div className="avatar">
           <img src={editUser.image} alt={editUser.pseudo} />
+          <label className="labeledit" htmlFor="files">
+            Ajoutez une photo
+          </label>
           <input
+            id="files"
             className="profile"
             type="file"
             alt="Avatar"
