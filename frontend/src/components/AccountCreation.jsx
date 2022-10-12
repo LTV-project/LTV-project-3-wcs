@@ -52,17 +52,13 @@ export default function AccountCreation() {
   const postUser = () => {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/users`, { ...accountCreation })
-      .then((response) => {
-        console.error(response);
-        console.error(response.data);
-      })
+      .then((res) =>
+        navigate("/validate-message-account-creation", {
+          state: { id: res.data },
+        })
+      )
       .catch((error) => console.error(error));
   };
-
-  function handleSubmitButton() {
-    postUser();
-    navigate("/validatedMessageAccount");
-  }
 
   return (
     <div>
@@ -225,7 +221,7 @@ export default function AccountCreation() {
             <button
               className="generic-btn buttonSub"
               type="button"
-              onClick={handleSubmitButton}
+              onClick={postUser}
             >
               Soumettre
             </button>
@@ -235,3 +231,25 @@ export default function AccountCreation() {
     </div>
   );
 }
+/* function handleSubmitButton() {
+  axios
+    .post(`${import.meta.env.VITE_BACKEND_URL}/travel_info`, {
+      ...travelInfo,
+      date: travelInfo.date,
+    })
+    .then((response) => {
+      axios
+        .post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
+          ...lobby,
+          travel_infos_id: response.data,
+          game_id: id,
+          user_id: id,
+        })
+        .then((res) =>
+          navigate("/validated-message", {
+            state: { id: res.data },
+          })
+        );
+    })
+    .catch((error) => console.error(error));
+// } */
