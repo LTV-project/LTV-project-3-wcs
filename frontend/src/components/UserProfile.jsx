@@ -20,27 +20,6 @@ export default function UserProfile() {
       .then((data) => setUser(data));
   }, []);
 
-  // eslint-disable-next-line no-unused-vars
-  const uploadImage = (e) => {
-    const data = new FormData();
-    data.append("file", e.target.files[0]);
-    data.append("upload_preset", "Projet3_Ltv");
-    data.append("cloud_name", "bibilekid");
-    fetch("  https://api.cloudinary.com/v1_1/bibilekid/image/upload", {
-      method: "post",
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((data1) => {
-        setUser({ ...user, image: data1.url });
-        //   a changer suivant la page setgetuser et getuser
-      })
-      .catch((err) => console.error(err));
-  };
-
-  // eslint-disable-next-line no-unused-vars
-  const [dataInput, setDataInput] = useState(true);
-
   return (
     <div className="user-profile-container">
       <div className="user-profile-dashboard">
@@ -48,7 +27,6 @@ export default function UserProfile() {
           className="generic-btn btn-editaccount"
           type="button"
           onClick={() => {
-            setDataInput(true);
             navigate(`/user-profile/${params.id}/edit`);
           }}
         >
@@ -59,7 +37,6 @@ export default function UserProfile() {
             className="generic-btn btn-editaccount"
             type="button"
             onClick={() => {
-              setDataInput(true);
               navigate(`/admin`);
             }}
           >
@@ -74,7 +51,6 @@ export default function UserProfile() {
             className="generic-btn btn-editaccount"
             type="button"
             onClick={() => {
-              setDataInput(false);
               navigate(`/lobbies/${params.id}/`);
             }}
           >
@@ -92,11 +68,8 @@ export default function UserProfile() {
           <p>Pseudonyme : {user.pseudo}</p>
           <p>Email: {user.email}</p>
 
-          <p className="description">
-            Ma description
-            <br />
-            {user.description}
-          </p>
+          <p className="description">Ma description :</p>
+          <p className="description">{user.description}</p>
         </form>
       </div>
     </div>

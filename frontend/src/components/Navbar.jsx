@@ -12,7 +12,7 @@ import AuthApi from "../services/AuthApi";
 
 function Navbar() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
-  const { setCurrentUser } = useContext(CurrentUserContext);
+  const { setCurrentUser, currentUser } = useContext(CurrentUserContext);
 
   function handleLogout() {
     AuthApi.logout();
@@ -78,7 +78,7 @@ function Navbar() {
             </li>
           </Link>
           {isAuthenticated && (
-            <Link to="/user-profile/:id">
+            <Link to={`/user-profile/${currentUser.sub}`}>
               <li className="nav-item">
                 <img
                   src={myAccountPicto}

@@ -1097,6 +1097,7 @@ input[type="file"] {
   align-items: center;
   height: 22vh;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .avatar img {
