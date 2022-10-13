@@ -482,11 +482,6 @@ a {
   font-size: 20px;
 }
 
-.parag-validated {
-  height: 15vh;
-  margin: 50vh;
-}
-
 .create-lobby-input {
   margin: 10px;
   width: 70%;
@@ -850,15 +845,15 @@ a {
 .edit-lobby-btn {
   background-color: #81e8fe;
   width: 100px;
-  padding: 10px;  
+  padding: 10px;
   font-family: "AvenirBlack";
   border-radius: 20px;
 }
 .delete-lobby-btn {
   background-color: rgb(241, 62, 62);
   width: 100px;
-  padding: 10px; 
-  font-family: "AvenirBlack"; 
+  padding: 10px;
+  font-family: "AvenirBlack";
   border-radius: 20px;
 }
 
@@ -1053,7 +1048,8 @@ input[type="file"] {
 .user-profile-container {
   display: flex;
   height: 100vh;
-  margin-top: 2%;
+  margin-top: 4%;
+  margin-bottom: 50px;
 }
 
 .user-profile-dashboard {

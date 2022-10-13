@@ -20,7 +20,7 @@ function MiniCard({ lobby }) {
     <>
       <div className="creator-infos">
         <img
-          src="https://placekitten.com/g/50/50"
+          src={lobby.avatar}
           alt="creator-avatar"
           className="creator-avatar"
         />
@@ -28,7 +28,7 @@ function MiniCard({ lobby }) {
       </div>
       <div className="game-infos">
         <p>Nom de la salle : {lobby.name}</p>
-        <p>Jeu : {lobby.game}</p>
+        {lobby.game ? <p>Jeu : {lobby.game}</p> : ""}
         <p>Nombre de joueurs : {lobby.number_of_gamers}</p>
       </div>
       <div className="btn-container">

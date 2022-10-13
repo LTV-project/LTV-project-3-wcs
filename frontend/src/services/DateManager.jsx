@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 // DateManager replace Moment more lighter ^^
 
 // Fonction permettant de générer la date actuelle pour mysql
@@ -21,5 +22,12 @@ export const transDate = (date) => {
   const day = myDate[2];
   // const sec = myHours[2];
   // return `${day}-${month}-${years} ${hours + 2}h${min}m${sec}s`;
-  return `${day + 1}-${month}-${years}`;
+  return `${parseInt(day) + 1}-${month}-${years}`;
+};
+
+// Pour calculer l'année de naissance en fonction de l'âge
+export const birthday = (age) => {
+  const d = new Date();
+  const myDate = `${d.getFullYear()}`;
+  return `${parseInt(myDate, 10) - age}`;
 };
