@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Burger() {
   // Pour changer l'état de l'icone Menu burger
@@ -33,26 +34,18 @@ function Burger() {
       </nav>
       <div className={menuClass}>
         <ul className="menu-mobile">
-          <li className="menu-burger-title">
-            <a href="/" className="burger-menu-link">
-              Accueil
-            </a>
-          </li>
-          <li className="menu-burger-title">
-            <a href="/sign" className="burger-menu-link">
-              Se connecter
-            </a>
-          </li>
-          <li className="menu-burger-title">
-            <a href="/account-creation" className="burger-menu-link">
-              S'inscrire
-            </a>
-          </li>
-          <li className="menu-burger-title">
-            <a href="/contact" className="burger-menu-link">
-              Contact
-            </a>
-          </li>
+          <Link to="/">
+            <li className="menu-burger-title">Accueil</li>
+          </Link>
+          <Link to="/sign">
+            <li className="menu-burger-title">Se connecter</li>
+          </Link>
+          <Link to="/account-creation">
+            <li className="menu-burger-title">S'inscrire</li>
+          </Link>
+          <Link to="/contact">
+            <li className="menu-burger-title">Contact</li>
+          </Link>
         </ul>
       </div>
     </div>
