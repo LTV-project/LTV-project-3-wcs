@@ -10,8 +10,8 @@ const sendEmail = (req, res) => {
     {
       from: "naim-aouchiche_student2022@wilder.school",
       to: email,
-      subject: `Bienvenue ${req.body.pseudo}`,
-      text: "Êtes-vous prêts à jouer le jeu  ou à échanger?",
+      subject: `Bonjour ${req.body.pseudo}, confirmation de votre inscription`,
+      text: "Êtes-vous prêts à jouer le jeu ou à échanger?",
       html: `<!DOCTYPE html>
       <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -98,13 +98,13 @@ const sendEmail = (req, res) => {
                 
                 <tbody><tr><td width="100%" valign="top" align="center" class="links-color" style="padding-bottom: 9px;"><!--[if (lte ie 8)]><div style="display: inline-block; width: 534px; -mru-width: 0px;"><![endif]--><img border="0" hspace="0" align="center" vspace="0" width="534" style="border: 0px; display: block; vertical-align: top; height: auto; margin: 0 auto; color: #3f3f3f; font-size: 13px; font-family: Arial, Helvetica, sans-serif; width: 100%; max-width: 534px; height: auto;" src="https://mosaico.io/srv/f-tmfyil5/img?src=https%3A%2F%2Fmosaico.io%2Ffiles%2Ftmfyil5%2FTGVM%2520%2520Astom%2520SA-Speedinnov%2520SAS%25202020.jpg&amp;method=resize&amp;params=534%2Cnull"><!--[if (lte ie 8)]></div><![endif]--></td></tr>
                 <tr>
-            <td width="100%" valign="top" align="left" style="font-weight: normal; color: #3f3f3f; font-size: 18px; font-family: Arial, Helvetica, sans-serif; text-align: left;"><span style="font-weight: normal;">Tu es prêt à jouer?</span></td>
+            <td width="100%" valign="top" align="left" style="font-weight: normal; color: #3f3f3f; font-size: 18px; font-family: Arial, Helvetica, sans-serif; text-align: left;"><span style="font-weight: normal;">Bonjour ! Prêt à passer un agréable moment lors de vos voyages en train ?</span></td>
           </tr>
-                <tr><td class="long-text links-color" width="100%" valign="top" align="left" style="font-weight: normal; color: #3f3f3f; font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align: left; line-height: normal;"><p style="margin: 1em 0px; margin-top: 0px;"><p><strong>Bonjour et bienvenue sur le service de jeu et d'échange.</strong></p>
+                <tr><td class="long-text links-color" width="100%" valign="top" align="left" style="font-weight: normal; color: #3f3f3f; font-size: 13px; font-family: Avenir, Arial, Helvetica, sans-serif; text-align: left; line-height: normal;"><p style="margin: 1em 0px; margin-top: 0px;"><p><strong>Bienvenue sur le service de jeu et d'échange.</strong></p>
       <p style="margin: 1em 0px;"><strong>Vous pouvez à tout moment vous connecter au service grâce à votre identifiant et votre mot de passe.</strong></p>
-      <p style="margin: 1em 0px;"><strong>Rendez-vous sur le site www.letempsdunvoyage.fr pour accéder à votre compte et découvrir plus d'informations sur nos services.</strong></p>
+      <p style="margin: 1em 0px;"><strong>Rendez-vous sur le site https://le-temps-d-un-voyage.netlify.app pour accéder à votre compte et découvrir plus d'informations sur nos services.</strong></p>
       <p style="margin: 1em 0px;">L'équipe Le Temps d'un Voyage est également à votre écoute sur les réseaux sociaux.</p>
-      <p style="margin: 1em 0px;">A tout moment, vous pouvez consulter les conditions générales d'utilisation sur le site www.letempsdunvoyage.fr.</p>
+      <p style="margin: 1em 0px;">A tout moment, vous pouvez consulter les conditions générales d'utilisation sur le site https://le-temps-d-un-voyage.netlify.app.</p>
       <p style="margin: 1em 0px;">&nbsp;</p>
       <p style="margin: 1em 0px;">En cas de questions, veuillez contacter notre service client par mail.</p>`,
     },
