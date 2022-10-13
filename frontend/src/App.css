@@ -1463,6 +1463,21 @@ input[type="file"] {
   .menu-desktop {
     display: none;
   }
+
+  .btn-nav-logout-burger {
+    font-size: 16px;
+    padding: 5px;
+    display: flex;
+    width: auto;
+    background-color: #151965;
+    align-items: center;
+    border: #151965;
+  }
+
+  .menu-mobile {
+    align-items: center;
+  }
+
   .navbar {
     display: none;
   }

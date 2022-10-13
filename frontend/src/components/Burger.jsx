@@ -1,7 +1,10 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthApi from "../services/AuthApi";
+import AuthContext from "../contexts/AuthContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function Burger() {
   // Pour changer l'état de l'icone Menu burger
@@ -22,6 +25,15 @@ function Burger() {
     }
     setIsMenuClicked(!isMenuClicked); // change l'état après le click sur le menu
   };
+
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { setCurrentUser } = useContext(CurrentUserContext);
+
+  function handleLogout() {
+    AuthApi.logout();
+    setIsAuthenticated(false);
+    setCurrentUser({});
+  }
 
   return (
     <div>
@@ -46,6 +58,17 @@ function Burger() {
           <Link to="/contact">
             <li className="menu-burger-title burger-menu-link">Contact</li>
           </Link>
+          {isAuthenticated && (
+            <div className="navbar-btn-logout">
+              <button
+                type="button"
+                className="btn-nav-logout-burger"
+                onClick={handleLogout}
+              >
+                <p className="burger-menu-link">Déconnexion</p>
+              </button>
+            </div>
+          )}
         </ul>
       </div>
     </div>

@@ -231,25 +231,3 @@ export default function AccountCreation() {
     </div>
   );
 }
-/* function handleSubmitButton() {
-  axios
-    .post(`${import.meta.env.VITE_BACKEND_URL}/travel_info`, {
-      ...travelInfo,
-      date: travelInfo.date,
-    })
-    .then((response) => {
-      axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
-          ...lobby,
-          travel_infos_id: response.data,
-          game_id: id,
-          user_id: id,
-        })
-        .then((res) =>
-          navigate("/validated-message", {
-            state: { id: res.data },
-          })
-        );
-    })
-    .catch((error) => console.error(error));
-// } */
