@@ -17,7 +17,7 @@ export default function LobbyGame({ selectedValue }) {
     number_of_gamers: "",
     name: "",
     commentary: "",
-    category_id: currentUser.sub,
+    category_id: 2,
   });
 
   const [travelInfo, setTravelInfo] = useState({
@@ -44,7 +44,7 @@ export default function LobbyGame({ selectedValue }) {
             ...lobby,
             travel_infos_id: response.data,
             game_id: id,
-            user_id: id,
+            user_id: currentUser.sub,
           })
           .then((res) =>
             navigate("/validated-message", {

@@ -4,20 +4,17 @@ import { useNavigate } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import { getDate } from "../services/DateManager";
 
-export default function LobbyTalk({ selectedValue }) {
-  // Une fonction pour convertir l'id du jeu en number
-
-  const id = parseInt(selectedValue, 10);
+export default function LobbyTalk() {
   const { currentUser } = useContext(CurrentUserContext);
 
   const navigate = useNavigate();
 
   const [talk, setTalk] = useState({
-    number_of_talkers: "",
+    number_of_gamers: "",
     theme: "",
     name: "",
     commentary: "",
-    category_id: currentUser.sub,
+    category_id: 1,
   });
 
   const [travelInfo, setTravelInfo] = useState({
@@ -43,8 +40,7 @@ export default function LobbyTalk({ selectedValue }) {
           .post(`${import.meta.env.VITE_BACKEND_URL}/lobbies`, {
             ...talk,
             travel_infos_id: response.data,
-            game_id: id,
-            user_id: id,
+            user_id: currentUser.sub,
           })
           .then((res) =>
             navigate("/validated-message", {
@@ -97,19 +93,19 @@ export default function LobbyTalk({ selectedValue }) {
             <input
               className="create-lobby-input"
               type="text"
-              value={talk.number_of_talkers}
-              placeholder="Nombre de participants souhaités"
+              value={talk.number_of_gamers}
+              placeholder="Nombre de participants souhaité"
               onChange={(e) =>
                 setTalk({
                   ...talk,
-                  number_of_talkers: e.target.value.replace(/\D/g, ""),
+                  number_of_gamers: e.target.value.replace(/\D/g, ""),
                 })
               }
               required
             />
             <p
               className={
-                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+                talk.number_of_gamers ? "parag-fixed" : "parag-lobby-create"
               }
             >
               Veuillez renseigner ce champ avant de poursuivre
@@ -128,7 +124,7 @@ export default function LobbyTalk({ selectedValue }) {
                 type="button"
                 className="create-lobby-input-valited"
                 onClick={() => {
-                  if (talk.number_of_talkers) {
+                  if (talk.number_of_gamers) {
                     setStep(step + 1);
                   }
                 }}
@@ -203,9 +199,7 @@ export default function LobbyTalk({ selectedValue }) {
               required
             />
             <p
-              className={
-                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
-              }
+              className={travelInfo.date ? "parag-fixed" : "parag-lobby-create"}
             >
               Veuillez renseigner ce champ avant de poursuivre
             </p>
@@ -253,7 +247,7 @@ export default function LobbyTalk({ selectedValue }) {
             />
             <p
               className={
-                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+                travelInfo.train_number ? "parag-fixed" : "parag-lobby-create"
               }
             >
               Veuillez renseigner ce champ avant de poursuivre
@@ -302,7 +296,7 @@ export default function LobbyTalk({ selectedValue }) {
             />
             <p
               className={
-                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+                travelInfo.coach_number ? "parag-fixed" : "parag-lobby-create"
               }
             >
               Veuillez renseigner ce champ avant de poursuivre
@@ -351,7 +345,7 @@ export default function LobbyTalk({ selectedValue }) {
             />
             <p
               className={
-                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+                travelInfo.seat_number ? "parag-fixed" : "parag-lobby-create"
               }
             >
               Veuillez renseigner ce champ avant de poursuivre
@@ -400,7 +394,7 @@ export default function LobbyTalk({ selectedValue }) {
             />
             <p
               className={
-                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+                travelInfo.departure ? "parag-fixed" : "parag-lobby-create"
               }
             >
               Veuillez renseigner ce champ avant de poursuivre
@@ -449,7 +443,7 @@ export default function LobbyTalk({ selectedValue }) {
             />
             <p
               className={
-                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
+                travelInfo.arrival ? "parag-fixed" : "parag-lobby-create"
               }
             >
               Veuillez renseigner ce champ avant de poursuivre
@@ -497,9 +491,7 @@ export default function LobbyTalk({ selectedValue }) {
               required
             />
             <p
-              className={
-                talk.number_of_talkers ? "parag-fixed" : "parag-lobby-create"
-              }
+              className={talk.commentary ? "parag-fixed" : "parag-lobby-create"}
             >
               Veuillez renseigner ce champ avant de poursuivre
             </p>
@@ -552,12 +544,12 @@ export default function LobbyTalk({ selectedValue }) {
             <input
               className="create-lobby-input"
               type="text"
-              value={talk.number_of_talkers}
+              value={talk.number_of_gamers}
               placeholder="Nombre de participants souhaités"
               onChange={(e) =>
                 setTalk({
                   ...talk,
-                  number_of_talkers: e.target.value.replace(/\D/g, ""),
+                  number_of_gamers: e.target.value.replace(/\D/g, ""),
                 })
               }
               required

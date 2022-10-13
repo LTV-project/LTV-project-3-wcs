@@ -28,24 +28,22 @@ function ValidatedMessage() {
     <div className="validated-message-container">
       <h2 className="validated-message-title">
         Félicitations{" "}
-        {lobbyCreateByUser.pseudo
-          ? lobbyCreateByUser.pseudo
-          : "place du pseudo"}{" "}
+        {lobbyCreateByUser.host ? lobbyCreateByUser.host : "place du pseudo"}{" "}
         !!!
       </h2>
-      {lobbyCreateByUser.category_id === "game" ? (
+      {lobbyCreateByUser.category === "game" ? (
         <div className="validated-message-text">
           <p className="parag-validated">
-            Vous venez de créer la salle de jeu :{" "}
+            Vous venez de créer la salle de jeu :
           </p>
-          {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}
+          {lobbyCreateByUser.name}
           <p className="parag-validated">
             N'oubliez pas d'apporter votre jeu !
           </p>
           <p className="parag-validated">Rappels concernant votre voyage :</p>
           <p className="parag-validated">
-            {/* Date du voyage : {lobbyCreateByUser.date} */}
-            Date du voyage : {transDate(lobbyCreateByUser.date)}
+            Date du voyage :
+            {lobbyCreateByUser.date && transDate(lobbyCreateByUser.date)}
           </p>
           <p className="parag-validated">
             Numéro de train : {lobbyCreateByUser.train_number}
@@ -57,10 +55,12 @@ function ValidatedMessage() {
       ) : (
         <div className="validated-message-text">
           <p>Vous venez de créer la salle de discussion : </p>
-          {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}
+          {lobbyCreateByUser.name}
           <p>Rappels concernant votre voyage :</p>
-          <p>Date du voyage : </p>
-          {lobbyCreateByUser.date}
+          <p>
+            Date du voyage :
+            {lobbyCreateByUser.date && transDate(lobbyCreateByUser.date)}
+          </p>
           <p>Numéro de train : {lobbyCreateByUser.train_number}</p>
           <p>Numéro de voiture : {lobbyCreateByUser.coach_number}</p>
         </div>
