@@ -5,6 +5,7 @@ import { transDate } from "../services/DateManager";
 
 function ValidatedMessage() {
   const [lobbyCreateByUser, setLobbyCreateUser] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [name, setName] = useState("");
   const navigate = useNavigate();
   // import useLocation pour récupérer les données du composant précédent LobbyGame ou LobbyTalk
@@ -27,7 +28,6 @@ function ValidatedMessage() {
           .catch((error) => console.error(error));
       });
   }, []);
-  // console.log(lobbyCreateByUser);
 
   // Création useEffect pour le timeOut de 10sec avec retour page d'accueil
   useEffect(() => {
@@ -39,14 +39,16 @@ function ValidatedMessage() {
   return (
     <div className="validated-message-container">
       <h2 className="validated-message-title">
-        Félicitations {name || "place du pseudo"} !!!
+        Félicitations{" "}
+        {lobbyCreateByUser.host ? lobbyCreateByUser.host : "place du pseudo"}{" "}
+        !!!
       </h2>
-      {lobbyCreateByUser.category_id === "game" ? (
+      {lobbyCreateByUser.category === "game" ? (
         <div className="validated-message-text">
           <p className="parag-validated">
-            Vous venez de créer la salle de jeu :{" "}
+            Vous venez de créer la salle de jeu :
           </p>
-          {(lobbyCreateByUser.name, lobbyCreateByUser.number_of_gamers)}
+          {lobbyCreateByUser.name}
           <p className="parag-validated">
             N'oubliez pas d'apporter votre jeu !
           </p>
@@ -65,10 +67,10 @@ function ValidatedMessage() {
       ) : (
         <div className="validated-message-text">
           <p>Vous venez de créer la salle de discussion : </p>
-          {(name, lobbyCreateByUser.number_of_gamers)}
-          <p>Rappels concernant votre voyage </p>
+          {lobbyCreateByUser.name}
+          <p>Rappels concernant votre voyage :</p>
           <p>
-            Date du voyage :{" "}
+            Date du voyage :
             {lobbyCreateByUser.date && transDate(lobbyCreateByUser.date)}
           </p>
           <p>Numéro de train : {lobbyCreateByUser.train_number}</p>

@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import AuthContext from "../contexts/AuthContext";
 
 export default function EditAccount() {
   const params = useParams();
   const navigate = useNavigate();
+  const { setIsAuthenticated } = useContext(AuthContext);
+
+  const [toggleAlert, setToggleAlert] = useState(false);
 
   const [editUser, setEditUser] = useState({
     pseudo: "",
@@ -32,6 +36,14 @@ export default function EditAccount() {
     });
   }
 
+  function displayAlert() {
+    setToggleAlert(true);
+  }
+
+  function cancelDelete() {
+    navigate(-1);
+  }
+
   const uploadImage = (e) => {
     const data = new FormData();
     data.append("file", e.target.files[0]);
@@ -44,7 +56,6 @@ export default function EditAccount() {
       .then((res) => res.json())
       .then((data1) => {
         setEditUser({ ...editUser, image: data1.url });
-        //   a changer suivant la page setgetuser et getuser
       })
       .catch((err) => console.error(err));
   };
@@ -54,6 +65,9 @@ export default function EditAccount() {
   }
   function handleDelete() {
     deleteAccount();
+    window.localStorage.removeItem("authToken");
+    delete axios.defaults.headers.Authorization;
+    setIsAuthenticated(false);
     navigate("/");
   }
 
@@ -78,13 +92,17 @@ export default function EditAccount() {
         >
           Sécurité
         </button>
-        <button
-          className="generic-btn btn-editaccount"
-          type="button"
-          onClick={handleDelete}
-        >
-          Supprimer mon compte
-        </button>
+        {editUser.isAdmin === 0 ? (
+          <button
+            className="generic-btn btn-editaccount"
+            type="button"
+            onClick={displayAlert}
+          >
+            Supprimer mon compte
+          </button>
+        ) : (
+          ""
+        )}
       </div>
       <div className="user-profile-edit">
         <div className="avatar">
@@ -101,6 +119,30 @@ export default function EditAccount() {
             onChange={(e) => uploadImage(e)}
           />
         </div>
+        {toggleAlert && (
+          <div className="alert-message-show">
+            <p>
+              Attention cette opération est définitive. Voulez-vous confirmer la
+              suppression ?
+            </p>
+            <div className="btn-container">
+              <button
+                className="confirm-delete-btn"
+                type="button"
+                onClick={handleDelete}
+              >
+                OUI
+              </button>
+              <button
+                className="cancel-delete-btn"
+                type="button"
+                onClick={cancelDelete}
+              >
+                ANNULER
+              </button>
+            </div>
+          </div>
+        )}
         {dataInput ? (
           <form className="user-profile-edit-form">
             <label htmlFor="pseudo">Pseudonyme :</label>
@@ -165,7 +207,8 @@ export default function EditAccount() {
               className="user-describe"
               name="message"
               id="describe"
-              style={{ backgroundColor: "rgba(81, 85, 133, .2)" }}
+              value={editUser.description}
+              style={{ backgroundColor: "white" }}
               onChange={(e) => {
                 e.preventDefault();
                 setEditUser({ ...editUser, description: e.target.value });

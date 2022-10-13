@@ -90,7 +90,10 @@ const add = (req, res, next) => {
   models.users
     .insert(user)
     .then(([result]) => {
-      res.location(`/users/${result.insertId}`).sendStatus(201);
+      res
+        .location(`/users/${result.insertId}`)
+        .status(201)
+        .send(`${result.insertId}`);
       next();
     })
     .catch((err) => {

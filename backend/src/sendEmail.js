@@ -110,8 +110,7 @@ const sendEmail = (req, res) => {
     },
     (err, info) => {
       if (err) console.error(err);
-      // eslint-disable-next-line no-restricted-syntax
-      else console.log(info);
+      else console.warn(info);
     }
   );
 };

@@ -6,6 +6,7 @@ import Contact from "@pages/Contact";
 import AccountCreation from "@pages/UserAccountCreation";
 import Sign from "@pages/Sign";
 import HomePage from "@pages/HomePage";
+import LobbyByUserDetails from "@components/LobbyByUserDetails";
 import LobbyGameCreation from "@pages/LobbyGameCreation";
 import LobbyTalkCreation from "@pages/LobbyTalkCreation";
 import EditUserProfile from "@pages/EditUserProfile";
@@ -14,9 +15,10 @@ import FullCard from "@components/FullCard";
 import JoinLobbies from "@pages/JoinLobbies";
 import AdminPage from "@pages/AdminPage";
 import ValidatedMessage from "@components/ValidatedMessage";
+import ValidateMessageAccountCreation from "@components/ValidateMessageAccountCreation";
+import AdminRoute from "@components/AdminRoute";
 
 import { useState } from "react";
-// import AdminRoute from "@components/AdminRoute";
 import UnauthorizedPage from "@pages/UnauthorizedPage";
 import AuthApi from "@services/AuthApi";
 import AuthContext from "./contexts/AuthContext";
@@ -52,7 +54,15 @@ function App() {
                 path="/user-profile/:id/edit"
                 element={<EditUserProfile />}
               />
+              <Route
+                path="/users/:id/lobbies"
+                element={<LobbyByUserDetails />}
+              />
               <Route path="/account-creation" element={<AccountCreation />} />
+              <Route
+                path="/validate-message-account-creation"
+                element={<ValidateMessageAccountCreation />}
+              />
               <Route path="/unauthorized" element={<UnauthorizedPage />} />
               <Route
                 path="/create-lobby-game"
@@ -66,9 +76,9 @@ function App() {
               <Route
                 path="/admin"
                 element={
-                  // <AdminRoute>
-                  <AdminPage />
-                  // </AdminRoute>
+                  <AdminRoute>
+                    <AdminPage />
+                  </AdminRoute>
                 }
               />
             </Routes>
