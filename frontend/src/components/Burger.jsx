@@ -35,16 +35,16 @@ function Burger() {
       <div className={menuClass}>
         <ul className="menu-mobile">
           <Link to="/">
-            <li className="menu-burger-title">Accueil</li>
+            <li className="menu-burger-title burger-menu-link">Accueil</li>
           </Link>
           <Link to="/sign">
-            <li className="menu-burger-title">Se connecter</li>
+            <li className="menu-burger-title burger-menu-link">Se connecter</li>
           </Link>
           <Link to="/account-creation">
-            <li className="menu-burger-title">S'inscrire</li>
+            <li className="menu-burger-title burger-menu-link">S'inscrire</li>
           </Link>
           <Link to="/contact">
-            <li className="menu-burger-title">Contact</li>
+            <li className="menu-burger-title burger-menu-link">Contact</li>
           </Link>
         </ul>
       </div>
