@@ -58,9 +58,13 @@ const readLobbyByCategoryWithTravelInfosAndCreator = (req, res) => {
 
 const readLobbyCreatedByUser = (req, res) => {
   models.lobbies
-    .findLobbyCreatedByUser()
+    .findLobbyCreatedByUser(req.params.id)
     .then(([rows]) => {
-      res.send(rows);
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows[0]);
+      }
     })
     .catch((err) => {
       console.error(err);
