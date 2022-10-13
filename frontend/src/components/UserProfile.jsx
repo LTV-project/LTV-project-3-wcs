@@ -46,7 +46,7 @@ export default function UserProfile() {
           ""
         )}
 
-        {user.isAdmin === 0 || user.isAdmin === 1 ? (
+        {user.isAdmin === 0 ? (
           <button
             className="generic-btn btn-editaccount"
             type="button"
