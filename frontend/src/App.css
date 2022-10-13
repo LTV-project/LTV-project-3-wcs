@@ -1562,5 +1562,6 @@ input[type="file"] {
   }
   .CTA-container {
     margin-top: 25%;
+    margin-bottom: 200px;
   }
 }

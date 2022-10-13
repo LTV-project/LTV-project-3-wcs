@@ -39,17 +39,17 @@ function Burger() {
             </a>
           </li>
           <li className="menu-burger-title">
-            <a href="/search" className="burger-menu-link">
+            <a href="/sign" className="burger-menu-link">
               Se connecter
             </a>
           </li>
           <li className="menu-burger-title">
-            <a href="/about" className="burger-menu-link">
+            <a href="/account-creation" className="burger-menu-link">
               S'inscrire
             </a>
           </li>
           <li className="menu-burger-title">
-            <a href="/contactus" className="burger-menu-link">
+            <a href="/contact" className="burger-menu-link">
               Contact
             </a>
           </li>
