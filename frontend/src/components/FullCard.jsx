@@ -37,7 +37,7 @@ function FullCard() {
       <div className="full-card">
         <div className="creator-infos">
           <img
-            src="https://placekitten.com/g/50/50"
+            src={lobbyFullDetails.avatar}
             alt="creator-avatar"
             className="creator-avatar"
           />
