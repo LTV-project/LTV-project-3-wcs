@@ -6,6 +6,7 @@ import Contact from "@pages/Contact";
 import AccountCreation from "@pages/UserAccountCreation";
 import Sign from "@pages/Sign";
 import HomePage from "@pages/HomePage";
+import LobbyByUserDetails from "@components/LobbyByUserDetails";
 import LobbyGameCreation from "@pages/LobbyGameCreation";
 import LobbyTalkCreation from "@pages/LobbyTalkCreation";
 import EditUserProfile from "@pages/EditUserProfile";
@@ -53,7 +54,10 @@ function App() {
                 path="/user-profile/:id/edit"
                 element={<EditUserProfile />}
               />
-              <Route path="/users/:id/lobbies" element={<FullCard />} />
+              <Route
+                path="/users/:id/lobbies"
+                element={<LobbyByUserDetails />}
+              />
               <Route path="/account-creation" element={<AccountCreation />} />
               <Route
                 path="/validate-message-account-creation"

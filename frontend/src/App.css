@@ -677,6 +677,8 @@ a {
   justify-self: center;
   align-self: center;
   padding: 10px;
+  width: 80px;
+  height: 60;
   grid-area: creator-avatar;
 }
 
@@ -812,9 +814,10 @@ a {
 
 .full-card-btn-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   height: 50px;
-  padding: 50px;
+  width: 400px;
+  margin: 25px auto;
 }
 
 .join-btn-full-card {
@@ -826,6 +829,23 @@ a {
   width: 180px;
   height: 42px;
   padding: 5px;
+}
+
+/* LobbyByUser CSS */
+
+.edit-lobby-btn {
+  background-color: #81e8fe;
+  width: 100px;
+  padding: 10px;  
+  font-family: "AvenirBlack";
+  border-radius: 20px;
+}
+.delete-lobby-btn {
+  background-color: rgb(241, 62, 62);
+  width: 100px;
+  padding: 10px; 
+  font-family: "AvenirBlack"; 
+  border-radius: 20px;
 }
 
 /* Css footer */
