@@ -51,7 +51,7 @@ export default function UserProfile() {
             className="generic-btn btn-editaccount"
             type="button"
             onClick={() => {
-              navigate(`/lobbies/${params.id}/`);
+              navigate(`/users/${params.id}/lobbies`);
             }}
           >
             Mes salles

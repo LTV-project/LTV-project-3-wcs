@@ -39,9 +39,12 @@ router.get(
   "/joinlobbies",
   lobbiesControllers.browseLobbiesByCategoryWithTravelInfosAndCreator
 );
-router.get("/lobbies/:id", lobbiesControllers.readLobbyCreateByUser);
+router.get(
+  "/lobbies/:id",
+  lobbiesControllers.readLobbyByCategoryWithTravelInfosAndCreator
+);
 router.get("/lobbies/:id/participants", participantsControllers.read);
-router.get("/lobbies-test/:id", lobbiesControllers.read);
+router.get("/users/:id/lobbies/", lobbiesControllers.readLobbyCreatedByUser);
 router.get("/travel_info", travelInfosControllers.browse);
 router.get("/travel_info/:id", travelInfosControllers.read);
 router.get("/category", categoryControllers.browse);
