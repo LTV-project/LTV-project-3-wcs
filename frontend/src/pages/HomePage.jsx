@@ -4,6 +4,7 @@ import UserDashboard from "@components/UserDashboard";
 import UsersComments from "@components/UsersComments";
 import Video from "@components/Video";
 import { useContext } from "react";
+import Burger from "@components/Burger";
 import AuthContext from "../contexts/AuthContext";
 
 function HomePage() {
@@ -21,7 +22,14 @@ function HomePage() {
           <UserDashboard />
         </div>
       )}
-      {!isAuthenticated && <Video />}
+      {!isAuthenticated && (
+        <>
+          <div className="burger">
+            <Burger />
+          </div>
+          <Video />
+        </>
+      )}
       <UsersComments />
     </div>
   );

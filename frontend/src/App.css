@@ -850,15 +850,15 @@ a {
 .edit-lobby-btn {
   background-color: #81e8fe;
   width: 100px;
-  padding: 10px;  
+  padding: 10px;
   font-family: "AvenirBlack";
   border-radius: 20px;
 }
 .delete-lobby-btn {
   background-color: rgb(241, 62, 62);
   width: 100px;
-  padding: 10px; 
-  font-family: "AvenirBlack"; 
+  padding: 10px;
+  font-family: "AvenirBlack";
   border-radius: 20px;
 }
 
@@ -1557,5 +1557,14 @@ input[type="file"] {
     margin-top: 15%;
     line-height: 1.15em;
     font-size: 1.15em;
+  }
+  .CTA-container video{
+    padding: 15%;
+  }
+  .CTA-btn{
+    margin-bottom: 0px;
+  }
+  .CTA-container{
+    margin-top: 25%;
   }
 }
