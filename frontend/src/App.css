@@ -482,11 +482,6 @@ a {
   font-size: 20px;
 }
 
-.parag-validated {
-  height: 15vh;
-  margin: 50vh;
-}
-
 .create-lobby-input {
   margin: 10px;
   width: 70%;
@@ -1053,7 +1048,8 @@ input[type="file"] {
 .user-profile-container {
   display: flex;
   height: 100vh;
-  margin-top: 2%;
+  margin-top: 4%;
+  margin-bottom: 50px;
 }
 
 .user-profile-dashboard {

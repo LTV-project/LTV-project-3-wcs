@@ -39,30 +39,20 @@ function ValidatedMessage() {
   return (
     <div className="validated-message-container">
       <h2 className="validated-message-title">
-        Félicitations{" "}
-        {lobbyCreateByUser.host ? lobbyCreateByUser.host : "place du pseudo"}{" "}
-        !!!
+        Félicitations {lobbyCreateByUser.host && lobbyCreateByUser.host} !
       </h2>
       {lobbyCreateByUser.category === "game" ? (
         <div className="validated-message-text">
-          <p className="parag-validated">
-            Vous venez de créer la salle de jeu :
-          </p>
+          <p>Vous venez de créer la salle de jeu :</p>
           {lobbyCreateByUser.name}
-          <p className="parag-validated">
-            N'oubliez pas d'apporter votre jeu !
-          </p>
-          <p className="parag-validated">Rappels concernant votre voyage </p>
-          <p className="parag-validated">
-            Date du voyage :{" "}
+          <p>N'oubliez pas d'apporter votre jeu !</p>
+          <p>Rappels concernant votre voyage :</p>
+          <p>
+            Date du voyage :
             {lobbyCreateByUser.date && transDate(lobbyCreateByUser.date)}
           </p>
-          <p className="parag-validated">
-            Numéro de train : {lobbyCreateByUser.train_number}
-          </p>
-          <p className="parag-validated">
-            Numéro de voiture : {lobbyCreateByUser.coach_number}
-          </p>
+          <p>Numéro de train : {lobbyCreateByUser.train_number}</p>
+          <p>Numéro de voiture : {lobbyCreateByUser.coach_number}</p>
         </div>
       ) : (
         <div className="validated-message-text">
