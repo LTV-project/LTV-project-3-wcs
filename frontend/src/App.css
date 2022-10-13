@@ -1558,13 +1558,13 @@ input[type="file"] {
     line-height: 1.15em;
     font-size: 1.15em;
   }
-  .CTA-container video{
+  .CTA-container video {
     padding: 15%;
   }
-  .CTA-btn{
+  .CTA-btn {
     margin-bottom: 0px;
   }
-  .CTA-container{
+  .CTA-container {
     margin-top: 25%;
   }
 }
