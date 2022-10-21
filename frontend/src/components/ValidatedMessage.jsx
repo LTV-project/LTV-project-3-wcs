@@ -19,9 +19,7 @@ function ValidatedMessage() {
         setName(response.data.pseudo);
         axios
           .get(
-            `${import.meta.env.VITE_BACKEND_URL}/lobbies/${
-              location.state.id
-            }/participants`
+            `${import.meta.env.VITE_BACKEND_URL}/lobbies/${location.state.id}`
           )
           .then((res) => res.data)
           .then((data) => setLobbyCreateUser(data))
@@ -41,8 +39,10 @@ function ValidatedMessage() {
       <h2 className="validated-message-title">Félicitations {name || ""} !</h2>
       {lobbyCreateByUser.category === "game" ? (
         <div className="validated-message-text">
-          <p>Vous venez de créer la salle de jeu :</p>
-          {lobbyCreateByUser.name && lobbyCreateByUser.name}
+          <p>
+            Vous venez de créer la salle de jeu :
+            {lobbyCreateByUser.name && lobbyCreateByUser.name}
+          </p>
           <p>N'oubliez pas d'apporter votre jeu !</p>
           <p>Rappels concernant votre voyage :</p>
           <p>
